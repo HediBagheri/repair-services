@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet" />
     <style>
         :root {
-            --primary-color: #013a63; /* سرمه‌ای کمرنگ */
-            --secondary-color: #FFD700; /* زرد */
+            --primary-color: #013a63;
+            --secondary-color: #FFD700;
             --muted-bg: #f6f7f9;
             --card-bg: #ffffff;
             --text-dark: #24323f;
@@ -23,144 +23,104 @@
         }
 
         body {
-            font-family: "Vazirmatn", "Tahoma", sans-serif;
+            font-family: "Vazirmatn","Tahoma",sans-serif;
             background: var(--muted-bg);
             color: var(--text-dark);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-       
 
-        
-
-        /* socials fix */
-        .topbar .social {
-            display: flex;
-            gap: 12px;
-            flex-wrap: nowrap;
-        }
-            .topbar .social a {
-                color: #fff;
-                font-size: 1.2rem;
-            }
-
-        /* top bar */
         .topbar {
-            background: linear-gradient(90deg, var(--primary-color), #012f4f);
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
             color: #fff;
             padding: 8px 0;
-            font-size: .95rem;
+            font-size: .95rem
         }
+
+            .topbar .social {
+                display: flex;
+                gap: 12px
+            }
+
+                .topbar .social a {
+                    color: #fff;
+                    font-size: 1.2rem
+                }
 
             .topbar a {
                 color: #fff;
                 text-decoration: none;
                 display: inline-flex;
                 gap: .5rem;
-                align-items: center;
+                align-items: center
             }
 
             .topbar .phone {
-                font-weight: 700;
+                font-weight: 700
             }
+
         .topbar-text {
             font-size: .9rem;
-            opacity: .9;
-            line-height: 1.6;
+            opacity: .9
         }
-        /* navbar */
-        .nav {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        /*.nav-link {
-            color: var(--text-dark);
-            font-weight: 600;
-            padding: .5rem .8rem;
-            border-radius: 8px;
-            transition: background .2s;
-        }*/
-        .nav-link {
-            font-size: .9rem;
-            padding: .3rem .6rem;
-        }
-            .nav-link:hover {
-                background: rgba(1,58,99,.1);
-                color: var(--primary-color);
-            }
 
         .navbar {
             background: var(--card-bg);
             box-shadow: 0 6px 20px rgba(1,30,50,.06);
             border-bottom: 1px solid rgba(3,22,36,.04);
-            padding: .9rem 0;
+            padding: .9rem 0
         }
 
         .brand {
             font-weight: 800;
             font-size: 1.35rem;
-            color: var(--primary-color);
+            color: var(--primary-color)
         }
 
             .brand span {
                 color: var(--secondary-color);
                 font-weight: 900;
-                margin-right: .25rem;
+                margin-right: .25rem
             }
 
         .nav-link {
             color: var(--text-dark);
             font-weight: 600;
             border-radius: 8px;
-            padding: .4rem .7rem;
+            padding: .4rem .7rem
         }
 
             .nav-link:hover {
                 background: rgba(1,58,99,.08);
-                color: var(--primary-color);
+                color: var(--primary-color)
             }
 
-        /* hero */
-        /*.hero {
-            background: linear-gradient(180deg, rgba(1,58,99,.9) 0%, rgba(1,58,99,.85) 50%), url('https://images.unsplash.com/photo-1543168256-4188115760a5?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
-            color: #fff;
-            padding: 80px 0;
-            text-align: center;
-            border-radius: var(--radius);
-            margin-top: 18px;
-        }*/
         .hero {
-            background: linear-gradient(180deg, rgba(1,58,99,.6) 0%, rgba(1,58,99,.5) 50%), url('images/hero.png') center/cover no-repeat;
+            background: linear-gradient(180deg,rgba(1,58,99,.6) 0%,rgba(1,58,99,.5) 50%),url('images/hero.png') center/cover no-repeat;
             color: #fff;
             padding: 80px 0;
             text-align: center;
             border-radius: var(--radius);
-            margin-top: 18px;
+            margin-top: 18px
         }
-
 
             .hero h1 {
                 font-size: 2.3rem;
                 font-weight: 800;
-                margin-bottom: .6rem;
-                letter-spacing: .3px;
+                margin-bottom: .6rem
             }
 
             .hero p {
                 max-width: 820px;
                 margin: 0 auto 1.2rem;
                 color: rgba(255,255,255,.92);
-                font-size: 1.05rem;
+                font-size: 1.05rem
             }
 
             .hero .cta {
                 gap: .8rem;
                 display: inline-flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: center
             }
 
         .btn-primary-custom {
@@ -169,7 +129,7 @@
             padding: .8rem 1.25rem;
             border-radius: 10px;
             font-weight: 700;
-            box-shadow: 0 8px 24px rgba(1,58,99,.18);
+            box-shadow: 0 8px 24px rgba(1,58,99,.18)
         }
 
         .btn-ghost {
@@ -178,12 +138,11 @@
             color: #fff;
             padding: .7rem 1rem;
             border-radius: 10px;
-            font-weight: 700;
+            font-weight: 700
         }
 
-        /* services */
         .services {
-            padding: 64px 0;
+            padding: 64px 0
         }
 
         .service-card {
@@ -192,12 +151,12 @@
             padding: 20px;
             height: 100%;
             box-shadow: 0 10px 30px rgba(2,22,36,.04);
-            transition: transform .28s ease, box-shadow .28s ease;
+            transition: all .28s ease
         }
 
             .service-card:hover {
                 transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(2,22,36,.06);
+                box-shadow: 0 20px 40px rgba(2,22,36,.06)
             }
 
         .service-icon {
@@ -207,36 +166,31 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: transparent; /* بی‌رنگ شد */
-            overflow: hidden;
+            overflow: hidden
         }
 
             .service-icon img {
-                max-width: 70%; /* عکس خیلی بزرگ نشه */
+                max-width: 70%;
                 max-height: 70%;
-                object-fit: contain;
+                object-fit: contain
             }
-
 
         .service-title {
             font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--text-dark);
+            margin-bottom: 8px
         }
 
-        /* steps */
         .steps {
-            padding: 48px 0;
-            background: transparent;
+            padding: 48px 0
         }
 
         .step-box {
-            background: linear-gradient(180deg,#fff, #ffffff);
+            background: #fff;
             border-radius: 12px;
             padding: 22px;
             box-shadow: 0 8px 30px rgba(3,22,36,.03);
             text-align: center;
-            height: 100%;
+            height: 100%
         }
 
         .step-num {
@@ -248,27 +202,26 @@
             font-weight: 800;
             color: var(--primary-color);
             background: rgba(1,58,99,.06);
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
-        /* contact section */
         .contact {
             padding: 60px 0;
-            background: linear-gradient(90deg, rgba(1,58,99,.06), rgba(255,215,0,.03));
-            border-radius: 12px;
+            background: linear-gradient(90deg,rgba(1,58,99,.06),rgba(255,215,0,.03));
+            border-radius: 12px
         }
 
         .contact-card {
             background: #fff;
             border-radius: 12px;
             padding: 26px;
-            box-shadow: 0 12px 30px rgba(3,22,36,.05);
+            box-shadow: 0 12px 30px rgba(3,22,36,.05)
         }
 
         .form-control {
             border-radius: 10px;
             padding: .8rem 1rem;
-            border: 1px solid #e6e9ee;
+            border: 1px solid #e6e9ee
         }
 
         .phone-badge {
@@ -280,28 +233,49 @@
             padding: .6rem .9rem;
             border-radius: 10px;
             font-weight: 800;
-            box-shadow: 0 8px 20px rgba(1,58,99,.12);
+            box-shadow: 0 8px 20px rgba(1,58,99,.12)
         }
 
         footer {
             padding: 40px 0;
             color: #fff;
-            background: linear-gradient(90deg, var(--primary-color), #012f4f);
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
             margin-top: 24px;
-            border-radius: 8px;
+            border-radius: 8px
+        }
+        /* واتساپ شناور */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000
         }
 
-        @media (max-width:768px) {
+            .whatsapp-float:hover {
+                background: #20bd5a
+            }
+
+        @media(max-width:768px) {
             .hero {
-                padding: 56px 18px;
+                padding: 56px 18px
             }
 
                 .hero h1 {
-                    font-size: 1.6rem;
+                    font-size: 1.6rem
                 }
 
             .services {
-                padding: 32px 0;
+                padding: 32px 0
             }
         }
     </style>
@@ -314,14 +288,13 @@
             <div class="d-flex align-items-center gap-3 flex-column flex-md-row">
                 <a class="phone" href="tel:+989099195067"><i class="fas fa-phone"></i> ۰۹۰۹۹۱۹۵۰۶۷</a>
                 <div class="topbar-text text-center text-md-start">
-                    <span>خدمات تعمیرات تخصصی لوازم خانگی در محل</span><br>
-                    <span>ضمانت کیفیت</span>
+                    <span>خدمات تعمیرات تخصصی لوازم خانگی در محل</span>
                 </div>
             </div>
             <div class="social d-flex gap-3 mt-2 mt-md-0">
-                <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
-                <a href="#" aria-label="واتساپ"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -333,23 +306,13 @@
                 <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
                 <small class="text-muted">خدمات فوری و ضمانت‌دار</small>
             </div>
-
             <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">خدمات</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#how">مراحل کار</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">درخواست</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">درباره ما</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+                <li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
+                <li class="nav-item"><a class="nav-link" href="#advantages">مزایا</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">درخواست</a></li>
             </ul>
-
-
             <div class="d-flex align-items-center gap-2">
                 <a class="phone-badge" href="tel:+989099195067"><i class="fas fa-phone-alt"></i> 09199195067</a>
             </div>
@@ -378,178 +341,126 @@
                 <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
             </div>
             <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="images/washer.png" alt="تعمیر لباسشویی">
-                        </div>
-                        <div class="service-title">تعمیر لباسشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">
-                            رفع مشکل موتور، پمپ، برد و تعویض قطعات اصلی.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="images/dishwasher.png" alt="تعمیر ظرفشویی">
-                        </div>
-                        <div class="service-title">تعمیر ظرفشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ، المنت و اجزای الکترونیکی.</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="images/vacuum.png" alt="تعمیر جاروبرقی">
-                        </div>
-                        <div class="service-title">تعمیر جاروبرقی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش، موتور و تأمین قطعات با کیفیت.</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="images/microwave.png" alt="تعمیر مایکروفر">
-                        </div>
-                        <div class="service-title">تعمیر مایکروفر</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون، تعمیر برد و رفع مشکل گرمایش.</p>
-                    </div>
-                </div>
+                <!-- کارت‌های خدمات (لباسشویی، ظرفشویی، جاروبرقی، مایکروفر) -->
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/washer.png"></div><div class="service-title">تعمیر لباسشویی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور، پمپ، برد و تعویض قطعات اصلی.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/dishwasher.png"></div><div class="service-title">تعمیر ظرفشویی</div><p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ، المنت و اجزای الکترونیکی.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/vacuum.png"></div><div class="service-title">تعمیر جاروبرقی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش، موتور و تأمین قطعات با کیفیت.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/microwave.png"></div><div class="service-title">تعمیر مایکروفر</div><p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون، تعمیر برد و رفع مشکل گرمایش.</p></div></div>
             </div>
         </section>
 
-        <!-- How we work -->
+        <!-- Steps -->
         <section id="how" class="steps">
             <div class="text-center mb-4">
                 <h3 style="font-weight:800">مراحل حضور ما</h3>
                 <p style="color:var(--text-muted)">ثبت درخواست — تخصیص تکنسین — انجام تعمیر با قطعات استاندارد — ضمانت خدمات</p>
             </div>
-
             <div class="row g-3">
-                <div class="col-md-3 col-6">
-                    <div class="step-box">
-                        <div class="step-num">۱</div>
-                        <h5 style="font-weight:800">ثبت درخواست</h5>
-                        <p style="color:var(--text-muted)">تماس یا فرم سریع در همین صفحه</p>
+                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۱</div><h5>ثبت درخواست</h5><p style="color:var(--text-muted)">تماس یا فرم سریع</p></div></div>
+                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۲</div><h5>بررسی و زمان‌بندی</h5><p style="color:var(--text-muted)">تخصیص نزدیک‌ترین تکنسین</p></div></div>
+                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۳</div><h5>تعمیر در محل</h5><p style="color:var(--text-muted)">قطعات استاندارد و فاکتور</p></div></div>
+                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۴</div><h5>تضمین خدمات</h5><p style="color:var(--text-muted)">گارانتی و پشتیبانی</p></div></div>
+            </div>
+        </section>
+
+        <!-- Advantages -->
+        <section id="advantages" class="container my-5">
+            <div class="text-center mb-4"><h2 style="font-weight:800">چرا تعمیرات پلاس؟</h2></div>
+            <div class="row g-4 text-center">
+                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-user-tie fa-2x text-primary mb-2"></i><h6>تکنسین‌های متخصص</h6></div></div>
+                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-certificate fa-2x text-warning mb-2"></i><h6>ضمانت خدمات</h6></div></div>
+                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-tools fa-2x text-success mb-2"></i><h6>قطعات اصلی</h6></div></div>
+                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-clock fa-2x text-danger mb-2"></i><h6>خدمات فوری</h6></div></div>
+            </div>
+        </section>
+        <!-- Brand Logos -->
+        <section id="brands" class="container my-5">
+            <div class="text-center mb-4">
+                <h2 style="font-weight:800">برندهای تحت پوشش</h2>
+                <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
+            </div>
+
+            <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
+                            <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
+                            <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
+                            <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
+                            <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
+                            <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
+                            <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="step-box">
-                        <div class="step-num">۲</div>
-                        <h5 style="font-weight:800">بررسی و زمان‌بندی</h5>
-                        <p style="color:var(--text-muted)">تخصیص نزدیک‌ترین تکنسین متخصص</p>
-                    </div>
+
+                <!-- controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container my-5">
+            <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">هزینه تعمیرات چگونه محاسبه می‌شود؟</button></h2>
+                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه، قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="step-box">
-                        <div class="step-num">۳</div>
-                        <h5 style="font-weight:800">تعمیر در محل</h5>
-                        <p style="color:var(--text-muted)">استفاده از قطعات استاندارد و فاکتور</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="step-box">
-                        <div class="step-num">۴</div>
-                        <h5 style="font-weight:800">تضمین و پشتیبانی</h5>
-                        <p style="color:var(--text-muted)">گارانتی خدمات و پشتیبانی پس از تعمیر</p>
-                    </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">آیا خدمات شامل ضمانت است؟</button></h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله، تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact / Request form -->
+        <!-- Contact -->
         <section id="contact" class="contact mt-4">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-card">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div>
-                                    <h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4>
-                                    <small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن، یا با شماره تماس بگیر</small>
-                                </div>
+                                <div><h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4><small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small></div>
                                 <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
                             </div>
-
-                            <!-- مثال ساده‌ی فرم: ارسال به واتساپ یا به نقطه دلخواه -->
                             <form action="https://wa.me/989099195067" target="_blank" method="get">
                                 <div class="row g-2">
-                                    <div class="col-md-6">
-                                        <input class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input class="form-control" name="phone" placeholder="شماره تماس" value="09199195067" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="device" required>
-                                            <option value="" disabled selected>نوع دستگاه</option>
-                                            <option>لباسشویی</option>
-                                            <option>ظرفشویی</option>
-                                            <option>جاروبرقی</option>
-                                            <option>مایکروفر</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="brand" required>
-                                            <option value="" disabled selected>برند</option>
-                                            <option>ال‌جی</option>
-                                            <option>سامسونگ</option>
-                                            <option>بوش</option>
-                                            <option>دیگر</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control" name="message" rows="4" placeholder="توضیح مشکل" required></textarea>
-                                    </div>
-                                    <div class="col-12 d-flex gap-2">
-                                        <button type="submit" class="btn btn-primary-custom flex-grow-1">
-                                            <i class="fab fa-whatsapp me-2"></i> ارسال درخواست (واتساپ)
-                                        </button>
-                                        <a href="tel:+989099195067" class="btn btn-outline-secondary" style="border-radius:10px; padding:.7rem 1rem;">
-                                            <i class="fas fa-phone me-2"></i> تماس فوری
-                                        </a>
-                                    </div>
+                                    <div class="col-md-6"><input class="form-control" name="name" placeholder="نام و نام خانوادگی" required></div>
+                                    <div class="col-md-6"><input class="form-control" name="phone" placeholder="شماره تماس" required></div>
+                                    <div class="col-md-6"><select class="form-control" name="device" required><option disabled selected>نوع دستگاه</option><option>لباسشویی</option><option>ظرفشویی</option><option>جاروبرقی</option><option>مایکروفر</option></select></div>
+                                    <div class="col-md-6"><select class="form-control" name="brand" required><option disabled selected>برند</option><option>ال‌جی</option><option>سامسونگ</option><option>بوش</option><option>دیگر</option></select></div>
+                                    <div class="col-12"><textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea></div>
                                 </div>
+                                <button type="submit" class="btn btn-primary-custom mt-3 w-100"><i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ</button>
                             </form>
-
-                            <div class="mt-3" style="color:var(--text-muted); font-size:.95rem;">
-                                <strong>توجه:</strong> پس از ارسال، کارشناسان ما برای هماهنگی با شما تماس خواهند گرفت.
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- footer -->
     <footer>
-        <div class="container">
-            <div class="row gy-3">
-                <div class="col-md-6">
-                    <h5 style="font-weight:900">تعمیرات پلاس</h5>
-                    <p style="color:rgba(255,255,255,.9)">خدمات تعمیرات لوازم خانگی با تلفن پشتیبانی و ثبت درخواست سریع.</p>
-                </div>
-                <div class="col-md-3">
-                    <h6 style="font-weight:800">خدمات</h6>
-                    <ul style="list-style:none;padding:0;margin:0;color:rgba(255,255,255,.95)">
-                        <li>تعمیر لباسشویی</li>
-                        <li>تعمیر ظرفشویی</li>
-                        <li>تعمیر جاروبرقی</li>
-                        <li>تعمیر مایکروفر</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 text-md-end">
-                    <h6 style="font-weight:800">تماس با ما</h6>
-                    <div style="color:#fff;font-weight:800">09199195067</div>
-                    <small style="color:rgba(255,255,255,.9)">تهران — خدمات در محل</small>
-                </div>
-            </div>
+        <div class="container text-center">
+            <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
+
+    <!-- واتساپ شناور -->
+    <a href="https://wa.me/989099195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
