@@ -357,6 +357,29 @@
             margin-top: 24px;
             border-radius: 8px
         }
+        /* تماس شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* سمت راست */
+            background: #013a63; /* هم‌رنگ برند */
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+            }
+
         /* واتساپ شناور */
         .whatsapp-float {
             position: fixed;
@@ -603,7 +626,10 @@
             <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
-
+    <!-- تماس شناور -->
+    <a href="tel:+989099195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
     <!-- واتساپ شناور -->
     <a href="https://wa.me/989099195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
