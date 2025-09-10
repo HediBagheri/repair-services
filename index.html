@@ -29,7 +29,7 @@
             line-height: 1.6;
         }
 
-        .topbar {
+      /*  .topbar {
             background: linear-gradient(90deg,var(--primary-color),#012f4f);
             color: #fff;
             padding: 8px 0;
@@ -61,7 +61,69 @@
         .topbar-text {
             font-size: .9rem;
             opacity: .9
+        }*/
+
+        .topbar {
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
+            color: #fff;
+            padding: 8px 0;
+            font-size: .95rem;
         }
+
+            .topbar .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: .5rem;
+            }
+
+            .topbar .social {
+                display: flex;
+                gap: 12px;
+            }
+
+                .topbar .social a {
+                    color: #fff;
+                    font-size: 1.2rem;
+                    transition: transform .2s ease;
+                }
+
+                    .topbar .social a:hover {
+                        transform: scale(1.2);
+                    }
+
+            .topbar a {
+                color: #fff;
+                text-decoration: none;
+                display: inline-flex;
+                gap: .5rem;
+                align-items: center;
+            }
+
+            .topbar .phone {
+                font-weight: 700;
+            }
+
+        .topbar-text {
+            font-size: .9rem;
+            opacity: .9;
+        }
+
+        /* موبایل */
+        @media(max-width:768px) {
+            .topbar .container {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: .4rem;
+            }
+
+            .topbar .social {
+                justify-content: center;
+            }
+        }
+
 
         .navbar {
             background: var(--card-bg);
@@ -129,8 +191,10 @@
             padding: .8rem 1.25rem;
             border-radius: 10px;
             font-weight: 700;
-            box-shadow: 0 8px 24px rgba(1,58,99,.18)
+            color: var(--secondary-color); /* متن زرد */
+            box-shadow: 0 8px 24px rgba(1,58,99,.18);
         }
+
 
         .btn-ghost {
             background: transparent;
