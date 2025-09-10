@@ -125,12 +125,60 @@
         }
 
 
-        .navbar {
+       /* .navbar {
             background: var(--card-bg);
             box-shadow: 0 6px 20px rgba(1,30,50,.06);
             border-bottom: 1px solid rgba(3,22,36,.04);
             padding: .9rem 0
+        }*/
+
+        .navbar {
+            background: var(--card-bg);
+            box-shadow: 0 6px 20px rgba(1,30,50,.06);
+            border-bottom: 1px solid rgba(3,22,36,.04);
+            padding: .9rem 0;
         }
+
+        /* دکمه همبرگری */
+        .navbar-toggler {
+            border: none;
+            font-size: 1.2rem;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        /* آیکون همبرگری پیش‌فرض تیره هست، ما سفیدش می‌کنیم */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.75%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* منو در دسکتاپ */
+        .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            border-radius: 8px;
+            padding: .4rem .7rem;
+        }
+
+            .nav-link:hover {
+                background: rgba(1,58,99,.08);
+                color: var(--primary-color);
+            }
+
+        /* منو در موبایل */
+        @media(max-width:768px) {
+            .navbar-nav {
+                text-align: center;
+                gap: .5rem;
+            }
+
+            .phone-badge {
+                margin: 10px auto 0;
+            }
+        }
+
 
         .brand {
             font-weight: 800;
@@ -364,7 +412,7 @@
     </div>
 
     <!-- navbar -->
-    <nav class="navbar">
+    <!--<nav class="navbar">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center gap-3">
                 <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
@@ -381,7 +429,38 @@
                 <a class="phone-badge" href="tel:+989099195067"><i class="fas fa-phone-alt"></i> 09199195067</a>
             </div>
         </div>
+    </nav>-->
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- برند -->
+            <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
+            <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
+
+            <!-- دکمه همبرگری -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- آیتم‌های منو -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advantages">مزایا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">درخواست</a></li>
+                </ul>
+                <!-- شماره تلفن -->
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a class="phone-badge" href="tel:+989099195067">
+                        <i class="fas fa-phone-alt"></i> 09199195067
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
+
 
     <!-- HERO -->
     <header class="container">
