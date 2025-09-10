@@ -31,6 +31,17 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* socials fix */
+        .topbar .social {
+            display: flex;
+            gap: 12px;
+            flex-wrap: nowrap;
+        }
+
+            .topbar .social a {
+                color: #fff;
+                font-size: 1.1rem;
+            }
 
         /* top bar */
         .topbar {
@@ -59,14 +70,17 @@
             align-items: center;
         }
 
-        .nav-link {
+        /*.nav-link {
             color: var(--text-dark);
             font-weight: 600;
             padding: .5rem .8rem;
             border-radius: 8px;
             transition: background .2s;
+        }*/
+        .nav-link {
+            font-size: .9rem;
+            padding: .3rem .6rem;
         }
-
             .nav-link:hover {
                 background: rgba(1,58,99,.1);
                 color: var(--primary-color);
@@ -104,14 +118,23 @@
             }
 
         /* hero */
-        .hero {
+        /*.hero {
             background: linear-gradient(180deg, rgba(1,58,99,.9) 0%, rgba(1,58,99,.85) 50%), url('https://images.unsplash.com/photo-1543168256-4188115760a5?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
             color: #fff;
             padding: 80px 0;
             text-align: center;
             border-radius: var(--radius);
             margin-top: 18px;
+        }*/
+        .hero {
+            background: linear-gradient(180deg, rgba(1,58,99,.6) 0%, rgba(1,58,99,.5) 50%), url('images/hero.png') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            border-radius: var(--radius);
+            margin-top: 18px;
         }
+
 
             .hero h1 {
                 font-size: 2.3rem;
