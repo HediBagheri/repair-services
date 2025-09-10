@@ -30,6 +30,9 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+       
+
+        
 
         /* socials fix */
         .topbar .social {
@@ -37,10 +40,9 @@
             gap: 12px;
             flex-wrap: nowrap;
         }
-
             .topbar .social a {
                 color: #fff;
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
         /* top bar */
@@ -62,7 +64,11 @@
             .topbar .phone {
                 font-weight: 700;
             }
-
+        .topbar-text {
+            font-size: .9rem;
+            opacity: .9;
+            line-height: 1.6;
+        }
         /* navbar */
         .nav {
             display: flex;
@@ -304,15 +310,18 @@
 
     <!-- top bar -->
     <div class="topbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div class="d-flex align-items-center gap-3 flex-column flex-md-row">
                 <a class="phone" href="tel:+989099195067"><i class="fas fa-phone"></i> ۰۹۰۹۹۱۹۵۰۶۷</a>
-                <span style="opacity:.9">خدمات تعمیرات تخصصی لوازم خانگی در محل — ضمانت کیفیت</span>
+                <div class="topbar-text text-center text-md-start">
+                    <span>خدمات تعمیرات تخصصی لوازم خانگی در محل</span><br>
+                    <span>ضمانت کیفیت</span>
+                </div>
             </div>
-            <div>
-                <a class="me-3" href="#" aria-label="اینستاگرام"><i class="fab fa-instagram" style="color:#fff"></i></a>
-                <a class="me-3" href="#" aria-label="تلگرام"><i class="fab fa-telegram" style="color:#fff"></i></a>
-                <a class="me-3" href="#" aria-label="واتساپ"><i class="fab fa-whatsapp" style="color:#fff"></i></a>
+            <div class="social d-flex gap-3 mt-2 mt-md-0">
+                <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+                <a href="#" aria-label="واتساپ"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
