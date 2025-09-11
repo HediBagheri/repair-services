@@ -29,40 +29,6 @@
             line-height: 1.6;
         }
 
-      /*  .topbar {
-            background: linear-gradient(90deg,var(--primary-color),#012f4f);
-            color: #fff;
-            padding: 8px 0;
-            font-size: .95rem
-        }
-
-            .topbar .social {
-                display: flex;
-                gap: 12px
-            }
-
-                .topbar .social a {
-                    color: #fff;
-                    font-size: 1.2rem
-                }
-
-            .topbar a {
-                color: #fff;
-                text-decoration: none;
-                display: inline-flex;
-                gap: .5rem;
-                align-items: center
-            }
-
-            .topbar .phone {
-                font-weight: 700
-            }
-
-        .topbar-text {
-            font-size: .9rem;
-            opacity: .9
-        }*/
-
         .topbar {
             background: linear-gradient(90deg,var(--primary-color),#012f4f);
             color: #fff;
@@ -124,14 +90,6 @@
             }
         }
 
-
-       /* .navbar {
-            background: var(--card-bg);
-            box-shadow: 0 6px 20px rgba(1,30,50,.06);
-            border-bottom: 1px solid rgba(3,22,36,.04);
-            padding: .9rem 0
-        }*/
-
         .navbar {
             background: var(--card-bg);
             box-shadow: 0 6px 20px rgba(1,30,50,.06);
@@ -179,31 +137,17 @@
             }
         }
 
-
         .brand {
             font-weight: 800;
             font-size: 1.35rem;
             color: var(--primary-color);
-            text-decoration: none !important; /* این خط underline رو برمی‌داره */
+            text-decoration: none !important;
         }
-
 
             .brand span {
                 color: var(--secondary-color);
                 font-weight: 900;
                 margin-right: .25rem
-            }
-
-        .nav-link {
-            color: var(--text-dark);
-            font-weight: 600;
-            border-radius: 8px;
-            padding: .4rem .7rem
-        }
-
-            .nav-link:hover {
-                background: rgba(1,58,99,.08);
-                color: var(--primary-color)
             }
 
         .hero {
@@ -241,10 +185,9 @@
             padding: .8rem 1.25rem;
             border-radius: 10px;
             font-weight: 700;
-            color: var(--secondary-color); /* متن زرد */
+            color: var(--secondary-color);
             box-shadow: 0 8px 24px rgba(1,58,99,.18);
         }
-
 
         .btn-ghost {
             background: transparent;
@@ -357,12 +300,13 @@
             margin-top: 24px;
             border-radius: 8px
         }
+
         /* تماس شناور */
         .call-float {
             position: fixed;
             bottom: 20px;
-            right: 20px; /* سمت راست */
-            background: #013a63; /* هم‌رنگ برند */
+            right: 20px;
+            background: #013a63;
             color: white;
             font-size: 26px;
             width: 54px;
@@ -402,6 +346,63 @@
                 background: #20bd5a
             }
 
+        /* استایل‌های جدید برای بخش درباره ما */
+        .about-section {
+            padding: 60px 0;
+            background: #fff;
+            border-radius: var(--radius);
+        }
+
+        .about-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(1, 58, 99, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+            .about-icon i {
+                font-size: 32px;
+                color: var(--primary-color);
+            }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+            .team-member:hover {
+                transform: translateY(-5px);
+            }
+
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 4px solid var(--muted-bg);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        .stats-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
         @media(max-width:768px) {
             .hero {
                 padding: 56px 18px
@@ -414,6 +415,10 @@
             .services {
                 padding: 32px 0
             }
+
+            .stats-number {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -423,7 +428,7 @@
     <div class="topbar">
         <div class="container d-flex justify-content-between align-items-center flex-wrap">
             <div class="d-flex align-items-center gap-3 flex-column flex-md-row">
-                <a class="phone" href="tel:+989099195067"><i class="fas fa-phone"></i> ۰۹۰۹۹۱۹۵۰۶۷</a>
+                <a class="phone" href="tel:+989199195067"><i class="fas fa-phone"></i> 09199195067</a>
                 <div class="topbar-text text-center text-md-start">
                     <span>خدمات تعمیرات تخصصی لوازم خانگی در محل</span>
                 </div>
@@ -437,57 +442,34 @@
     </div>
 
     <!-- navbar -->
-    <!--<nav class="navbar">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3">
-                <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
-                <small class="text-muted">خدمات فوری و ضمانت‌دار</small>
-            </div>
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-                <li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
-                <li class="nav-item"><a class="nav-link" href="#advantages">مزایا</a></li>
-                <li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">درخواست</a></li>
-            </ul>
-            <div class="d-flex align-items-center gap-2">
-                <a class="phone-badge" href="tel:+989099195067"><i class="fas fa-phone-alt"></i> 09199195067</a>
-            </div>
-        </div>
-    </nav>-->
-    <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <!-- برند -->
             <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
             <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
 
-            <!-- دکمه همبرگری -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- آیتم‌های منو -->
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
                     <li class="nav-item"><a class="nav-link" href="#advantages">مزایا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#brands">برندها</a></li> <!-- اینو اضافه کردم -->
-                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">درخواست</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#brands">برندها</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="#contact">درخواست تعمیر</a></li>
                 </ul>
 
-                <!-- شماره تلفن -->
                 <div class="d-flex align-items-center mt-3 mt-lg-0">
-                    <a class="phone-badge" href="tel:+989099195067">
+                    <a class="phone-badge" href="tel:+989199195067">
                         <i class="fas fa-phone-alt"></i> 09199195067
                     </a>
                 </div>
             </div>
         </div>
     </nav>
-
 
     <!-- HERO -->
     <header class="container">
@@ -497,7 +479,7 @@
                 <p>تعمیرات ماشین لباسشویی، ظرفشویی، جاروبرقی و مایکروفر با قطعات استاندارد و ضمانت کار در کمترین زمان در محل شما.</p>
                 <div class="hero-buttons cta">
                     <a class="btn btn-primary-custom" href="#contact"><i class="fas fa-wrench me-2"></i> ثبت درخواست آنلاین</a>
-                    <a class="btn btn-ghost" href="https://wa.me/989099195067" target="_blank"><i class="fab fa-whatsapp me-2"></i> ارسال پیام در واتساپ</a>
+                    <a class="btn btn-ghost" href="https://wa.me/989199195067" target="_blank"><i class="fab fa-whatsapp me-2"></i> ارسال پیام در واتساپ</a>
                 </div>
             </div>
         </section>
@@ -511,7 +493,6 @@
                 <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
             </div>
             <div class="row g-4">
-                <!-- کارت‌های خدمات (لباسشویی، ظرفشویی، جاروبرقی، مایکروفر) -->
                 <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/washer.png"></div><div class="service-title">تعمیر لباسشویی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور، پمپ، برد و تعویض قطعات اصلی.</p></div></div>
                 <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/dishwasher.png"></div><div class="service-title">تعمیر ظرفشویی</div><p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ، المنت و اجزای الکترونیکی.</p></div></div>
                 <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/vacuum.png"></div><div class="service-title">تعمیر جاروبرقی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش، موتور و تأمین قطعات با کیفیت.</p></div></div>
@@ -543,6 +524,7 @@
                 <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-clock fa-2x text-danger mb-2"></i><h6>خدمات فوری</h6></div></div>
             </div>
         </section>
+
         <!-- Brand Logos -->
         <section id="brands" class="container my-5">
             <div class="text-center mb-4">
@@ -570,13 +552,121 @@
                     </div>
                 </div>
 
-                <!-- controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </button>
+            </div>
+        </section>
+
+        <!-- درباره ما - بخش جدید -->
+        <section id="about" class="about-section my-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 style="font-weight:800">درباره تعمیرات پلاس</h2>
+                    <p class="text-muted">تخصص و تجربه ما در خدمت رضایت شما</p>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-lg-6">
+                        <h3 class="mb-4">چه چیزی ما را متمایز می‌کند؟</h3>
+                        <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="about-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5>تضمین کیفیت خدمات</h5>
+                                <p class="text-muted mb-0">همه خدمات ما دارای گارانتی و پشتیبانی هستند</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="about-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5>استفاده از قطعات اصلی</h5>
+                                <p class="text-muted mb-0">قطعات مورد استفاده تماماً اصلی و دارای ضمانت هستند</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="about-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5>خدمات سریع و به موقع</h5>
+                                <p class="text-muted mb-0">ارائه خدمات در کمترین زمان ممکن در محل شما</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <h4 class="card-title mb-4">آمار و ارقام</h4>
+
+                                <div class="row text-center">
+                                    <div class="col-6 mb-4">
+                                        <p class="stats-number">۱۰+</p>
+                                        <p class="stats-text">سال تجربه</p>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <p class="stats-number">۲۵۰۰+</p>
+                                        <p class="stats-text">مشتری راضی</p>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <p class="stats-number">۹۸%</p>
+                                        <p class="stats-text">رضایت مشتریان</p>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <p class="stats-number">۱۵+</p>
+                                        <p class="stats-text">تکنسین متخصص</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h5>ماموریت ما</h5>
+                                    <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h3 class="mb-4">تیم متخصص ما</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="team-member">
+                                <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۱" alt="تکنسین" class="team-img">
+                                <h5>مهدی جونم</h5>
+                                <p class="text-muted"> تکنسین ارشد لباسشویی و ظرفشویی و جاروبرقی و مایکروفر</p>
+                                <p class="text-muted small">۱۰ سال سابقه - متخصص برندهای ال‌جی و سامسونگ و ...</p>
+                            </div>
+                        </div>
+                        <!--<div class="col-md-4 mb-4">
+                            <div class="team-member">
+                                <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۲" alt="تکنسین" class="team-img">
+                                <h5>علی محمدی</h5>
+                                <p class="text-muted">تکنسین ارشد جاروبرقی و مایکروفر</p>
+                                <p class="text-muted small">۸ سال سابقه - متخصص برندهای بوش و فیلیپس</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="team-member">
+                                <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۳" alt="تکنسین" class="team-img">
+                                <h5>رضا حسینی</h5>
+                                <p class="text-muted">تکنسین ارشد بردهای الکترونیکی</p>
+                                <p class="text-muted small">۱۲ سال سابقه - متخصص تعمیرات تخصصی برد</p>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -605,7 +695,7 @@
                                 <div><h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4><small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small></div>
                                 <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
                             </div>
-                            <form action="https://wa.me/989099195067" target="_blank" method="get">
+                            <form action="https://wa.me/989199195067" target="_blank" method="get">
                                 <div class="row g-2">
                                     <div class="col-md-6"><input class="form-control" name="name" placeholder="نام و نام خانوادگی" required></div>
                                     <div class="col-md-6"><input class="form-control" name="phone" placeholder="شماره تماس" required></div>
@@ -628,12 +718,14 @@
             <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
+
     <!-- تماس شناور -->
-    <a href="tel:+989099195067" class="call-float">
+    <a href="tel:+989199195067" class="call-float">
         <i class="fas fa-phone"></i>
     </a>
+
     <!-- واتساپ شناور -->
-    <a href="https://wa.me/989099195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
