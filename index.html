@@ -29,64 +29,138 @@
             line-height: 1.6;
         }
 
+        /* استایل‌های جدید برای Topbar */
         .topbar {
             background: linear-gradient(90deg,var(--primary-color),#012f4f);
             color: #fff;
             padding: 8px 0;
             font-size: .95rem;
+            position: relative;
+            overflow: hidden;
         }
 
-            .topbar .container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: .5rem;
-            }
+        /* نوار زرد جدید */
+        .yellow-bar {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-            .topbar .social {
-                display: flex;
-                gap: 12px;
-            }
+        .topbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
 
-                .topbar .social a {
-                    color: #fff;
-                    font-size: 1.2rem;
-                    transition: transform .2s ease;
-                }
-
-                    .topbar .social a:hover {
-                        transform: scale(1.2);
-                    }
-
-            .topbar a {
-                color: #fff;
-                text-decoration: none;
-                display: inline-flex;
-                gap: .5rem;
-                align-items: center;
-            }
-
-            .topbar .phone {
-                font-weight: 700;
-            }
+        .topbar-text-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
         .topbar-text {
             font-size: .9rem;
             opacity: .9;
+            white-space: nowrap;
         }
+
+        .brands-slider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 30px;
+        }
+
+        .brand-scroll {
+            display: flex;
+            animation: scrollBrands 20s linear infinite;
+            gap: 20px;
+        }
+
+        .brand-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .brand-img {
+            height: 20px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        @keyframes scrollBrands {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .topbar .social {
+            display: flex;
+            gap: 12px;
+        }
+
+            .topbar .social a {
+                color: #fff;
+                font-size: 1.2rem;
+                transition: transform .2s ease;
+            }
+
+                .topbar .social a:hover {
+                    transform: scale(1.2);
+                }
 
         /* موبایل */
         @media(max-width:768px) {
-            .topbar .container {
+            .topbar-content {
                 flex-direction: column;
                 justify-content: center;
                 text-align: center;
                 gap: .4rem;
             }
 
-            .topbar .social {
+            .topbar-text-container {
                 justify-content: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .brands-slider {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .brand-scroll {
+                animation: scrollBrandsMobile 15s linear infinite;
+            }
+
+            @keyframes scrollBrandsMobile {
+                0% {
+                    transform: translateX(50%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .yellow-bar {
+                font-size: 0.85rem;
+                padding: 6px 0;
             }
         }
 
@@ -423,21 +497,74 @@
     </style>
 </head>
 <body>
-
     <!-- top bar -->
     <div class="topbar">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap">
-            <div class="d-flex align-items-center gap-3 flex-column flex-md-row">
-                <a class="phone" href="tel:+989199195067"><i class="fas fa-phone"></i> 09199195067</a>
-                <div class="topbar-text text-center text-md-start">
-                    <span>خدمات تعمیرات تخصصی لوازم خانگی در محل</span>
+        <div class="container">
+            <div class="topbar-content">
+                <div class="topbar-text-container">
+                    <div class="topbar-text">نمایندگی تعمیرات تخصصی لوازم خانگی</div>
+                    <div class="brands-slider">
+                        <div class="brand-scroll">
+                            <div class="brand-item">
+                                <img src="images/lg.png" alt="LG" class="brand-img" style="height: 16px;">
+                                <span>ال جی</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img" style="height: 16px;">
+                                <span>سامسونگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img" style="height: 16px;">
+                                <span>بوش</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Daewoo.svg" alt="Daewoo" class="brand-img" style="height: 16px;">
+                                <span>دوو</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Siemens.png" alt="Siemens" class="brand-img" style="height: 16px;">
+                                <span>زیمنس</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Snowa.svg" alt="Snowa" class="brand-img" style="height: 16px;">
+                                <span>اسنوا</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/aeg.png" alt="AEG" class="brand-img" style="height: 16px;">
+                                <span>آاگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/kenwood.png" alt="Kenwood" class="brand-img" style="height: 16px;">
+                                <span>کنوود</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/lg.png" alt="LG" class="brand-img" style="height: 16px;">
+                                <span>ال جی</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img" style="height: 16px;">
+                                <span>سامسونگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img" style="height: 16px;">
+                                <span>بوش</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex gap-3">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="social d-flex gap-3 mt-2 mt-md-0">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        </div>
+    </div>
+
+    <!-- نوار زرد جدید -->
+    <div class="yellow-bar">
+        <div class="container">
+            <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
         </div>
     </div>
 
@@ -454,11 +581,7 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" href="#how">مراحل کار</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#advantages">مزایا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#brands">برندها</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" href="#faq">سوالات</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="#contact">درخواست تعمیر</a></li>
                 </ul>
 
@@ -476,7 +599,7 @@
         <section class="hero">
             <div class="container">
                 <h1>تعمیرات تخصصی لوازم خانگی در محل</h1>
-                <p>تعمیرات ماشین لباسشویی، ظرفشویی، جاروبرقی و مایکروفر با قطعات استاندارد و ضمانت کار در کمترین زمان در محل شما.</p>
+                <p>تعمیرات ماشین لباسشویی, ظرفشویی, جاروبرقی و مایکروفر با قطعات استاندارد و ضمانت کار در کمترین زمان در محل شما.</p>
                 <div class="hero-buttons cta">
                     <a class="btn btn-primary-custom" href="#contact"><i class="fas fa-wrench me-2"></i> ثبت درخواست آنلاین</a>
                     <a class="btn btn-ghost" href="https://wa.me/989199195067" target="_blank"><i class="fab fa-whatsapp me-2"></i> ارسال پیام در واتساپ</a>
@@ -489,14 +612,14 @@
     <main class="container">
         <section id="services" class="services">
             <div class="text-center mb-4">
-                <h2 style="font-weight:800">خدمات ما</h2>
+                <h2 style="font-weight:800">خدمات تعمیرات</h2>
                 <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
             </div>
             <div class="row g-4">
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/washer.png"></div><div class="service-title">تعمیر لباسشویی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور، پمپ، برد و تعویض قطعات اصلی.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/dishwasher.png"></div><div class="service-title">تعمیر ظرفشویی</div><p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ، المنت و اجزای الکترونیکی.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/vacuum.png"></div><div class="service-title">تعمیر جاروبرقی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش، موتور و تأمین قطعات با کیفیت.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/microwave.png"></div><div class="service-title">تعمیر مایکروفر</div><p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون، تعمیر برد و رفع مشکل گرمایش.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/washer.png"></div><div class="service-title">تعمیر لباسشویی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور, پمپ, برد و تعویض قطعات اصلی.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/dishwasher.png"></div><div class="service-title">تعمیر ظرفشویی</div><p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ, المنت و اجزای الکترونیکی.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/vacuum.png"></div><div class="service-title">تعمیر جاروبرقی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش, موتور و تأمین قطعات با کیفیت.</p></div></div>
+                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/microwave.png"></div><div class="service-title">تعمیر مایکروفر</div><p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون, تعمیر برد و رفع مشکل گرمایش.</p></div></div>
             </div>
         </section>
 
@@ -572,7 +695,7 @@
                 <div class="row mb-5">
                     <div class="col-lg-6">
                         <h3 class="mb-4">چه چیزی ما را متمایز می‌کند؟</h3>
-                        <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
+                        <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی, همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی, خدمات بی‌نظیری ارائه می‌دهیم.</p>
 
                         <div class="d-flex align-items-center mb-3">
                             <div class="about-icon">
@@ -631,7 +754,7 @@
 
                                 <div class="mt-4">
                                     <h5>ماموریت ما</h5>
-                                    <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
+                                    <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر, قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
                                 </div>
                             </div>
                         </div>
@@ -649,22 +772,6 @@
                                 <p class="text-muted small">۱۰ سال سابقه - متخصص برندهای ال‌جی و سامسونگ و ...</p>
                             </div>
                         </div>
-                        <!--<div class="col-md-4 mb-4">
-                            <div class="team-member">
-                                <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۲" alt="تکنسین" class="team-img">
-                                <h5>علی محمدی</h5>
-                                <p class="text-muted">تکنسین ارشد جاروبرقی و مایکروفر</p>
-                                <p class="text-muted small">۸ سال سابقه - متخصص برندهای بوش و فیلیپس</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="team-member">
-                                <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۳" alt="تکنسین" class="team-img">
-                                <h5>رضا حسینی</h5>
-                                <p class="text-muted">تکنسین ارشد بردهای الکترونیکی</p>
-                                <p class="text-muted small">۱۲ سال سابقه - متخصص تعمیرات تخصصی برد</p>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </div>
@@ -676,11 +783,11 @@
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">هزینه تعمیرات چگونه محاسبه می‌شود؟</button></h2>
-                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه، قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
+                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه, قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">آیا خدمات شامل ضمانت است؟</button></h2>
-                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله، تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله, تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
                 </div>
             </div>
         </section>
