@@ -1,0 +1,923 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>مجله آموزشی | تعمیرات پلاس</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #013a63;
+            --secondary-color: #FFD700;
+            --muted-bg: #f6f7f9;
+            --card-bg: #ffffff;
+            --text-dark: #24323f;
+            --text-muted: #6b7a86;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Vazirmatn","Tahoma",sans-serif;
+            background: var(--muted-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        /* استایل‌های جدید برای Topbar */
+        .topbar {
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
+            color: #fff;
+            padding: 8px 0;
+            font-size: .95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* نوار زرد جدید */
+        .yellow-bar {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .topbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .topbar-text-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .topbar-text {
+            font-size: .9rem;
+            opacity: .9;
+            white-space: nowrap;
+        }
+
+        .brands-slider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 30px;
+        }
+
+        .brand-scroll {
+            display: flex;
+            animation: scrollBrands 20s linear infinite;
+            gap: 20px;
+        }
+
+        .brand-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .brand-img {
+            height: 20px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        @keyframes scrollBrands {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .topbar .social {
+            display: flex;
+            gap: 12px;
+        }
+
+            .topbar .social a {
+                color: #fff;
+                font-size: 1.2rem;
+                transition: transform .2s ease;
+            }
+
+                .topbar .social a:hover {
+                    transform: scale(1.2);
+                }
+
+        /* موبایل */
+        @media (max-width: 768px) {
+            .topbar {
+                padding: 10px 0;
+            }
+
+            .topbar-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .topbar-text-container {
+                justify-content: center;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+
+            .topbar-text {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
+
+            .brands-slider {
+                width: 100%;
+                justify-content: center;
+                height: 25px;
+                margin: 5px 0;
+            }
+
+            .brand-scroll {
+                animation: scrollBrandsMobile 15s linear infinite;
+                gap: 15px;
+            }
+
+            .brand-item {
+                font-size: 0.8rem;
+            }
+
+            .brand-img {
+                height: 16px;
+            }
+
+            @keyframes scrollBrandsMobile {
+                0% {
+                    transform: translateX(30%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .yellow-bar {
+                font-size: 0.8rem;
+                padding: 6px 0;
+            }
+
+            .topbar .social {
+                justify-content: center;
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brands-slider {
+                height: 22px;
+            }
+
+            .brand-item {
+                font-size: 0.7rem;
+                gap: 5px;
+            }
+
+            .brand-img {
+                height: 14px;
+            }
+
+            .brand-scroll {
+                gap: 12px;
+            }
+        }
+
+        .navbar {
+            background: var(--card-bg);
+            box-shadow: 0 6px 20px rgba(1,30,50,.06);
+            border-bottom: 1px solid rgba(3,22,36,.04);
+            padding: .9rem 0;
+        }
+
+        /* دکمه همبرگری */
+        .navbar-toggler {
+            border: none;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        /* آیکون همبرگری */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.75%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 1.2em;
+            height: 1.2em;
+        }
+
+        /* منو در دسکتاپ */
+        .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            border-radius: 8px;
+            padding: .4rem .7rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+            .nav-link:hover {
+                background: rgba(1,58,99,.08);
+                color: var(--primary-color);
+            }
+
+        /* منو در موبایل */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.7rem 0;
+            }
+
+            .navbar-nav {
+                text-align: center;
+                gap: .5rem;
+                padding: 1rem 0;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.95rem;
+            }
+
+            .phone-badge {
+                margin: 10px auto;
+                display: flex;
+                justify-content: center;
+                width: fit-content;
+            }
+
+            .brand {
+                font-size: 1.2rem;
+            }
+
+            .navbar .text-muted {
+                display: none;
+            }
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            text-decoration: none !important;
+        }
+
+            .brand span {
+                color: var(--secondary-color);
+                font-weight: 900;
+                margin-right: .25rem
+            }
+
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: .8rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            box-shadow: 0 8px 24px rgba(1,58,99,.18);
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary-custom:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
+
+        .phone-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: .6rem .9rem;
+            border-radius: 10px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(1,58,99,.12);
+            transition: all 0.3s ease;
+        }
+
+            .phone-badge:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
+
+        /* استایل‌های جدید برای مجله آموزشی */
+        .magazine-page {
+            padding: 60px 0;
+            background: var(--muted-bg);
+        }
+
+        .magazine-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .magazine-header h1 {
+                font-weight: 800;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+            }
+
+            .magazine-header p {
+                color: var(--text-muted);
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+        .article-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 25px;
+        }
+
+            .article-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            }
+
+        .article-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .article-date {
+            margin-right: 15px;
+        }
+
+        .article-category {
+            background: rgba(1,58,99,0.1);
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-weight: 800;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .article-link {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+            .article-link:hover {
+                color: #02548f;
+            }
+
+            .article-link i {
+                margin-right: 5px;
+                transition: transform 0.3s ease;
+            }
+
+            .article-link:hover i {
+                transform: translateX(5px);
+            }
+
+        .category-filter {
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .category-btn {
+            background: rgba(1,58,99,0.1);
+            color: var(--primary-color);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .category-btn:hover, .category-btn.active {
+                background: var(--primary-color);
+                color: #fff;
+            }
+
+        .pagination {
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .page-link {
+            color: var(--primary-color);
+            border: 1px solid #dee2e6;
+            padding: 0.5rem 0.75rem;
+            margin: 0 3px;
+            border-radius: 8px;
+        }
+
+            .page-link:hover {
+                background: var(--primary-color);
+                color: #fff;
+                border-color: var(--primary-color);
+            }
+
+        .page-item.active .page-link {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .magazine-page {
+                padding: 40px 0;
+            }
+
+            .article-img {
+                height: 180px;
+            }
+
+            .article-content {
+                padding: 15px;
+            }
+
+            .article-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-img {
+                height: 160px;
+            }
+        }
+
+        footer {
+            padding: 40px 0;
+            color: #fff;
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
+            margin-top: 24px;
+            border-radius: 8px
+        }
+
+        /* تماس شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #013a63;
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+            }
+
+        /* واتساپ شناور */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .whatsapp-float:hover {
+                background: #20bd5a;
+            }
+    </style>
+</head>
+<body>
+    <!-- top bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-content">
+                <div class="topbar-text-container">
+                    <div class="topbar-text">نمایندگی تعمیرات تخصصی لوازم خانگی</div>
+                    <div class="brands-slider">
+                        <div class="brand-scroll">
+                            <div class="brand-item">
+                                <img src="images/lg.png" alt="LG" class="brand-img">
+                                <span>ال جی</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img">
+                                <span>سامسونگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img">
+                                <span>بوش</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Daewoo.svg" alt="Daewoo" class="brand-img">
+                                <span>دوو</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Siemens.png" alt="Siemens" class="brand-img">
+                                <span>زیمنس</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Snowa.svg" alt="Snowa" class="brand-img">
+                                <span>اسنوا</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/aeg.png" alt="AEG" class="brand-img">
+                                <span>آاگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/kenwood.png" alt="Kenwood" class="brand-img">
+                                <span>کنوود</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/lg.png" alt="LG" class="brand-img">
+                                <span>ال جی</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img">
+                                <span>سامسونگ</span>
+                            </div>
+                            <div class="brand-item">
+                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img">
+                                <span>بوش</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex gap-3">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نوار زرد جدید -->
+    <div class="yellow-bar">
+        <div class="container">
+            <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="brand" href="index.html">تعمیرات <span>پلاس</span></a>
+            <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">خدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="magazine.html">مجله آموزشی</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">درخواست تعمیر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a class="phone-badge" href="tel:+989199195067">
+                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- صفحه مجله آموزشی -->
+    <section class="magazine-page">
+        <div class="container">
+            <div class="magazine-header">
+                <h1>مجله آموزشی تعمیرات پلاس</h1>
+                <p>آموزش‌های تخصصی، نکات کاربردی و راهنمای تعمیر لوازم خانگی</p>
+            </div>
+
+            <!-- فیلتر دسته‌بندی -->
+            <div class="category-filter text-center">
+                <h4 class="mb-3">دسته‌بندی مقالات</h4>
+                <div>
+                    <button class="category-btn active" data-category="all">همه مقالات</button>
+                    <button class="category-btn" data-category="لباسشویی">لباسشویی</button>
+                    <button class="category-btn" data-category="جاروبرقی">جاروبرقی</button>
+                    <button class="category-btn" data-category="مایکروفر">مایکروفر</button>
+                    <button class="category-btn" data-category="ظرفشویی">ظرفشویی</button>
+                    <button class="category-btn" data-category="الکترونیک">الکترونیک</button>
+                    <button class="category-btn" data-category="نکات کاربردی">نکات کاربردی</button>
+                </div>
+            </div>
+
+            <div class="row" id="articles-container">
+                <!-- مقاله 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۵ فروردین ۱۴۰۳</span>
+                                <span class="article-category">لباسشویی</span>
+                            </div>
+                            <h3 class="article-title">۷ نشانه که می‌گوید لباسشویی شما نیاز به تعمیر دارد</h3>
+                            <p class="article-excerpt">اگر لباسشویی شما صداهای غیرعادی تولید می‌کند، آب را تخلیه نمی‌کند یا لباس‌ها به خوبی شسته نمی‌شوند، زمان آن رسیده که به فکر تعمیر باشید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۸ فروردین ۱۴۰۳</span>
+                                <span class="article-category">جاروبرقی</span>
+                            </div>
+                            <h3 class="article-title">۱۰ نکته طلایی برای افزایش طول عمر جاروبرقی</h3>
+                            <p class="article-excerpt">با رعایت چند نکته ساده می‌توانید عمر جاروبرقی خود را افزایش داده و از هزینه‌های اضافی تعمیر جلوگیری کنید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۲ فروردین ۱۴۰۳</span>
+                                <span class="article-category">مایکروفر</span>
+                            </div>
+                            <h3 class="article-title">راهنمای کامل عیب‌یابی و رفع مشکلات مایکروفر</h3>
+                            <p class="article-excerpt">اگر مایکروفر شما غذا را گرم نمی‌کند، جرقه می‌زند یا صفحه نمایش آن کار نمی‌کند، این راهنما به شما کمک می‌کند مشکل را تشخیص دهید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۵ فروردین ۱۴۰۳</span>
+                                <span class="article-category">ظرفشویی</span>
+                            </div>
+                            <h3 class="article-title">تفاوت‌های ظرفشویی صنعتی و خانگی و نکات تعمیر آن‌ها</h3>
+                            <p class="article-excerpt">ظرفشویی‌های صنعتی و خانگی تفاوت‌های اساسی در ساختار و عملکرد دارند که بر روش تعمیر آن‌ها تأثیر می‌گذارد.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۸ اسفند ۱۴۰۲</span>
+                                <span class="article-category">نکات کاربردی</span>
+                            </div>
+                            <h3 class="article-title">چگونه مصرف انرژی لوازم خانگی خود را کاهش دهیم؟</h3>
+                            <p class="article-excerpt">با رعایت این نکات ساده می‌توانید تا ۳۰٪ در مصرف انرژی صرفه‌جویی کرده و هزینه قبض‌های خود را کاهش دهید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
+                                <span class="article-category">الکترونیک</span>
+                            </div>
+                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
+                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 7 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
+                                <span class="article-category">الکترونیک</span>
+                            </div>
+                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
+                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 8 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
+                                <span class="article-category">الکترونیک</span>
+                            </div>
+                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
+                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 9 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
+                                <span class="article-category">الکترونیک</span>
+                            </div>
+                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
+                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صفحه‌بندی -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">قبلی</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">بعدی</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <!-- تماس شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- واتساپ شناور -->
+    <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // فیلتر کردن مقالات بر اساس دسته‌بندی
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.category-btn');
+            const articles = document.querySelectorAll('[data-category]');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // حذف کلاس active از همه دکمه‌ها
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // اضافه کردن کلاس active به دکمه کلیک شده
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    // نمایش مقالات بر اساس دسته‌بندی انتخاب شده
+                    articles.forEach(article => {
+                        if (category === 'all' || article.getAttribute('data-category') === category) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

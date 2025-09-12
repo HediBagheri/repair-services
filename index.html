@@ -244,6 +244,7 @@
             border-radius: 8px;
             padding: .4rem .7rem;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
             .nav-link:hover {
@@ -368,7 +369,13 @@
             font-weight: 700;
             color: var(--secondary-color);
             box-shadow: 0 8px 24px rgba(1,58,99,.18);
+            transition: all 0.3s ease;
         }
+
+            .btn-primary-custom:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
 
         .btn-ghost {
             background: transparent;
@@ -376,8 +383,13 @@
             color: #fff;
             padding: .7rem 1rem;
             border-radius: 10px;
-            font-weight: 700
+            font-weight: 700;
+            transition: all 0.3s ease;
         }
+
+            .btn-ghost:hover {
+                background: rgba(255,255,255,0.1);
+            }
 
         .services {
             padding: 50px 0
@@ -505,8 +517,14 @@
         .form-control {
             border-radius: 10px;
             padding: .8rem 1rem;
-            border: 1px solid #e6e9ee
+            border: 1px solid #e6e9ee;
+            transition: all 0.3s ease;
         }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(1,58,99,0.2);
+            }
 
         .phone-badge {
             display: inline-flex;
@@ -517,8 +535,14 @@
             padding: .6rem .9rem;
             border-radius: 10px;
             font-weight: 800;
-            box-shadow: 0 8px 20px rgba(1,58,99,.12)
+            box-shadow: 0 8px 20px rgba(1,58,99,.12);
+            transition: all 0.3s ease;
         }
+
+            .phone-badge:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
 
         footer {
             padding: 40px 0;
@@ -566,11 +590,12 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 6px 12px rgba(0,0,0,.15);
-            z-index: 1000
+            z-index: 1000;
+            transition: background .2s ease;
         }
 
             .whatsapp-float:hover {
-                background: #20bd5a
+                background: #20bd5a;
             }
 
         /* استایل‌های جدید برای بخش درباره ما */
@@ -629,6 +654,139 @@
         .stats-text {
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* استایل‌های جدید برای مجله آموزشی */
+        .magazine-section {
+            padding: 60px 0;
+            background: var(--muted-bg);
+        }
+
+        .magazine-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .magazine-header h2 {
+                font-weight: 800;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+            }
+
+            .magazine-header p {
+                color: var(--text-muted);
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+        .article-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 25px;
+        }
+
+            .article-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            }
+
+        .article-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .article-date {
+            margin-right: 15px;
+        }
+
+        .article-category {
+            background: rgba(1,58,99,0.1);
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-weight: 800;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .article-link {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+            .article-link:hover {
+                color: #02548f;
+            }
+
+            .article-link i {
+                margin-right: 5px;
+                transition: transform 0.3s ease;
+            }
+
+            .article-link:hover i {
+                transform: translateX(5px);
+            }
+
+        .view-all-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .magazine-section {
+                padding: 40px 0;
+            }
+
+            .article-img {
+                height: 180px;
+            }
+
+            .article-content {
+                padding: 15px;
+            }
+
+            .article-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-img {
+                height: 160px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -761,6 +919,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#magazine">مجله آموزشی</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">درخواست تعمیر</a></li>
                     <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
                 </ul>
@@ -789,21 +948,62 @@
     </header>
 
     <!-- Services -->
-    <!--<main class="container">
-        <section id="services" class="services">
-            <div class="text-center mb-4">
-                <h2 style="font-weight:800">خدمات ما</h2>
-                <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
+    <section id="services" class="services">
+        <div class="text-center mb-4">
+            <h2 style="font-weight:800">خدمات ما</h2>
+            <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
+        </div>
+        <div class="row g-4">
+
+            <!-- لباسشویی -->
+            <div class="col-6 col-md-3">
+                <a href="washer.html" class="text-decoration-none text-dark">
+                    <div class="service-card">
+                        <div class="service-icon"><img src="images/washer.png" alt="تعمیر لباسشویی"></div>
+                        <div class="service-title">تعمیر لباسشویی</div>
+                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور, پمپ, برد و تعویض قطعات اصلی.</p>
+                    </div>
+                </a>
             </div>
-            <div class="row g-4">
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/washer.png"></div><div class="service-title">تعمیر لباسشویی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور, پمپ, برد و تعویض قطعات اصلی.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/dishwasher.png"></div><div class="service-title">تعمیر ظرفشویی</div><p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ, المنت و اجزای الکترونیکی.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/vacuum.png"></div><div class="service-title">تعمیر جاروبرقی</div><p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش, موتور و تأمین قطعات با کیفیت.</p></div></div>
-                <div class="col-6 col-md-3"><div class="service-card"><div class="service-icon"><img src="images/microwave.png"></div><div class="service-title">تعمیر مایکروفر</div><p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون, تعمیر برد و رفع مشکل گرمایش.</p></div></div>
+
+            <!-- ظرفشویی -->
+            <div class="col-6 col-md-3">
+                <a href="dishwasher.html" class="text-decoration-none text-dark">
+                    <div class="service-card">
+                        <div class="service-icon"><img src="images/dishwasher.png" alt="تعمیر ظرفشویی"></div>
+                        <div class="service-title">تعمیر ظرفشویی</div>
+                        <p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ, المنت و اجزای الکترونیکی.</p>
+                    </div>
+                </a>
             </div>
-        </section>-->
+
+            <!-- جاروبرقی -->
+            <div class="col-6 col-md-3">
+                <a href="vacuum.html" class="text-decoration-none text-dark">
+                    <div class="service-card">
+                        <div class="service-icon"><img src="images/vacuum.png" alt="تعمیر جاروبرقی"></div>
+                        <div class="service-title">تعمیر جاروبرقی</div>
+                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش, موتور و تأمین قطعات با کیفیت.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- مایکروفر -->
+            <div class="col-6 col-md-3">
+                <a href="microwave.html" class="text-decoration-none text-dark">
+                    <div class="service-card">
+                        <div class="service-icon"><img src="images/microwave.png" alt="تعمیر مایکروفر"></div>
+                        <div class="service-title">تعمیر مایکروفر</div>
+                        <p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون, تعمیر برد و رفع مشکل گرمایش.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Steps -->
-    <!--<section id="how" class="steps">
+    <section id="how" class="steps">
         <div class="text-center mb-4">
             <h3 style="font-weight:800">مراحل حضور ما</h3>
             <p style="color:var(--text-muted)">ثبت درخواست — تخصیص تکنسین — انجام تعمیر با قطعات استاندارد — ضمانت خدمات</p>
@@ -814,9 +1014,10 @@
             <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۳</div><h5>تعمیر در محل</h5><p style="color:var(--text-muted)">قطعات استاندارد و فاکتور</p></div></div>
             <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۴</div><h5>تضمین خدمات</h5><p style="color:var(--text-muted)">گارانتی و پشتیبانی</p></div></div>
         </div>
-    </section>-->
+    </section>
+
     <!-- Advantages -->
-    <!--<section id="advantages" class="container my-5">
+    <section id="advantages" class="container my-5">
         <div class="text-center mb-4"><h2 style="font-weight:800">چرا تعمیرات پلاس؟</h2></div>
         <div class="row g-4 text-center">
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-user-tie fa-2x text-primary mb-2"></i><h6>تکنسین‌های متخصص</h6></div></div>
@@ -824,9 +1025,10 @@
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-tools fa-2x text-success mb-2"></i><h6>قطعات اصلی</h6></div></div>
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-clock fa-2x text-danger mb-2"></i><h6>خدمات فوری</h6></div></div>
         </div>
-    </section>-->
+    </section>
+
     <!-- Brand Logos -->
-    <!--<section id="brands" class="container my-5">
+    <section id="brands" class="container my-5">
         <div class="text-center mb-4">
             <h2 style="font-weight:800">برندهای تحت پوشش</h2>
             <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
@@ -859,9 +1061,10 @@
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
-    </section>-->
+    </section>
+
     <!-- درباره ما - بخش جدید -->
-    <!--<section id="about" class="about-section my-5">
+    <section id="about" class="about-section my-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-weight:800">درباره تعمیرات پلاس</h2>
@@ -871,7 +1074,7 @@
             <div class="row mb-5">
                 <div class="col-lg-6">
                     <h3 class="mb-4">چه چیزی ما را متمایز می‌کند؟</h3>
-                    <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی, همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی, خدمات بی‌نظیری ارائه می‌دهیم.</p>
+                    <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
 
                     <div class="d-flex align-items-center mb-3">
                         <div class="about-icon">
@@ -930,395 +1133,255 @@
 
                             <div class="mt-4">
                                 <h5>ماموریت ما</h5>
-                                <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر, قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
+                                <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>-->
-    <!--<div class="text-center mt-5">
-        <h3 class="mb-4">تیم متخصص ما</h3>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="team-member">
-                    <img src="https://placehold.co/200x200/013a63/white?text=تکنسین+۱" alt="تکنسین" class="team-img">
-                    <h5>مهدی جونم</h5>
-                    <p class="text-muted"> تکنسین ارشد لباسشویی و ظرفشویی و جاروبرقی و مایکروفر</p>
-                    <p class="text-muted small">۱۰ سال سابقه - متخصص برندهای ال‌جی و سامسونگ و ...</p>
-                </div>
             </div>
         </div>
-    </div>-->
-    <!--</div>
-    </section>-->
+    </section>
+
+    <!-- مجله آموزشی - بخش جدید -->
+    <section id="magazine" class="magazine-section">
+        <div class="container">
+            <div class="magazine-header">
+                <h2>مجله آموزشی تعمیرات پلاس</h2>
+                <p>آموزش‌های تخصصی، نکات کاربردی و راهنمای تعمیر لوازم خانگی</p>
+            </div>
+
+            <div class="row">
+                <!-- مقاله 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۵ فروردین ۱۴۰۳</span>
+                                <span class="article-category">لباسشویی</span>
+                            </div>
+                            <h3 class="article-title">۷ نشانه که می‌گوید لباسشویی شما نیاز به تعمیر دارد</h3>
+                            <p class="article-excerpt">اگر لباسشویی شما صداهای غیرعادی تولید می‌کند، آب را تخلیه نمی‌کند یا لباس‌ها به خوبی شسته نمی‌شوند، زمان آن رسیده که به فکر تعمیر باشید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۸ فروردین ۱۴۰۳</span>
+                                <span class="article-category">جاروبرقی</span>
+                            </div>
+                            <h3 class="article-title">۱۰ نکته طلایی برای افزایش طول عمر جاروبرقی</h3>
+                            <p class="article-excerpt">با رعایت چند نکته ساده می‌توانید عمر جاروبرقی خود را افزایش داده و از هزینه‌های اضافی تعمیر جلوگیری کنید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۲ فروردین ۱۴۰۳</span>
+                                <span class="article-category">مایکروفر</span>
+                            </div>
+                            <h3 class="article-title">راهنمای کامل عیب‌یابی و رفع مشکلات مایکروفر</h3>
+                            <p class="article-excerpt">اگر مایکروفر شما غذا را گرم نمی‌کند، جرقه می‌زند یا صفحه نمایش آن کار نمی‌کند، این راهنما به شما کمک می‌کند مشکل را تشخیص دهید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۵ فروردین ۱۴۰۳</span>
+                                <span class="article-category">ظرفشویی</span>
+                            </div>
+                            <h3 class="article-title">تفاوت‌های ظرفشویی صنعتی و خانگی و نکات تعمیر آن‌ها</h3>
+                            <p class="article-excerpt">ظرفشویی‌های صنعتی و خانگی تفاوت‌های اساسی در ساختار و عملکرد دارند که بر روش تعمیر آن‌ها تأثیر می‌گذارد.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۸ اسفند ۱۴۰۲</span>
+                                <span class="article-category">نکات کاربردی</span>
+                            </div>
+                            <h3 class="article-title">چگونه مصرف انرژی لوازم خانگی خود را کاهش دهیم؟</h3>
+                            <p class="article-excerpt">با رعایت این نکات ساده می‌توانید تا ۳۰٪ در مصرف انرژی صرفه‌جویی کرده و هزینه قبض‌های خود را کاهش دهید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="article-card">
+                        <video class="article-img" controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
+                                <span class="article-category">الکترونیک</span>
+                            </div>
+                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
+                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
+                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all-btn">
+                <a href="tutorial.html" class="btn btn-primary-custom">مشاهده همه مقالات <i class="fas fa-arrow-left me-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- FAQ -->
-    <!--<section id="faq" class="container my-5">
+    <section id="faq" class="container my-5">
         <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
         <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">هزینه تعمیرات چگونه محاسبه می‌شود؟</button></h2>
-                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه, قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
+                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه، قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">آیا خدمات شامل ضمانت است؟</button></h2>
-                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله, تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
+                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله، تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
             </div>
         </div>
-    </section>-->
+    </section>
+
     <!-- Contact -->
-    <!--<section id="contact" class="contact mt-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div><h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4><small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small></div>
-                                <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
-                            </div>
-                            <form action="https://wa.me/989199195067" target="_blank" method="get">
-                                <div class="row g-2">
-                                    <div class="col-md-6"><input class="form-control" name="name" placeholder="نام و نام خانوادگی" required></div>
-                                    <div class="col-md-6"><input class="form-control" name="phone" placeholder="شماره تماس" required></div>
-                                    <div class="col-md-6"><select class="form-control" name="device" required><option disabled selected>نوع دستگاه</option><option>لباسشویی</option><option>ظرفشویی</option><option>جاروبرقی</option><option>مایکروفر</option></select></div>
-                                    <div class="col-md-6"><select class="form-control" name="brand" required><option disabled selected>برند</option><option>ال‌جی</option><option>سامسونگ</option><option>بوش</option><option>دیگر</option></select></div>
-                                    <div class="col-12"><textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea></div>
-                                </div>
-                                <button type="submit" class="btn btn-primary-custom mt-3 w-100"><i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>-->
-    <!-- Services -->
-    <section id="services" class="services">
-        <div class="text-center mb-4">
-            <h2 style="font-weight:800">خدمات ما</h2>
-            <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
-        </div>
-        <div class="row g-4">
-
-            <!-- لباسشویی -->
-            <div class="col-6 col-md-3">
-                <a href="washer.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/washer.png" alt="تعمیر لباسشویی"></div>
-                        <div class="service-title">تعمیر لباسشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور, پمپ, برد و تعویض قطعات اصلی.</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- ظرفشویی -->
-            <div class="col-6 col-md-3">
-                <a href="dishwasher.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/dishwasher.png" alt="تعمیر ظرفشویی"></div>
-                        <div class="service-title">تعمیر ظرفشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ, المنت و اجزای الکترونیکی.</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- جاروبرقی -->
-            <div class="col-6 col-md-3">
-                <a href="vacuum.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/vacuum.png" alt="تعمیر جاروبرقی"></div>
-                        <div class="service-title">تعمیر جاروبرقی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش, موتور و تأمین قطعات با کیفیت.</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- مایکروفر -->
-            <div class="col-6 col-md-3">
-                <a href="microwave.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/microwave.png" alt="تعمیر مایکروفر"></div>
-                        <div class="service-title">تعمیر مایکروفر</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون, تعمیر برد و رفع مشکل گرمایش.</p>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-        <!-- Steps -->
-        <section id="how" class="steps">
-            <div class="text-center mb-4">
-                <h3 style="font-weight:800">مراحل حضور ما</h3>
-                <p style="color:var(--text-muted)">ثبت درخواست — تخصیص تکنسین — انجام تعمیر با قطعات استاندارد — ضمانت خدمات</p>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۱</div><h5>ثبت درخواست</h5><p style="color:var(--text-muted)">تماس یا فرم سریع</p></div></div>
-                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۲</div><h5>بررسی و زمان‌بندی</h5><p style="color:var(--text-muted)">تخصیص نزدیک‌ترین تکنسین</p></div></div>
-                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۳</div><h5>تعمیر در محل</h5><p style="color:var(--text-muted)">قطعات استاندارد و فاکتور</p></div></div>
-                <div class="col-md-3 col-6"><div class="step-box"><div class="step-num">۴</div><h5>تضمین خدمات</h5><p style="color:var(--text-muted)">گارانتی و پشتیبانی</p></div></div>
-            </div>
-        </section>
-
-        <!-- Advantages -->
-        <section id="advantages" class="container my-5">
-            <div class="text-center mb-4"><h2 style="font-weight:800">چرا تعمیرات پلاس؟</h2></div>
-            <div class="row g-4 text-center">
-                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-user-tie fa-2x text-primary mb-2"></i><h6>تکنسین‌های متخصص</h6></div></div>
-                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-certificate fa-2x text-warning mb-2"></i><h6>ضمانت خدمات</h6></div></div>
-                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-tools fa-2x text-success mb-2"></i><h6>قطعات اصلی</h6></div></div>
-                <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-clock fa-2x text-danger mb-2"></i><h6>خدمات فوری</h6></div></div>
-            </div>
-        </section>
-
-        <!-- Brand Logos -->
-        <section id="brands" class="container my-5">
-            <div class="text-center mb-4">
-                <h2 style="font-weight:800">برندهای تحت پوشش</h2>
-                <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
-            </div>
-
-            <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center gap-4 flex-wrap">
-                            <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
-                            <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
-                            <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
-                            <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center gap-4 flex-wrap">
-                            <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
-                            <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
-                            <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
-                            <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </section>
-
-
-        <!-- درباره ما - بخش جدید -->
-        <section id="about" class="about-section my-5">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 style="font-weight:800">درباره تعمیرات پلاس</h2>
-                    <p class="text-muted">تخصص و تجربه ما در خدمت رضایت شما</p>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-lg-6">
-                        <h3 class="mb-4">چه چیزی ما را متمایز می‌کند؟</h3>
-                        <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
-
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="about-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h5>تضمین کیفیت خدمات</h5>
-                                <p class="text-muted mb-0">همه خدمات ما دارای گارانتی و پشتیبانی هستند</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="about-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h5>استفاده از قطعات اصلی</h5>
-                                <p class="text-muted mb-0">قطعات مورد استفاده تماماً اصلی و دارای ضمانت هستند</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h5>خدمات سریع و به موقع</h5>
-                                <p class="text-muted mb-0">ارائه خدمات در کمترین زمان ممکن در محل شما</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body p-4">
-                                <h4 class="card-title mb-4">آمار و ارقام</h4>
-
-                                <div class="row text-center">
-                                    <div class="col-6 mb-4">
-                                        <p class="stats-number">۱۰+</p>
-                                        <p class="stats-text">سال تجربه</p>
-                                    </div>
-                                    <div class="col-6 mb-4">
-                                        <p class="stats-number">۲۵۰۰+</p>
-                                        <p class="stats-text">مشتری راضی</p>
-                                    </div>
-                                    <div class="col-6 mb-4">
-                                        <p class="stats-number">۹۸%</p>
-                                        <p class="stats-text">رضایت مشتریان</p>
-                                    </div>
-                                    <div class="col-6 mb-4">
-                                        <p class="stats-number">۱۵+</p>
-                                        <p class="stats-text">تکنسین متخصص</p>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4">
-                                    <h5>ماموریت ما</h5>
-                                    <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="container my-5">
-            <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">هزینه تعمیرات چگونه محاسبه می‌شود؟</button></h2>
-                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه، قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">آیا خدمات شامل ضمانت است؟</button></h2>
-                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله، تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <!--<section id="contact" class="contact mt-4">
+    <section id="contact" class="contact mt-4">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div><h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4><small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small></div>
+                            <div>
+                                <h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4>
+                                <small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small>
+                            </div>
                             <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
                         </div>
-                        <form action="https://wa.me/989199195067" target="_blank" method="get">
+
+                        <form id="repairForm">
                             <div class="row g-2">
-                                <div class="col-md-6"><input class="form-control" name="name" placeholder="نام و نام خانوادگی" required></div>
-                                <div class="col-md-6"><input class="form-control" name="phone" placeholder="شماره تماس" required></div>
-                                <div class="col-md-6"><select class="form-control" name="device" required><option disabled selected>نوع دستگاه</option><option>لباسشویی</option><option>ظرفشویی</option><option>جاروبرقی</option><option>مایکروفر</option></select></div>
-                                <div class="col-md-6"><select class="form-control" name="brand" required><option disabled selected>برند</option><option>ال‌جی</option><option>سامسونگ</option><option>بوش</option><option>دیگر</option></select></div>
-                                <div class="col-12"><textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea></div>
+                                <div class="col-md-6">
+                                    <input class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" name="phone" placeholder="شماره تماس" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="device" required>
+                                        <option disabled selected>نوع دستگاه</option>
+                                        <option>لباسشویی</option>
+                                        <option>ظرفشویی</option>
+                                        <option>جاروبرقی</option>
+                                        <option>مایکروفر</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="brand" required>
+                                        <option disabled selected>برند</option>
+                                        <option>ال‌جی</option>
+                                        <option>سامسونگ</option>
+                                        <option>بوش</option>
+                                        <option>دیگر</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary-custom mt-3 w-100"><i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ</button>
+                            <button type="submit" class="btn btn-primary-custom mt-3 w-100">
+                                <i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ
+                            </button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section>-->
-        <section id="contact" class="contact mt-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div>
-                                    <h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4>
-                                    <small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small>
-                                </div>
-                                <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
-                            </div>
+    </section>
 
-                            <form id="repairForm">
-                                <div class="row g-2">
-                                    <div class="col-md-6">
-                                        <input class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input class="form-control" name="phone" placeholder="شماره تماس" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="device" required>
-                                            <option disabled selected>نوع دستگاه</option>
-                                            <option>لباسشویی</option>
-                                            <option>ظرفشویی</option>
-                                            <option>جاروبرقی</option>
-                                            <option>مایکروفر</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="brand" required>
-                                            <option disabled selected>برند</option>
-                                            <option>ال‌جی</option>
-                                            <option>سامسونگ</option>
-                                            <option>بوش</option>
-                                            <option>دیگر</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary-custom mt-3 w-100">
-                                    <i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ
-                                </button>
-                            </form>
+    <script>
+        document.getElementById("repairForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            let name = this.name.value;
+            let phone = this.phone.value;
+            let device = this.device.value;
+            let brand = this.brand.value;
+            let message = this.message.value;
 
-        <script>
-            document.getElementById("repairForm").addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                let name = this.name.value;
-                let phone = this.phone.value;
-                let device = this.device.value;
-                let brand = this.brand.value;
-                let message = this.message.value;
-
-                let text = `📩 درخواست تعمیر لوازم خانگی
+            let text = `📩 درخواست تعمیر لوازم خانگی
 👤 نام: ${name}
 📞 شماره تماس: ${phone}
 🛠 دستگاه: ${device}
 🏷 برند: ${brand}
 📝 توضیحات: ${message ? message : "ندارد"}`;
 
-                let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
-                window.open(url, "_blank");
-            });
-        </script>
+            let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank");
+        });
+    </script>
 
+    </main>
 
-        </main>
+    <!-- footer -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
 
-        <!-- footer -->
-        <footer>
-            <div class="container text-center">
-                <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
-            </div>
-        </footer>
+    <!-- تماس شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
 
-        <!-- تماس شناور -->
-        <a href="tel:+989199195067" class="call-float">
-            <i class="fas fa-phone"></i>
-        </a>
+    <!-- واتساپ شناور -->
+    <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-        <!-- واتساپ شناور -->
-        <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
