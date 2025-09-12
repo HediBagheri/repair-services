@@ -558,7 +558,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="contact-form">
-                        <form action="#" method="post">
+                        <form id="applyForm">
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
@@ -572,9 +572,9 @@
                                 <div class="col-md-6">
                                     <select class="form-control" name="position" required>
                                         <option value="" selected disabled>انتخاب موقعیت شغلی</option>
-                                        <option value="تکنسین تعمیرات">تکنسین تعمیرات لوازم خانگی</option>
+                                        <option value="تکنسین تعمیرات لوازم خانگی">تکنسین تعمیرات لوازم خانگی</option>
                                         <option value="پشتیبان مشتریان">پشتیبان مشتریان</option>
-                                        <option value="سایر">سایر موقعیت‌ها</option>
+                                        <option value="سایر موقعیت‌ها">سایر موقعیت‌ها</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
@@ -598,6 +598,29 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById("applyForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = this.name.value;
+            let phone = this.phone.value;
+            let email = this.email.value;
+            let position = this.position.value;
+            let experience = this.experience.value;
+
+            let text = `📄 درخواست همکاری
+👤 نام و نام خانوادگی: ${name}
+📞 شماره تماس: ${phone}
+✉️ ایمیل: ${email ? email : "وارد نشده"}
+💼 موقعیت شغلی: ${position}
+📝 سوابق کاری: ${experience}
+📎 رزومه: لطفاً رزومه خود را در واتساپ ارسال کنید.`;
+
+            let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank");
+        });
+    </script>
 
     <!-- فوتر -->
     <footer class="footer">

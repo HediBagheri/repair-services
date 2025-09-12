@@ -682,55 +682,83 @@
     </section>
 
     <!-- فرم تماس -->
-    <section id="contact" class="content-section">
+    <section id="contact" class="contact mt-4">
         <div class="container">
-            <h2 class="section-title">درخواست تعمیر مایکروفر</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="contact-form">
-                        <form action="https://wa.me/989199195067" method="get" target="_blank">
-                            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4>
+                                <small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small>
+                            </div>
+                            <div class="phone-badge"><i class="fas fa-phone"></i> 09199195067</div>
+                        </div>
+
+                        <form id="repairForm">
+                            <div class="row g-2">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
+                                    <input class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control" name="phone" placeholder="شماره تماس" required>
+                                    <input class="form-control" name="phone" placeholder="شماره تماس" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="device" required>
+                                        <option disabled selected>نوع دستگاه</option>
+                                        <option>لباسشویی</option>
+                                        <option>ظرفشویی</option>
+                                        <option>جاروبرقی</option>
+                                        <option>مایکروفر</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="brand" required>
-                                        <option value="" selected disabled>برند مایکروفر</option>
-                                        <option value="سامسونگ">سامسونگ</option>
-                                        <option value="ال جی">ال جی</option>
-                                        <option value="بوش">بوش</option>
-                                        <option value="پاناسونیک">پاناسونیک</option>
-                                        <option value="سایر">سایر برندها</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="form-control" name="problem" required>
-                                        <option value="" selected disabled>نوع مشکل</option>
-                                        <option value="روشن نمی‌شود">روشن نمی‌شود</option>
-                                        <option value="غذا گرم نمی‌کند">غذا گرم نمی‌کند</option>
-                                        <option value="جرقه می‌زند">جرقه می‌زند</option>
-                                        <option value="صفحه نمایش مشکل دارد">صفحه نمایش مشکل دارد</option>
-                                        <option value="سایر">سایر مشکلات</option>
+                                        <option disabled selected>برند</option>
+                                        <option>ال‌جی</option>
+                                        <option>سامسونگ</option>
+                                        <option>بوش</option>
+                                        <option>دیگر</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="4" placeholder="توضیحات بیشتر (اختیاری)"></textarea>
-                                </div>
-                                <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-primary-custom btn-lg">
-                                        <i class="fab fa-whatsapp"></i> ارسال درخواست از طریق واتساپ
-                                    </button>
+                                    <textarea class="form-control" name="message" rows="3" placeholder="توضیحات مشکل..."></textarea>
                                 </div>
                             </div>
+                            <button type="submit" class="btn btn-primary-custom mt-3 w-100">
+                                <i class="fas fa-paper-plane me-2"></i> ارسال درخواست به واتساپ
+                            </button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById("repairForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = this.name.value;
+            let phone = this.phone.value;
+            let device = this.device.value;
+            let brand = this.brand.value;
+            let message = this.message.value;
+
+            let text = `📩 درخواست تعمیر لوازم خانگی
+👤 نام: ${name}
+📞 شماره تماس: ${phone}
+🛠 دستگاه: ${device}
+🏷 برند: ${brand}
+📝 توضیحات: ${message ? message : "ندارد"}`;
+
+            let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank");
+        });
+    </script>
+
+    <br />
 
     <!-- فوتر -->
     <footer class="footer">
