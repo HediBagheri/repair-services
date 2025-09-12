@@ -61,10 +61,32 @@
             .brand span {
                 color: var(--secondary-color);
             }
+        /* تماس شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #013a63;
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+            }
 
         /* هیرو سکشن */
         .hero-section {
-            background: url('images/hero-washer.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('images/hero-washer.png') center/cover no-repeat;
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -220,6 +242,24 @@
             padding: 12px 15px;
             border: 1px solid #e6e9ee;
             margin-bottom: 20px;
+        }
+
+        /* ویژگی‌های خاص */
+        .features-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #012f4f 100%);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
         }
 
         /* فوتر */
@@ -407,9 +447,9 @@
                     <a href="tel:+989199195067"><i class="fas fa-phone"></i> ۰۹۱۹۹۱۹۵۰۶۷</a>
                 </div>
                 <div>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="me-3"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -635,7 +675,10 @@
             </div>
         </div>
     </footer>
-
+    <!-- تماس شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
     <!-- دکمه واتساپ شناور -->
     <a href="https://wa.me/989199195067" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>

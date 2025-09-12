@@ -3,124 +3,771 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعمیر مایکروفر</title>
+    <title>تعمیر تخصصی مایکروفر | تعمیرات پلاس</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet">
     <style>
-        body {
-            font-family: tahoma;
-            background: #f8f9fa;
+        :root {
+            --primary-color: #013a63;
+            --secondary-color: #FFD700;
+            --muted-bg: #f6f7f9;
+            --card-bg: #ffffff;
+            --text-dark: #24323f;
+            --text-muted: #6b7a86;
+            --radius: 14px;
         }
 
-        header {
-            background: linear-gradient(90deg,#007BFF,#FF8C00);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Vazirmatn", "Tahoma", sans-serif;
+            background-color: var(--muted-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* نوار بالایی */
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-color), #012f4f);
             color: white;
-            padding: 30px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+            .top-bar a {
+                color: white;
+                text-decoration: none;
+            }
+
+        /* هدر */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+            .brand span {
+                color: var(--secondary-color);
+            }
+        /* تماس شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #013a63;
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+            }
+
+        /* هیرو سکشن */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-microwave.png') center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
             text-align: center;
         }
 
-        .content {
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* دکمه‌ها */
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+            .btn-primary-custom:hover {
+                background-color: #012a4a;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        /* بخش‌های محتوا */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+            .section-title:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                background-color: var(--secondary-color);
+                margin: 15px auto;
+                border-radius: 2px;
+            }
+
+        /* کارت خدمات */
+        .service-card {
             background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(1, 58, 99, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+            .service-icon i {
+                font-size: 2rem;
+                color: var(--primary-color);
+            }
+
+        .service-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* مشکلات رایج */
+        .problem-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .problem-list li {
+                padding: 12px 15px;
+                margin-bottom: 10px;
+                background: white;
+                border-radius: var(--radius);
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+                border-right: 4px solid var(--secondary-color);
+                display: flex;
+                align-items: center;
+            }
+
+                .problem-list li i {
+                    color: var(--primary-color);
+                    margin-left: 10px;
+                }
+
+        /* برندها */
+        .brands-section {
+            background-color: white;
+            padding: 50px 0;
+        }
+
+        .brand-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+            .brand-logo:hover {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+
+        /* فرم تماس */
+        .contact-form {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #e6e9ee;
+            margin-bottom: 20px;
+        }
+
+        /* ویژگی‌های خاص */
+        .features-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #012f4f 100%);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .feature-item {
+            text-align: center;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
         }
 
-        .btn-orange {
-            background: #FF8C00;
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* فوتر */
+        .footer {
+            background: linear-gradient(90deg, var(--primary-color), #012f4f);
             color: white;
-            font-weight: bold;
+            padding: 40px 0 20px;
         }
 
-            .btn-orange:hover {
-                background: #e67e00;
-                color: white;
+            .footer a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: color 0.3s;
             }
 
-        .btn-blue {
-            background: #007BFF;
+                .footer a:hover {
+                    color: var(--secondary-color);
+                }
+
+        /* دکمه واتساپ شناور */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
             color: white;
-            font-weight: bold;
+            font-size: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: background 0.3s;
         }
 
-            .btn-blue:hover {
-                background: #0056b3;
-                color: white;
+            .whatsapp-float:hover {
+                background: #20bd5a;
             }
+
+        /* رسپانسیو - موبایل */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+                padding: 0 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                padding: 0 15px;
+            }
+
+            .content-section {
+                padding: 40px 0;
+            }
+
+            .service-card {
+                margin-bottom: 15px;
+                padding: 20px 15px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 15px;
+            }
+
+                .service-icon i {
+                    font-size: 1.5rem;
+                }
+
+            .service-title {
+                font-size: 1.1rem;
+            }
+
+            .problem-list li {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+
+            .brand-logo {
+                height: 50px;
+                margin-bottom: 15px;
+            }
+
+            .contact-form {
+                padding: 20px 15px;
+            }
+
+            .form-control {
+                padding: 10px 12px;
+            }
+
+            .btn-primary-custom {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 30px 0 15px;
+            }
+
+                .footer .col-md-4 {
+                    margin-bottom: 25px;
+                }
+
+            .top-bar {
+                padding: 10px 0;
+                font-size: 0.8rem;
+            }
+
+            .main-header {
+                padding: 10px 0;
+            }
+
+            .brand {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .service-card {
+                padding: 15px 10px;
+            }
+
+            .brand-logo {
+                height: 40px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+
+        /* بهبود نمایش در حالت عمودی */
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .btn-primary-custom {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background:linear-gradient(90deg,#007BFF,#FF8C00);">
+    <!-- نوار بالایی -->
+    <div class="top-bar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">خدمات تعمیرات</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">صفحه اصلی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="washer.html">لباسشویی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dishwasher.html">ظرفشویی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="vacuum.html">جاروبرقی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="microwave.html">مایکروفر</a></li>
-                </ul>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a href="tel:+989199195067"><i class="fas fa-phone"></i> ۰۹۱۹۹۱۹۵۰۶۷</a>
+                </div>
+                <div>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <header>
-        <h1>تعمیر مایکروفر</h1>
+    <!-- هدر اصلی -->
+    <header class="main-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="brand">تعمیرات <span>پلاس</span></a>
+                <div>
+                    <a href="index.html" class="btn btn-outline-primary">بازگشت به صفحه اصلی</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="container my-4">
-        <div class="content">
-            <img src="images/microwave.jpg" alt="مایکروفر" class="img-fluid rounded mb-3">
+    <!-- هیرو سکشن -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">تعمیر تخصصی مایکروفر</h1>
+            <p class="hero-subtitle">با بیش از ۱۰ سال تجربه در تعمیرات تخصصی انواع مایکروفر با بهترین کیفیت و کمترین هزینه در محل شما</p>
+            <a href="#contact" class="btn btn-primary-custom">درخواست تعمیر رایگان</a>
+        </div>
+    </section>
 
-            <p>
-                مایکروفر دستگاهی پرکاربرد است و خرابی‌های رایج آن شامل:
-                <br>🔹 گرم نکردن غذا
-                <br>🔹 روشن نشدن دستگاه
-                <br>🔹 صدای غیرعادی هنگام کار
-                <br>🔹 جرقه زدن داخل دستگاه
-                <br>🔹 خرابی صفحه لمسی یا کلیدها
-                متخصصان ما تمامی مشکلات مایکروفر را رفع می‌کنند.
-            </p>
-
-            <h5 class="mt-4">برندهای پشتیبانی‌شده:</h5>
-            <ul>
-                <li>سامسونگ</li>
-                <li>ال‌جی</li>
-                <li>پاناسونیک</li>
-                <li>شارپ</li>
-                <li>بوش</li>
-            </ul>
-            <div class="container my-4">
-                <div class="content">
-                    <h2 class="mb-4 text-center">راهنمای ارورهای مایکروفر</h2>
-                    <p>
-                        مایکروفرها معمولا ارورهای محدودی دارن که بیشتر مربوط به برق یا درب دستگاهه:
-                    </p>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <img src="images/microwave-error.jpg" class="img-fluid rounded" alt="ارور مایکروفر">
+    <!-- خدمات تخصصی -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">خدمات تخصصی تعمیر مایکروفر</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <div class="col-md-6">
-                            <h5>❌ ارور SE</h5>
-                            <p>مشکل در صفحه لمسی (تاچ پد) یا برد اصلی.</p>
-                            <h5>❌ ارور F3</h5>
-                            <p>خرابی در سنسور دما یا ترموستات.</p>
-                            <h5>❌ ارور E1</h5>
-                            <p>مشکل در ولتاژ برق یا اتصال داخلی دستگاه.</p>
+                        <h3 class="service-title">تعمیر فیوز مایکروفر</h3>
+                        <p>تعویض و تعمیر فیوزهای معیوب با قطعات اورجینال و گارانتی ۶ ماهه</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="service-title">تعمیر برد الکترونیکی</h3>
+                        <p>عیب‌یابی و تعمیر تخصصی بردهای الکترونیکی مایکروفر با پیشرفته‌ترین دستگاه‌ها</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                        <h3 class="service-title">تعمیر مگنترون</h3>
+                        <p>تعویض و تعمیر مگنترون معیوب به عنوان قلب تپنده مایکروفر</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3 class="service-title">تعمیر قفل درب</h3>
+                        <p>تعویض قفل درب معیوب و رفع مشکل باز و بسته شدن درب مایکروفر</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="service-title">تعمیر لامپ مایکروفر</h3>
+                        <p>تعویض لامپ داخلی و روشنایی صفحه نمایش مایکروفر</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">سرویس دوره‌ای</h3>
+                        <p>سرویس کامل، تمیزکاری و بررسی سلامت کلی دستگاه</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ویژگی‌های خاص -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">چرا تعمیرات پلاس؟</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>تخصص و تجربه</h4>
+                        <p>با بیش از ۱۰ سال تجربه در تعمیرات تخصصی مایکروفر</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>خدمات سریع</h4>
+                        <p>ارائه خدمات در سریع‌ترین زمان ممکن در محل شما</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>ضمانت کار</h4>
+                        <p>ارائه گارانتی ۶ ماهه برای کلیه خدمات و تعمیرات</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h4>قیمت مناسب</h4>
+                        <p>هزینه مناسب و رقابتی با کیفیت کار عالی</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مشکلات رایج -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="section-title">مشکلات رایج مایکروفر</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="problem-list">
+                        <li><i class="fas fa-exclamation-circle"></i> مایکروفر روشن نمی‌شود</li>
+                        <li><i class="fas fa-exclamation-circle"></i> غذا گرم نمی‌کند</li>
+                        <li><i class="fas fa-exclamation-circle"></i> جرقه می‌زند</li>
+                        <li><i class="fas fa-exclamation-circle"></i> درب به درستی بسته نمی‌شود</li>
+                        <li><i class="fas fa-exclamation-circle"></i> صفحه نمایش کار نمی‌کند</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="problem-list">
+                        <li><i class="fas fa-exclamation-circle"></i> صدای غیرعادی دارد</li>
+                        <li><i class="fas fa-exclamation-circle"></i> دکمه‌ها کار نمی‌کنند</li>
+                        <li><i class="fas fa-exclamation-circle"></i> بوی سوختگی می‌دهد</li>
+                        <li><i class="fas fa-exclamation-circle"></i> زمان‌دهی دقیق نیست</li>
+                        <li><i class="fas fa-exclamation-circle"></i> چراغ داخلی روشن نمی‌شود</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- راهنمای تعمیرات -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="section-title">راهنمای نگهداری از مایکروفر</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="guide-card">
+                        <div class="guide-header">
+                            <i class="fas fa-lightbulb"></i>
+                            نکات ایمنی
+                        </div>
+                        <div class="guide-body">
+                            <p>• از ظروف فلزی در مایکروفر استفاده نکنید</p>
+                            <p>• درب دستگاه باید کاملاً بسته باشد</p>
+                            <p>• دستگاه را خالی روشن نکنید</p>
+                            <p>• از تمیز بودن درزهای درب اطمینان حاصل کنید</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="guide-card">
+                        <div class="guide-header">
+                            <i class="fas fa-tools"></i>
+                            نگهداری پیشگیرانه
+                        </div>
+                        <div class="guide-body">
+                            <p>• هفته‌ای یکبار داخلی دستگاه را تمیز کنید</p>
+                            <p>• از اسپری تمیزکننده مخصوص استفاده کنید</p>
+                            <p>• از خراشیدن سطح داخلی خودداری کنید</p>
+                            <p>• دستگاه را در مکانی خشک و خنک قرار دهید</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="d-flex gap-2 mt-4">
-                <a href="tel:+989199195067" class="btn btn-orange flex-fill">📞 تماس</a>
-                <a href="index.html#requestForm" class="btn btn-blue flex-fill">📝 فرم درخواست</a>
+    <!-- برندها -->
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="section-title">برندهایی که تعمیر می‌کنیم</h2>
+            <div class="row align-items-center text-center">
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Electrolux_logo.svg" alt="Electrolux" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch_logo.svg" alt="Bosch" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Philips_logo_new.svg" alt="Philips" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Siemens_AG_logo.svg" alt="Siemens" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Panasonic_logo_%28Blue%29.svg" alt="Panasonic" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/AEG_Logo.svg" alt="AEG" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/LG_logo_%282015%29.svg" alt="LG" class="brand-logo">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- فرم تماس -->
+    <section id="contact" class="content-section">
+        <div class="container">
+            <h2 class="section-title">درخواست تعمیر مایکروفر</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <form action="https://wa.me/989199195067" method="get" target="_blank">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" name="phone" placeholder="شماره تماس" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="brand" required>
+                                        <option value="" selected disabled>برند مایکروفر</option>
+                                        <option value="سامسونگ">سامسونگ</option>
+                                        <option value="ال جی">ال جی</option>
+                                        <option value="بوش">بوش</option>
+                                        <option value="پاناسونیک">پاناسونیک</option>
+                                        <option value="سایر">سایر برندها</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="problem" required>
+                                        <option value="" selected disabled>نوع مشکل</option>
+                                        <option value="روشن نمی‌شود">روشن نمی‌شود</option>
+                                        <option value="غذا گرم نمی‌کند">غذا گرم نمی‌کند</option>
+                                        <option value="جرقه می‌زند">جرقه می‌زند</option>
+                                        <option value="صفحه نمایش مشکل دارد">صفحه نمایش مشکل دارد</option>
+                                        <option value="سایر">سایر مشکلات</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="4" placeholder="توضیحات بیشتر (اختیاری)"></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-primary-custom btn-lg">
+                                        <i class="fab fa-whatsapp"></i> ارسال درخواست از طریق واتساپ
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>تعمیرات پلاس</h5>
+                    <p>ارائه خدمات تخصصی تعمیرات لوازم خانگی با کیفیت برتر و ضمانت کار</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>تماس با ما</h5>
+                    <p><i class="fas fa-phone"></i> ۰۹۱۹۹۱۹۵۰۶۷</p>
+                    <p><i class="fas fa-map-marker-alt"></i> تهران</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>لینک‌های مفید</h5>
+                    <p><a href="index.html">صفحه اصلی</a></p>
+                    <p><a href="service-washer.html">تعمیر لباسشویی</a></p>
+                    <p><a href="service-dishwasher.html">تعمیر ظرفشویی</a></p>
+                    <p><a href="service-vacuum.html">تعمیر جاروبرقی</a></p>
+                    <p><a href="service-microwave.html">تعمیر مایکروفر</a></p>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p>© ۲۰۲۳ تعمیرات پلاس. تمام حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- تماس شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+    <!-- دکمه واتساپ شناور -->
+    <a href="https://wa.me/989199195067" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
