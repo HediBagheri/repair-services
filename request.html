@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعمیر تخصصی ظرفشویی | تعمیرات پلاس</title>
+    <title>همکاری با ما | تعمیرات پلاس</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet">
@@ -64,9 +64,9 @@
 
         /* هیرو سکشن */
         .hero-section {
-            background: url('images/hero-dishwasher.png') center/cover no-repeat;
+            background: linear-gradient(rgba(1, 58, 99, 0.5), rgba(1, 47, 79, 0.5)), url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
         }
 
@@ -83,28 +83,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        /* تماس شناور */
-        .call-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #013a63;
-            color: white;
-            font-size: 26px;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 12px rgba(0,0,0,.15);
-            z-index: 1000;
-            transition: background .2s ease;
-        }
-
-            .call-float:hover {
-                background: #02548f;
-            }
 
         /* دکمه‌ها */
         .btn-primary-custom {
@@ -148,86 +126,62 @@
                 border-radius: 2px;
             }
 
-        /* کارت خدمات */
-        .service-card {
+        /* کارت موقعیت‌های شغلی */
+        .job-card {
             background: white;
             border-radius: var(--radius);
             padding: 25px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
-            text-align: center;
             margin-bottom: 20px;
+            border-right: 4px solid var(--secondary-color);
         }
 
-            .service-card:hover {
+            .job-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
+        .job-icon {
+            width: 70px;
+            height: 70px;
             background-color: rgba(1, 58, 99, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin-bottom: 20px;
         }
 
-            .service-icon i {
-                font-size: 2rem;
+            .job-icon i {
+                font-size: 1.8rem;
                 color: var(--primary-color);
             }
 
-        .service-title {
+        .job-title {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
-        /* مشکلات رایج */
-        .problem-list {
+        .job-details {
             list-style: none;
             padding: 0;
+            margin-bottom: 20px;
         }
 
-            .problem-list li {
-                padding: 12px 15px;
-                margin-bottom: 10px;
-                background: white;
-                border-radius: var(--radius);
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-                border-right: 4px solid var(--secondary-color);
+            .job-details li {
+                padding: 8px 0;
                 display: flex;
                 align-items: center;
             }
 
-                .problem-list li i {
-                    color: var(--primary-color);
+                .job-details li i {
+                    color: var(--secondary-color);
                     margin-left: 10px;
                 }
-
-        /* برندها */
-        .brands-section {
-            background-color: white;
-            padding: 50px 0;
-        }
-
-        .brand-logo {
-            height: 60px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s;
-            margin-bottom: 20px;
-        }
-
-            .brand-logo:hover {
-                filter: grayscale(0);
-                opacity: 1;
-            }
 
         /* فرم تماس */
         .contact-form {
@@ -244,7 +198,11 @@
             margin-bottom: 20px;
         }
 
-        /* ویژگی‌های خاص */
+        textarea.form-control {
+            min-height: 150px;
+        }
+
+        /* ویژگی‌های همکاری */
         .features-section {
             background: linear-gradient(135deg, var(--primary-color) 0%, #012f4f 100%);
             color: white;
@@ -302,10 +260,32 @@
                 background: #20bd5a;
             }
 
+        /* بخش مزایا */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .benefits-list li {
+                padding: 12px 15px;
+                margin-bottom: 10px;
+                background: white;
+                border-radius: var(--radius);
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+                border-right: 4px solid var(--secondary-color);
+                display: flex;
+                align-items: center;
+            }
+
+                .benefits-list li i {
+                    color: var(--primary-color);
+                    margin-left: 10px;
+                }
+
         /* رسپانسیو - موبایل */
         @media (max-width: 768px) {
             .hero-section {
-                padding: 50px 0;
+                padding: 70px 0;
             }
 
             .hero-title {
@@ -327,33 +307,23 @@
                 padding: 40px 0;
             }
 
-            .service-card {
+            .job-card {
                 margin-bottom: 15px;
                 padding: 20px 15px;
             }
 
-            .service-icon {
+            .job-icon {
                 width: 60px;
                 height: 60px;
                 margin-bottom: 15px;
             }
 
-                .service-icon i {
+                .job-icon i {
                     font-size: 1.5rem;
                 }
 
-            .service-title {
+            .job-title {
                 font-size: 1.1rem;
-            }
-
-            .problem-list li {
-                padding: 10px 12px;
-                font-size: 0.9rem;
-            }
-
-            .brand-logo {
-                height: 50px;
-                margin-bottom: 15px;
             }
 
             .contact-form {
@@ -400,12 +370,8 @@
                 font-size: 1.4rem;
             }
 
-            .service-card {
+            .job-card {
                 padding: 15px 10px;
-            }
-
-            .brand-logo {
-                height: 40px;
             }
 
             .whatsapp-float {
@@ -470,186 +436,129 @@
     <!-- هیرو سکشن -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="hero-title">تعمیر تخصصی ظرفشویی</h1>
-            <p class="hero-subtitle">با بیش از ۱۰ سال تجربه در تعمیرات تخصصی انواع ظرفشویی با بهترین کیفیت و کمترین هزینه در محل شما</p>
-            <a href="#contact" class="btn btn-primary-custom">درخواست تعمیر رایگان</a>
+            <h1 class="hero-title">همکاری با تعمیرات پلاس</h1>
+            <p class="hero-subtitle">به خانواده تعمیرات پلاس بپیوندید و در محیطی پویا و حرفه‌ای، استعدادهای خود را شکوفا کنید</p>
+            <a href="#jobs" class="btn btn-primary-custom">مشاهده موقعیت‌های شغلی</a>
         </div>
     </section>
 
-    <!-- خدمات تخصصی -->
-    <section class="content-section">
+    <!-- موقعیت‌های شغلی -->
+    <section id="jobs" class="content-section">
         <div class="container">
-            <h2 class="section-title">خدمات تخصصی تعمیر ظرفشویی</h2>
+            <h2 class="section-title">موقعیت‌های شغلی</h2>
             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
+                <div class="col-md-6">
+                    <div class="job-card">
+                        <div class="job-icon">
                             <i class="fas fa-tools"></i>
                         </div>
-                        <h3 class="service-title">تعمیر پمپ تخلیه آب</h3>
-                        <p>تعمیر و تعویض پمپ تخلیه آب ظرفشویی با قطعات اورجینال و گارانتی ۶ ماهه</p>
+                        <h3 class="job-title">تکنسین تعمیرات لوازم خانگی</h3>
+                        <ul class="job-details">
+                            <li><i class="fas fa-briefcase"></i> نوع همکاری: تمام وقت، پاره وقت</li>
+                            <li><i class="fas fa-map-marker-alt"></i> محل کار: تهران</li>
+                            <li><i class="fas fa-clock"></i> ساعات کاری: انعطاف‌پذیر</li>
+                        </ul>
+                        <p>به دنبال تکنسین ماهر و باانگیزه در زمینه تعمیرات لوازم خانگی هستیم. حداقل ۳ سال سابقه کار و تسلط به تعمیرات چند برند الزامی است.</p>
+                        <a href="#apply" class="btn btn-primary-custom w-100">ارسال رزومه</a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-microchip"></i>
+                <div class="col-md-6">
+                    <div class="job-card">
+                        <div class="job-icon">
+                            <i class="fas fa-headset"></i>
                         </div>
-                        <h3 class="service-title">تعمیر برد الکترونیکی</h3>
-                        <p>عیب‌یابی و تعمیر تخصصی بردهای الکترونیکی ظرفشویی با پیشرفته‌ترین دستگاه‌ها</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-fan"></i>
-                        </div>
-                        <h3 class="service-title">تعمیر فن خشک‌کن</h3>
-                        <p>رفع مشکل خشک‌نکردن ظروف، تعویض فن و موتور خشک‌کن با قطعات اورجینال</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-temperature-high"></i>
-                        </div>
-                        <h3 class="service-title">تعمیر المنت گرم‌کن</h3>
-                        <p>تعویض المنت سوخته و رفع مشکل گرم نشدن آب ظرفشویی</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-spray-can"></i>
-                        </div>
-                        <h3 class="service-title">تعمیر بازوهای آب‌پاش</h3>
-                        <p>رفع مشکل چرخش بازوهای آب‌پاش، تعویض و تمیز کردن نازل‌های مسدود شده</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="service-title">سرویس دوره‌ای</h3>
-                        <p>سرویس کامل، تمیزکاری و روغن‌کاری قطعات برای افزایش عمر دستگاه</p>
+                        <h3 class="job-title">پشتیبان مشتریان</h3>
+                        <ul class="job-details">
+                            <li><i class="fas fa-briefcase"></i> نوع همکاری: تمام وقت، دورکاری</li>
+                            <li><i class="fas fa-map-marker-alt"></i> محل کار: تهران یا دورکاری</li>
+                            <li><i class="fas fa-clock"></i> ساعات کاری: نوبتی</li>
+                        </ul>
+                        <p>به دنبال فردی خوش برخورد و مسلط به اصول پشتیبانی تلفنی و آنلاین هستیم. تسلط به نرم‌افزارهای آفیس و CRM امتیاز محسوب می‌شود.</p>
+                        <a href="#apply" class="btn btn-primary-custom w-100">ارسال رزومه</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ویژگی‌های خاص -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">چرا تعمیرات پلاس؟</h2>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h4>تخصص و تجربه</h4>
-                        <p>با بیش از ۱۰ سال تجربه در تعمیرات تخصصی جاروبرقی</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4>خدمات سریع</h4>
-                        <p>ارائه خدمات در سریع‌ترین زمان ممکن در محل شما</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>ضمانت کار</h4>
-                        <p>ارائه گارانتی ۶ ماهه برای کلیه خدمات و تعمیرات</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-tag"></i>
-                        </div>
-                        <h4>قیمت مناسب</h4>
-                        <p>هزینه مناسب و رقابتی با کیفیت کار عالی</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- مشکلات رایج -->
+
+    <!-- مزایای همکاری -->
     <section class="content-section bg-light">
         <div class="container">
-            <h2 class="section-title">مشکلات رایج ظرفشویی</h2>
+            <h2 class="section-title">مزایای همکاری با ما</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <ul class="problem-list">
-                        <li><i class="fas fa-exclamation-circle"></i> ظرفشویی روشن نمی‌شود</li>
-                        <li><i class="fas fa-exclamation-circle"></i> آب نمی‌کشد یا تخلیه نمی‌شود</li>
-                        <li><i class="fas fa-exclamation-circle"></i> آب گرم نمی‌شود</li>
-                        <li><i class="fas fa-exclamation-circle"></i> صداهای غیرعادی دارد</li>
-                        <li><i class="fas fa-exclamation-circle"></i> درب به درستی بسته نمی‌شود</li>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> حقوق و مزایای رقابتی</li>
+                        <li><i class="fas fa-check-circle"></i> بیمه تکمیلی و درمانی</li>
+                        <li><i class="fas fa-check-circle"></i> محیط کاری پویا و صمیمی</li>
+                        <li><i class="fas fa-check-circle"></i> امکان پیشرفت و ارتقاء شغلی</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <ul class="problem-list">
-                        <li><i class="fas fa-exclamation-circle"></i> ظروف به خوبی خشک نمی‌شوند</li>
-                        <li><i class="fas fa-exclamation-circle"></i> از زیر نشت آب دارد</li>
-                        <li><i class="fas fa-exclamation-circle"></i> برنامه‌ها به درستی کار نمی‌کنند</li>
-                        <li><i class="fas fa-exclamation-circle"></i> ظرف‌ها خوب شسته نمی‌شوند</li>
-                        <li><i class="fas fa-exclamation-circle"></i> خطاهای مختلف نمایش داده می‌شود</li>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> دوره‌های آموزشی رایگان</li>
+                        <li><i class="fas fa-check-circle"></i> ساعت کاری منعطف</li>
+                        <li><i class="fas fa-check-circle"></i> پاداش و مزایای عملکردی</li>
+                        <li><i class="fas fa-check-circle"></i> امکان دورکاری برای برخی موقعیت‌ها</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- برندها -->
-    <section class="brands-section">
+    <!-- ویژگی‌های همکاری -->
+    <section class="features-section">
         <div class="container">
-            <h2 class="section-title">برندهایی که تعمیر می‌کنیم</h2>
-            <div class="row align-items-center text-center">
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/LG_symbol.svg" alt="LG" class="brand-logo">
+            <h2 class="section-title" style="color: white;">فرآیند همکاری</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>ارسال رزومه</h4>
+                        <p>ارسال رزومه و اطلاعات تماس از طریق فرم درج شده</p>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="brand-logo">
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>مصاحبه تلفنی</h4>
+                        <p>بررسی اولیه و انجام مصاحبه تلفنی</p>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch_logo.svg" alt="Bosch" class="brand-logo">
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>مصاحبه حضوری</h4>
+                        <p>دعوت به مصاحبه حضوری و آشنایی با محیط کار</p>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Daewoo_Electronics_logo.svg" alt="Daewoo" class="brand-logo">
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Siemens_AG_logo.svg" alt="Siemens" class="brand-logo">
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Snowa_Logo.png" alt="Snowa" class="brand-logo">
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/AEG_Logo.svg" alt="AEG" class="brand-logo">
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Kenwood_logo.svg" alt="Kenwood" class="brand-logo">
+                <div class="col-md-3 col-sm-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h4>شروع همکاری</h4>
+                        <p>عقد قرارداد و شروع دوره آموزشی و همکاری</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- فرم تماس -->
-    <section id="contact" class="content-section">
+    <!-- فرم درخواست همکاری -->
+    <section id="apply" class="content-section">
         <div class="container">
-            <h2 class="section-title">درخواست تعمیر ظرفشویی</h2>
+            <h2 class="section-title">فرم درخواست همکاری</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="contact-form">
-                        <form action="https://wa.me/989199195067" method="get" target="_blank">
+                        <form action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
@@ -658,31 +567,28 @@
                                     <input type="tel" class="form-control" name="phone" placeholder="شماره تماس" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="brand" required>
-                                        <option value="" selected disabled>برند ظرفشویی</option>
-                                        <option value="ال جی">ال جی</option>
-                                        <option value="سامسونگ">سامسونگ</option>
-                                        <option value="بوش">بوش</option>
-                                        <option value="اسنوا">اسنوا</option>
-                                        <option value="سایر">سایر برندها</option>
-                                    </select>
+                                    <input type="email" class="form-control" name="email" placeholder="آدرس ایمیل">
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="problem" required>
-                                        <option value="" selected disabled>نوع مشکل</option>
-                                        <option value="روشن نمی‌شود">روشن نمی‌شود</option>
-                                        <option value="آب نمی‌کشد">آب نمی‌کشد</option>
-                                        <option value="تخلیه نمی‌کند">تخلیه نمی‌کند</option>
-                                        <option value="صدا دارد">صدا دارد</option>
-                                        <option value="سایر">سایر مشکلات</option>
+                                    <select class="form-control" name="position" required>
+                                        <option value="" selected disabled>انتخاب موقعیت شغلی</option>
+                                        <option value="تکنسین تعمیرات">تکنسین تعمیرات لوازم خانگی</option>
+                                        <option value="پشتیبان مشتریان">پشتیبان مشتریان</option>
+                                        <option value="سایر">سایر موقعیت‌ها</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="4" placeholder="توضیحات بیشتر (اختیاری)"></textarea>
+                                    <textarea class="form-control" name="experience" rows="4" placeholder="سوابق کاری و تجربیات مرتبط" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="resume" class="form-label">ارسال رزومه (اختیاری)</label>
+                                        <input type="file" class="form-control" id="resume" name="resume">
+                                    </div>
                                 </div>
                                 <div class="col-12 text-center mt-3">
                                     <button type="submit" class="btn btn-primary-custom btn-lg">
-                                        <i class="fab fa-whatsapp"></i> ارسال درخواست از طریق واتساپ
+                                        <i class="fas fa-paper-plane"></i> ارسال درخواست
                                     </button>
                                 </div>
                             </div>
@@ -710,7 +616,9 @@
                     <h5>لینک‌های مفید</h5>
                     <p><a href="index.html">صفحه اصلی</a></p>
                     <p><a href="service-washer.html">تعمیر لباسشویی</a></p>
+                    <p><a href="service-dishwasher.html">تعمیر ظرفشویی</a></p>
                     <p><a href="service-vacuum.html">تعمیر جاروبرقی</a></p>
+                    <p><a href="service-microwave.html">تعمیر مایکروفر</a></p>
                 </div>
             </div>
             <div class="text-center mt-4 pt-3 border-top">
