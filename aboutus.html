@@ -1,0 +1,832 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>درباره ما | تعمیرات پلاس — خدمات تخصصی تعمیرات لوازم خانگی</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #013a63;
+            --secondary-color: #FFD700;
+            --muted-bg: #f6f7f9;
+            --card-bg: #ffffff;
+            --text-dark: #24323f;
+            --text-muted: #6b7a86;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Vazirmatn","Tahoma",sans-serif;
+            background: var(--muted-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        /* استایل‌های نوبار */
+        .navbar {
+            background: var(--card-bg);
+            box-shadow: 0 6px 20px rgba(1,30,50,.06);
+            border-bottom: 1px solid rgba(3,22,36,.04);
+            padding: .9rem 0;
+        }
+
+        .navbar-toggler {
+            border: none;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.75%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 1.2em;
+            height: 1.2em;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            border-radius: 8px;
+            padding: .4rem .7rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+            .nav-link:hover {
+                background: rgba(1,58,99,.08);
+                color: var(--primary-color);
+            }
+
+        .nav-request-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .nav-request-btn:hover {
+                background: #ffc400;
+                transform: translateY(-2px);
+                color: var(--primary-color);
+            }
+
+        @media (max-width: 768px) {
+            .nav-request-btn {
+                margin: 10px auto;
+                width: 90%;
+                justify-content: center;
+            }
+        }
+
+        .phone-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.55rem 1rem;
+            border-radius: 10px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(1,58,99,.12);
+            transition: all 0.3s ease;
+        }
+
+            .phone-badge:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            text-decoration: none !important;
+        }
+
+            .brand span {
+                color: var(--secondary-color);
+                font-weight: 900;
+                margin-right: .25rem
+            }
+
+        /* استایل‌های منوی بازشونده خدمات */
+        .nav-item.dropdown .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            min-width: 250px;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+            .dropdown-item:hover {
+                background-color: rgba(1,58,99,0.08);
+                color: var(--primary-color);
+            }
+
+            .dropdown-item i {
+                margin-left: 10px;
+                color: var(--primary-color);
+            }
+
+        .dropdown-divider {
+            margin: 10px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-header {
+            font-weight: 800;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-item.dropdown .dropdown-menu {
+                text-align: right;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 10px;
+                margin-top: 0;
+                border: none;
+                background-color: rgba(255,255,255,0.95);
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+            }
+        }
+
+        /* استایل‌های صفحه درباره ما */
+        .page-hero {
+            background: linear-gradient(rgba(1, 58, 99, 0.7), rgba(1, 47, 79, 0.7)), url('https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-section {
+            padding: 50px 0;
+            background: #fff;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+
+        .about-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(1, 58, 99, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+            .about-icon i {
+                font-size: 32px;
+                color: var(--primary-color);
+            }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        .stats-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .team-member:hover {
+                transform: translateY(-5px);
+            }
+
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 4px solid var(--muted-bg);
+        }
+
+        .values-section {
+            padding: 60px 0;
+            background: linear-gradient(90deg, rgba(1,58,99,.06), rgba(255,215,0,.03));
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+
+            .value-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(1, 58, 99, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+            .value-icon i {
+                font-size: 28px;
+                color: var(--primary-color);
+            }
+
+        .testimonials-section {
+            padding: 60px 0;
+            background: #fff;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--muted-bg);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+            .testimonial-card:after {
+                content: '''; font-family: Arial;
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                font-size: 60px;
+                color: rgba(1,58,99,0.1);
+            }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 15px;
+        }
+
+        .testimonial-author-info h6 {
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        .testimonial-author-info p {
+            margin-bottom: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: #fff;
+            background: linear-gradient(90deg,var(--primary-color),#012f4f);
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        /* تماس شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #013a63;
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+            }
+
+        /* واتساپ شناور */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+        }
+
+            .whatsapp-float:hover {
+                background: #20bd5a;
+            }
+
+        /* بخش فراخوان به اقدام - تغییر یافته به رنگ زرد */
+        .cta-yellow-section {
+            background-color: #FFD700 !important;
+            color: #24323f !important;
+            border: none;
+        }
+
+            .cta-yellow-section .btn-light {
+                background-color: #ffffff;
+                color: #24323f;
+                border: none;
+            }
+
+            .cta-yellow-section .btn-outline-light {
+                background-color: transparent;
+                color: #24323f;
+                border: 2px solid #24323f;
+            }
+
+                .cta-yellow-section .btn-outline-light:hover {
+                    background-color: #24323f;
+                    color: #FFD700;
+                }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 60px 0;
+            }
+
+            .about-section {
+                padding: 30px 0;
+            }
+
+            .values-section {
+                padding: 40px 0;
+            }
+
+            .testimonials-section {
+                padding: 40px 0;
+            }
+
+            .stats-number {
+                font-size: 2rem;
+            }
+
+            .team-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            footer {
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="brand" href="index.html">تعمیرات <span>پلاس</span></a>
+            <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- منوی بازشونده خدمات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            خدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                            <li><a class="dropdown-item" href="washer.html"><i class="fas fa-tshirt"></i> تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html#services"><i class="fas fa-list"></i> مشاهده همه خدمات</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorial.html">مجله آموزشی</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">درخواست تعمیر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <!-- دکمه جدید ثبت درخواست -->
+                    <a href="index.html#contact" class="nav-request-btn">
+                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
+                    </a>
+
+                    <a class="phone-badge" href="tel:+989199195067">
+                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هدر صفحه -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="display-5 fw-bold">درباره تعمیرات پلاس</h1>
+            <p class="lead">تخصص و تجربه ما در خدمت رضایت شما</p>
+        </div>
+    </section>
+
+    <!-- بخش درباره ما -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">چه چیزی ما را متمایز می‌کند؟</h2>
+                    <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
+                    <p class="mb-4">ماموریت ما ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم است. ما اعتقاد داریم که مشتریان راضی، بزرگترین سرمایه هر کسب و کاری هستند.</p>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="about-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5>تضمین کیفیت خدمات</h5>
+                            <p class="text-muted mb-0">همه خدمات ما دارای گارانتی و پشتیبانی هستند</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="about-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5>استفاده از قطعات اصلی</h5>
+                            <p class="text-muted mb-0">قطعات مورد استفاده تماماً اصلی و دارای ضمانت هستند</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="about-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5>خدمات سریع و به موقع</h5>
+                            <p class="text-muted mb-0">ارائه خدمات در کمترین زمان ممکن در محل شما</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4">آمار و ارقام</h4>
+
+                            <div class="row text-center">
+                                <div class="col-6 mb-4">
+                                    <p class="stats-number">۱۰+</p>
+                                    <p class="stats-text">سال تجربه</p>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <p class="stats-number">۲۵۰۰+</p>
+                                    <p class="stats-text">مشتری راضی</p>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <p class="stats-number">۹۸%</p>
+                                    <p class="stats-text">رضایت مشتریان</p>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <p class="stats-number">۱۵+</p>
+                                    <p class="stats-text">تکنسین متخصص</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h5>چشم انداز ما</h5>
+                                <p class="text-muted">ایجاد استانداردهای جدید در صنعت تعمیرات لوازم خانگی با تمرکز بر نوآوری، کیفیت و رضایت مشتری</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="fw-bold mb-4">تیم متخصص ما</h3>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدیر فنی" class="team-img">
+                        <h5>محمد رضایی</h5>
+                        <p class="text-primary">مدیر فنی و موسس</p>
+                        <p class="text-muted">با بیش از ۱۲ سال تجربه در تعمیرات تخصصی لوازم خانگی برندهای مختلف</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="تکنسین ارشد" class="team-img">
+                        <h5>فاطمه محمدی</h5>
+                        <p class="text-primary">تکنسین ارشد</p>
+                        <p class="text-muted">متخصص در تعمیرات بردهای الکترونیکی و عیب یابی پیشرفته</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="پشتیبانی مشتریان" class="team-img">
+                        <h5>علی حسینی</h5>
+                        <p class="text-primary">مدیر پشتیبانی مشتریان</p>
+                        <p class="text-muted">مسئول پاسخگویی به سوالات و پیگیری رضایت مشتریان</p>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <!-- بخش ارزش‌ها -->
+    <section class="values-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">ارزش‌های ما</h2>
+                <p class="text-muted">اصولی که هر روز به آن ها پایبندیم</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>رضایت مشتری</h4>
+                        <p class="text-muted">رضایت شما اولویت اصلی ماست. ما تا زمانی که شما کاملا راضی نباشید، کار را تمام شده نمی‌دانیم.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>ضمانت کیفیت</h4>
+                        <p class="text-muted">همه خدمات و قطعات مورد استفاده دارای ضمانت کتبی هستند تا خیال شما راحت باشد.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>سرعت عمل</h4>
+                        <p class="text-muted">در سریعترین زمان ممکن در محل شما حاضر شده و مشکل را برطرف می‌کنیم.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>تخصص و تجربه</h4>
+                        <p class="text-muted">تکنسین‌های ما دارای مدارک فنی و سال‌ها تجربه در تعمیرات لوازم خانگی هستند.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h4>قیمت منصفانه</h4>
+                        <p class="text-muted">قیمت‌های ما شفاف و منصفانه است و قبل از شروع کار به شما اعلام می‌شود.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>پشتیبانی ۲۴/۷</h4>
+                        <p class="text-muted">پشتیبانی ما حتی پس از اتمام کار ادامه دارد و همیشه پاسخگوی شما هستیم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش نظرات مشتریان -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">نظرات مشتریان ما</h2>
+                <p class="text-muted">آنچه مشتریان راضی ما می‌گویند</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">جاروبرقی من مشکل شدید در مکش داشت. تکنسین تعمیرات پلاس در کمتر از یک ساعت مشکل را تشخیص داد و برطرف کرد. حالا مثل روز اول کار می‌کند. واقعا متشکرم.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="محمد احمدی" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h6>محمد احمدی</h6>
+                                <p>ساکن تهرانپارس</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">ماشین لباسشویی سامسونگ من بعد از ۵ سال دچار مشکل شده بود. از خدمات سریع و حرفه‌ای تعمیرات پلاس واقعا راضی هستم. قیمت‌ها هم بسیار منصفانه بود.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="فروغ کریمی" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h6>فروغ کریمی</h6>
+                                <p>ساکن شهرک غرب</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">برد مایکروفر من سوخته بود و فکر می‌کردم باید دستگاه جدید بخرم. اما تکنسین تعمیرات پلاس برد را تعمیر کرد و هزینه بسیار کمتری نسبت به خرید دستگاه جدید پرداخت کردم.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="رضا موسوی" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h6>رضا موسوی</h6>
+                                <p>ساکن نیاوران</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">پشتیبانی فوق العاده‌ای دارند. حتی یک ماه بعد از تعمیر برای اطمینان از عملکرد دستگاه تماس گرفتند. این سطح از مسئولیت پذیری واقعا قابل تقدیره.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="نازیلا حسنی" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h6>نازیلا حسنی</h6>
+                                <p>ساکن پاسداران</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فراخوان به اقدام - تغییر یافته به رنگ زرد -->
+    <section class="container my-5">
+        <div class="card border-0 shadow-lg cta-yellow-section">
+            <div class="card-body p-5 text-center">
+                <h3 class="card-title mb-3">آماده ارائه خدمات به شما هستیم</h3>
+                <p class="card-text mb-4">همین حالا با ما تماس بگیرید یا درخواست خود را به صورت آنلاین ثبت کنید</p>
+                <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <a href="tel:+989199195067" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone me-2"></i> تماس تلفنی
+                    </a>
+                    <a href="index.html#contact" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-wrench me-2"></i> ثبت درخواست
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
+            <div class="mt-3">
+                <a href="index.html" class="text-light mx-2">صفحه اصلی</a>
+                <a href="aboutus.html" class="text-light mx-2">درباره ما</a>
+                <a href="tutorial.html" class="text-light mx-2">مجله آموزشی</a>
+                <a href="index.html#contact" class="text-light mx-2">تماس با ما</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- تماس شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- واتساپ شناور -->
+    <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // تابع برای بستن منوی بازشونده در حالت موبایل
+        function closeDropdown() {
+            if (window.innerWidth < 768) {
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+
+                if (navbarToggler && !navbarCollapse.classList.contains('show')) {
+                    return;
+                }
+
+                // بستن منو
+                var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        }
+
+        // بستن منوی بازشونده هنگام کلیک روی یک آیتم (در حالت موبایل)
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function () {
+                if (window.innerWidth < 768) {
+                    closeDropdown();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

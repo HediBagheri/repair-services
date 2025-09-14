@@ -43,8 +43,8 @@
 
         /* نوار زرد جدید */
         .yellow-bar {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
             padding: 8px 0;
             text-align: center;
             font-weight: 700;
@@ -254,6 +254,34 @@
                 color: var(--primary-color);
             }
 
+        .nav-request-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-left: 10px; /* تغییر کرد از right به left */
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .nav-request-btn:hover {
+                background: #ffc400;
+                transform: translateY(-2px);
+                color: var(--primary-color);
+            }
+
+        @media (max-width: 768px) {
+            .nav-request-btn {
+                margin: 10px auto;
+                width: 90%;
+                justify-content: center;
+            }
+        }
         /* منو در موبایل */
         @media (max-width: 768px) {
             .navbar {
@@ -272,11 +300,19 @@
             }
 
             .phone-badge {
-                margin: 10px auto;
-                display: flex;
-                justify-content: center;
-                width: fit-content;
+                display: inline-flex;
+                align-items: center;
+                gap: .6rem;
+                background: var(--primary-color);
+                color: #fff;
+                padding: 0.55rem 1rem; /* هماهنگ با nav-request-btn */
+                border-radius: 8px; /* هماهنگ با دکمه اول */
+                font-weight: 700;
+                font-size: 0.95rem; /* هماهنگ با دکمه اول */
+                box-shadow: 0 8px 20px rgba(1,58,99,.12);
+                transition: all 0.3s ease;
             }
+
 
             .brand {
                 font-size: 1.2rem;
@@ -393,7 +429,7 @@
                 background: rgba(255,255,255,0.1);
             }
 
-        .services {
+     /*   .services {
             padding: 50px 0
         }
 
@@ -454,7 +490,7 @@
             .service-title {
                 font-size: 1rem;
             }
-        }
+        }*/
 
         .steps {
             padding: 40px 0
@@ -534,7 +570,7 @@
             gap: .6rem;
             background: var(--primary-color);
             color: #fff;
-            padding: .6rem .9rem;
+            padding: 0.55rem 1rem;
             border-radius: 10px;
             font-weight: 800;
             box-shadow: 0 8px 20px rgba(1,58,99,.12);
@@ -800,9 +836,24 @@
                     font-size: 1.6rem
                 }
 
-            .services {
+            /*.services {
                 padding: 30px 0
+            }*/
+            .services {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px 0;
             }
+
+                .services .container {
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
 
             .stats-number {
                 font-size: 2rem;
@@ -833,72 +884,266 @@
                 padding: 30px 0;
             }
         }
+
+        .nav-request-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-left: 10px; /* تغییر کرد از right به left */
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .nav-request-btn:hover {
+                background: #ffc400;
+                transform: translateY(-2px);
+                color: var(--primary-color);
+            }
+
+        @media (max-width: 768px) {
+            .nav-request-btn {
+                margin: 10px auto;
+                width: 90%;
+                justify-content: center;
+            }
+        }
+        /* استایل‌های جدید برای منوی بازشونده خدمات */
+        .nav-item.dropdown .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            min-width: 250px;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+            .dropdown-item:hover {
+                background-color: rgba(1,58,99,0.08);
+                color: var(--primary-color);
+            }
+
+            .dropdown-item i {
+                margin-left: 10px;
+                color: var(--primary-color);
+            }
+
+        .dropdown-divider {
+            margin: 10px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-header {
+            font-weight: 800;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            font-size: 1rem;
+        }
+
+        /* موبایل */
+        @media (max-width: 768px) {
+            .nav-item.dropdown .dropdown-menu {
+                text-align: right;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 10px;
+                margin-top: 0;
+                border: none;
+                background-color: rgba(255,255,255,0.95);
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+            }
+        }
+        /* استایل‌های جدید برای منوی کشویی مجله آموزشی */
+        .nav-item.dropdown .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            min-width: 250px;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+
+            .dropdown-item:hover {
+                background-color: rgba(1,58,99,0.08);
+                color: var(--primary-color);
+            }
+
+            .dropdown-item i {
+                margin-left: 10px;
+                color: var(--primary-color);
+            }
+
+        .dropdown-divider {
+            margin: 10px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-header {
+            font-weight: 800;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            font-size: 1rem;
+        }
+
+        /* موبایل */
+        @media (max-width: 768px) {
+            .nav-item.dropdown .dropdown-menu {
+                text-align: right;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 10px;
+                margin-top: 0;
+                border: none;
+                background-color: rgba(255,255,255,0.95);
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+            }
+        }
+        /* استایل‌های جدید برای بخش خدمات */
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(1, 58, 99, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+            /* حذف تغییر رنگ آیکون هنگام hover */
+            .service-card:hover .service-icon img {
+                filter: none;
+            }
+
+        .service-icon img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .service-title {
+            font-weight: 800;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* حذف توضیح خدمات */
+        .service-description {
+            display: none;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+            .service-link:hover {
+                color: var(--secondary-color);
+            }
+
+            .service-link i {
+                margin-right: 5px;
+                transition: transform 0.3s ease;
+            }
+
+            .service-link:hover i {
+                transform: translateX(5px);
+            }
+
+        /* موبایل */
+        @media (max-width: 768px) {
+            .services {
+                padding: 40px 0;
+            }
+
+            .services-header {
+                text-align: center; /* وسط چین کردن تیتر و توضیح */
+                margin-bottom: 30px;
+            }
+
+                .services-header h2 {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    margin-bottom: 10px;
+                    color: var(--primary-color);
+                }
+
+                .services-header p {
+                    font-size: 1rem;
+                    color: var(--text-muted);
+                    max-width: 700px;
+                    margin: 0 auto; /* وسط چین کردن پاراگراف */
+                }
+
+
+            .service-card {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 15px;
+            }
+
+            .service-title {
+                font-size: 1.1rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- top bar -->
-    <div class="topbar">
-        <div class="container">
-            <div class="topbar-content">
-                <div class="topbar-text-container">
-                    <div class="topbar-text">نمایندگی تعمیرات تخصصی لوازم خانگی</div>
-                    <div class="brands-slider">
-                        <div class="brand-scroll">
-                            <div class="brand-item">
-                                <img src="images/lg.png" alt="LG" class="brand-img">
-                                <span>ال جی</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img">
-                                <span>سامسونگ</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img">
-                                <span>بوش</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/Daewoo.svg" alt="Daewoo" class="brand-img">
-                                <span>دوو</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/Siemens.png" alt="Siemens" class="brand-img">
-                                <span>زیمنس</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/Snowa.svg" alt="Snowa" class="brand-img">
-                                <span>اسنوا</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/aeg.png" alt="AEG" class="brand-img">
-                                <span>آاگ</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/kenwood.png" alt="Kenwood" class="brand-img">
-                                <span>کنوود</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/lg.png" alt="LG" class="brand-img">
-                                <span>ال جی</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/samsung.jpg" alt="Samsung" class="brand-img">
-                                <span>سامسونگ</span>
-                            </div>
-                            <div class="brand-item">
-                                <img src="images/Bosch.svg" alt="Bosch" class="brand-img">
-                                <span>بوش</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex gap-3">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- نوار زرد جدید -->
     <div class="yellow-bar">
@@ -906,6 +1151,7 @@
             <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
         </div>
     </div>
+
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
@@ -919,14 +1165,51 @@
 
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tutorial.html">مجله آموزشی</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">درخواست تعمیر</a></li>
+                    <!-- منوی بازشونده خدمات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            خدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                            <li><a class="dropdown-item" href="washer.html"><i class="fas fa-tshirt"></i> تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#services" onclick="closeDropdown()"><i class="fas fa-list"></i> مشاهده همه خدمات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- منوی بازشونده مجله آموزشی -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            مجله آموزشی
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="magazineDropdown">
+                            <li><h6 class="dropdown-header">آموزش‌های تخصصی</h6></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=لباسشویی"><i class="fas fa-tshirt"></i> آموزش تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=ظرفشویی"><i class="fas fa-concierge-bell"></i> آموزش تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=جاروبرقی"><i class="fas fa-wind"></i> آموزش تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=مایکروفر"><i class="fas fa-radiation"></i> آموزش تعمیر مایکروفر</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=الکترونیک"><i class="fas fa-microchip"></i> آموزش الکترونیک</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=نکات کاربردی"><i class="fas fa-lightbulb"></i> نکات کاربردی</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="tutorial.html"><i class="fas fa-book"></i> همه مقالات آموزشی</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
+
                 </ul>
 
                 <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <!-- دکمه جدید ثبت درخواست -->
+                    <a href="#contact" class="nav-request-btn">
+                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
+                    </a>
+
                     <a class="phone-badge" href="tel:+989199195067">
                         <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
                     </a>
@@ -948,62 +1231,150 @@
             </div>
         </section>
     </header>
+    <!-- Brand Logos -->
+    <section id="brands" class="container my-5">
+        <div class="text-center mb-4">
+            <h2 style="font-weight:800">برندهای تحت پوشش</h2>
+            <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
+        </div>
 
+        <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
+                        <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
+                        <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
+                        <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
+                        <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
+                        <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
+                        <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
+                        <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
+                        <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
+                        <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
+                        <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
+                        <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
+                        <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
+                        <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
+                        <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
+                    </div>
+                </div>
+            </div>
+
+            <!-- controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+    <br />
+    <br />
     <!-- Services -->
-    <section id="services" class="services">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2>خدمات تخصصی ما</h2>
+            <p>با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- لباسشویی -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/washer.png" alt="تعمیر لباسشویی">
+                    </div>
+                    <h3 class="service-title">تعمیر لباسشویی</h3>
+                </div>
+            </div>
+
+            <!-- ظرفشویی -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/dishwasher.png" alt="تعمیر ظرفشویی">
+                    </div>
+                    <h3 class="service-title">تعمیر ظرفشویی</h3>
+                </div>
+            </div>
+
+            <!-- جاروبرقی -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/vacuum.png" alt="تعمیر جاروبرقی">
+                    </div>
+                    <h3 class="service-title">تعمیر جاروبرقی</h3>
+                </div>
+            </div>
+
+            <!-- مایکروفر -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/microwave.png" alt="تعمیر مایکروفر">
+                    </div>
+                    <h3 class="service-title">تعمیر مایکروفر</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <br />
+    <br />
+    <!-- Services -->
+    <!--<section id="services" class="services">
         <div class="text-center mb-4">
             <h2 style="font-weight:800">خدمات ما</h2>
             <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
         </div>
-        <div class="row g-4">
-
-            <!-- لباسشویی -->
-            <div class="col-6 col-md-3">
-                <a href="washer.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/washer.png" alt="تعمیر لباسشویی"></div>
-                        <div class="service-title">تعمیر لباسشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل موتور, پمپ, برد و تعویض قطعات اصلی.</p>
-                    </div>
-                </a>
+        <div class="row g-4">-->
+    <!-- لباسشویی -->
+    <!--<div class="col-6 col-md-3">
+        <a href="washer.html" class="text-decoration-none text-dark">
+            <div class="service-card">
+                <div class="service-icon"><img src="images/washer.png" alt="تعمیر لباسشویی"></div>
+                <div class="service-title">تعمیر لباسشویی</div>
             </div>
-
-            <!-- ظرفشویی -->
-            <div class="col-6 col-md-3">
-                <a href="dishwasher.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/dishwasher.png" alt="تعمیر ظرفشویی"></div>
-                        <div class="service-title">تعمیر ظرفشویی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">عیب‌یابی و تعمیر پمپ, المنت و اجزای الکترونیکی.</p>
-                    </div>
-                </a>
+        </a>
+    </div>-->
+    <!-- ظرفشویی -->
+    <!--<div class="col-6 col-md-3">
+        <a href="dishwasher.html" class="text-decoration-none text-dark">
+            <div class="service-card">
+                <div class="service-icon"><img src="images/dishwasher.png" alt="تعمیر ظرفشویی"></div>
+                <div class="service-title">تعمیر ظرفشویی</div>
             </div>
-
-            <!-- جاروبرقی -->
-            <div class="col-6 col-md-3">
-                <a href="vacuum.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/vacuum.png" alt="تعمیر جاروبرقی"></div>
-                        <div class="service-title">تعمیر جاروبرقی</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">رفع مشکل مکش, موتور و تأمین قطعات با کیفیت.</p>
-                    </div>
-                </a>
+        </a>
+    </div>-->
+    <!-- جاروبرقی -->
+    <!--<div class="col-6 col-md-3">
+        <a href="vacuum.html" class="text-decoration-none text-dark">
+            <div class="service-card">
+                <div class="service-icon"><img src="images/vacuum.png" alt="تعمیر جاروبرقی"></div>
+                <div class="service-title">تعمیر جاروبرقی</div>
             </div>
-
-            <!-- مایکروفر -->
-            <div class="col-6 col-md-3">
+        </a>
+    </div>-->
+    <!-- مایکروفر -->
+    <!--<div class="col-6 col-md-3">
                 <a href="microwave.html" class="text-decoration-none text-dark">
                     <div class="service-card">
                         <div class="service-icon"><img src="images/microwave.png" alt="تعمیر مایکروفر"></div>
                         <div class="service-title">تعمیر مایکروفر</div>
-                        <p style="color:var(--text-muted);font-size:.95rem">تعویض مگنترون, تعمیر برد و رفع مشکل گرمایش.</p>
                     </div>
                 </a>
             </div>
 
         </div>
-    </section>
-
+    </section>-->
     <!-- Steps -->
     <section id="how" class="steps">
         <div class="text-center mb-4">
@@ -1026,121 +1397,6 @@
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-certificate fa-2x text-warning mb-2"></i><h6>ضمانت خدمات</h6></div></div>
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-tools fa-2x text-success mb-2"></i><h6>قطعات اصلی</h6></div></div>
             <div class="col-md-3 col-6"><div class="p-3 shadow-sm rounded bg-white h-100"><i class="fas fa-clock fa-2x text-danger mb-2"></i><h6>خدمات فوری</h6></div></div>
-        </div>
-    </section>
-
-    <!-- Brand Logos -->
-    <section id="brands" class="container my-5">
-        <div class="text-center mb-4">
-            <h2 style="font-weight:800">برندهای تحت پوشش</h2>
-            <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
-        </div>
-
-        <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-4 flex-wrap">
-                        <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
-                        <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
-                        <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
-                        <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-4 flex-wrap">
-                        <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
-                        <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
-                        <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
-                        <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </section>
-
-    <!-- درباره ما - بخش جدید -->
-    <section id="about" class="about-section my-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 style="font-weight:800">درباره تعمیرات پلاس</h2>
-                <p class="text-muted">تخصص و تجربه ما در خدمت رضایت شما</p>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">چه چیزی ما را متمایز می‌کند؟</h3>
-                    <p class="mb-4">تعمیرات پلاس با بیش از ۱۰ سال تجربه در زمینه تعمیرات تخصصی لوازم خانگی، همواره کیفیت و رضایت مشتری را اولویت اصلی خود قرار داده است. ما با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم.</p>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="about-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>تضمین کیفیت خدمات</h5>
-                            <p class="text-muted mb-0">همه خدمات ما دارای گارانتی و پشتیبانی هستند</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="about-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>استفاده از قطعات اصلی</h5>
-                            <p class="text-muted mb-0">قطعات مورد استفاده تماماً اصلی و دارای ضمانت هستند</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center">
-                        <div class="about-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>خدمات سریع و به موقع</h5>
-                            <p class="text-muted mb-0">ارائه خدمات در کمترین زمان ممکن در محل شما</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body p-4">
-                            <h4 class="card-title mb-4">آمار و ارقام</h4>
-
-                            <div class="row text-center">
-                                <div class="col-6 mb-4">
-                                    <p class="stats-number">۱۰+</p>
-                                    <p class="stats-text">سال تجربه</p>
-                                </div>
-                                <div class="col-6 mb-4">
-                                    <p class="stats-number">۲۵۰۰+</p>
-                                    <p class="stats-text">مشتری راضی</p>
-                                </div>
-                                <div class="col-6 mb-4">
-                                    <p class="stats-number">۹۸%</p>
-                                    <p class="stats-text">رضایت مشتریان</p>
-                                </div>
-                                <div class="col-6 mb-4">
-                                    <p class="stats-number">۱۵+</p>
-                                    <p class="stats-text">تکنسین متخصص</p>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h5>ماموریت ما</h5>
-                                <p class="text-muted">ارائه خدمات تعمیراتی با کیفیت برتر، قیمت منصفانه و پشتیبانی مطمئن به مشتریان محترم</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1383,7 +1639,36 @@
 
     <!-- واتساپ شناور -->
     <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <script>
+        // تابع برای بستن منوی بازشونده در حالت موبایل
+        function closeDropdown() {
+            if (window.innerWidth < 768) {
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+
+                if (navbarToggler && !navbarCollapse.classList.contains('show')) {
+                    return;
+                }
+
+                // بستن منو
+                var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        }
+
+        // بستن منوی بازشونده هنگام کلیک روی یک آیتم (در حالت موبایل)
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function () {
+                if (window.innerWidth < 768) {
+                    closeDropdown();
+                }
+            });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
