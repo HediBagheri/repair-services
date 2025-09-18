@@ -31,7 +31,6 @@
             margin-top: 0;
         }
 
-        /* استایل‌های جدید برای Topbar */
         .topbar {
             background: linear-gradient(90deg,var(--primary-color),#012f4f);
             color: #fff;
@@ -41,7 +40,6 @@
             overflow: hidden;
         }
 
-        /* نوار زرد جدید */
         .yellow-bar {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -68,7 +66,7 @@
         }
 
         .topbar-text {
-            font-size: 1rem; /* افزایش سایز فونت از 0.9rem */
+            font-size: 1rem;
             opacity: .9;
             white-space: nowrap;
         }
@@ -93,8 +91,8 @@
             align-items: center;
             gap: 8px;
             white-space: nowrap;
-            font-size: 1rem; /* افزودن این خط برای بزرگتر کردن فونت برندها */
-            font-weight: 600; /* برای خوانایی بهتر */
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .brand-img {
@@ -128,7 +126,7 @@
                     transform: scale(1.2);
                 }
 
-        /* موبایل */
+
         @media (max-width: 768px) {
             .topbar {
                 padding: 10px 0;
@@ -149,7 +147,7 @@
             }
 
             .topbar-text {
-                font-size: 0.9rem; /* افزایش از 0.8rem */
+                font-size: 0.9rem;
                 margin-bottom: 5px;
             }
 
@@ -166,7 +164,7 @@
             }
 
             .brand-item {
-                font-size: 0.9rem; /* افزایش از 0.8rem */
+                font-size: 0.9rem;
             }
 
             .brand-img {
@@ -201,7 +199,7 @@
             }
 
             .brand-item {
-                font-size: 0.8rem; /* افزایش از 0.7rem */
+                font-size: 0.8rem;
                 gap: 5px;
             }
 
@@ -221,7 +219,7 @@
             padding: .9rem 0;
         }
 
-        /* دکمه همبرگری */
+
         .navbar-toggler {
             border: none;
             font-size: 1.2rem;
@@ -232,14 +230,12 @@
                 box-shadow: none;
             }
 
-        /* آیکون همبرگری */
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.75%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
             width: 1.2em;
             height: 1.2em;
         }
 
-        /* منو در دسکتاپ */
         .nav-link {
             color: var(--text-dark);
             font-weight: 600;
@@ -261,7 +257,7 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: 700;
-            margin-left: 10px; /* تغییر کرد از right به left */
+            margin-left: 10px;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
@@ -282,7 +278,7 @@
                 justify-content: center;
             }
         }
-        /* منو در موبایل */
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 0.7rem 0;
@@ -305,10 +301,10 @@
                 gap: .6rem;
                 background: var(--primary-color);
                 color: #fff;
-                padding: 0.55rem 1rem; /* هماهنگ با nav-request-btn */
-                border-radius: 8px; /* هماهنگ با دکمه اول */
+                padding: 0.55rem 1rem;
+                border-radius: 8px;
                 font-weight: 700;
-                font-size: 0.95rem; /* هماهنگ با دکمه اول */
+                font-size: 0.95rem;
                 box-shadow: 0 8px 20px rgba(1,58,99,.12);
                 transition: all 0.3s ease;
             }
@@ -429,68 +425,7 @@
                 background: rgba(255,255,255,0.1);
             }
 
-        /*   .services {
-            padding: 50px 0
-        }
 
-        .service-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 0 10px 30px rgba(2,22,36,.04);
-            transition: all .28s ease;
-            margin-bottom: 20px;
-        }
-
-            .service-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(2,22,36,.06)
-            }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-            .service-icon img {
-                max-width: 70%;
-                max-height: 70%;
-                object-fit: contain
-            }
-
-        .service-title {
-            font-weight: 800;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-            .services {
-                padding: 30px 0;
-            }
-
-            .service-card {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-
-            .service-icon {
-                width: 50px;
-                height: 50px;
-                margin-bottom: 10px;
-            }
-
-            .service-title {
-                font-size: 1rem;
-            }
-        }*/
 
         .steps {
             padding: 40px 0
@@ -590,7 +525,6 @@
             border-radius: 8px
         }
 
-        /* تماس شناور */
         .call-float {
             position: fixed;
             bottom: 20px;
@@ -613,7 +547,6 @@
                 background: #02548f;
             }
 
-        /* واتساپ شناور */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -636,7 +569,6 @@
                 background: #20bd5a;
             }
 
-        /* استایل‌های جدید برای بخش درباره ما */
         .about-section {
             padding: 50px 0;
             background: #fff;
@@ -694,7 +626,6 @@
             font-size: 0.9rem;
         }
 
-        /* استایل‌های جدید برای مجله آموزشی */
         .magazine-section {
             padding: 60px 0;
             background: var(--muted-bg);
@@ -892,7 +823,7 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: 700;
-            margin-left: 10px; /* تغییر کرد از right به left */
+            margin-left: 10px;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
@@ -913,7 +844,7 @@
                 justify-content: center;
             }
         }
-        /* استایل‌های جدید برای منوی بازشونده خدمات */
+
         .nav-item.dropdown .dropdown-menu {
             border: none;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -955,7 +886,6 @@
             font-size: 1rem;
         }
 
-        /* موبایل */
         @media (max-width: 768px) {
             .nav-item.dropdown .dropdown-menu {
                 text-align: right;
@@ -971,7 +901,7 @@
                 padding: 12px 20px;
             }
         }
-        /* استایل‌های جدید برای منوی کشویی مجله آموزشی */
+
         .nav-item.dropdown .dropdown-menu {
             border: none;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -1013,7 +943,6 @@
             font-size: 1rem;
         }
 
-        /* موبایل */
         @media (max-width: 768px) {
             .nav-item.dropdown .dropdown-menu {
                 text-align: right;
@@ -1029,6 +958,7 @@
                 padding: 12px 20px;
             }
         }
+
         .services-section {
             padding: 60px 0;
             background: #fff;
@@ -1142,7 +1072,6 @@
                 transform: translateX(5px);
             }
 
-        /* موبایل */
         @media (max-width: 768px) {
             .services-section {
                 padding: 40px 0;
@@ -1176,7 +1105,6 @@
                 font-size: 1.2rem;
             }
 
-            /* مخفی کردن توضیحات و لینک جزئیات در موبایل */
             .service-description,
             .service-link {
                 display: none;
@@ -1201,11 +1129,38 @@
             }
         }
 
+        /* اضافه کردن استایل برای کوچک‌تر کردن لوگوهای برندها */
+        #brands .brand-logo {
+            height: 45px; /* کاهش ارتفاع از 60px به 45px */
+            width: auto;
+            filter: grayscale(100%) opacity(0.8);
+            transition: all 0.3s ease;
+        }
+
+            #brands .brand-logo:hover {
+                filter: grayscale(0%) opacity(1);
+                transform: scale(1.05);
+            }
+
+        /* تنظیمات کاروسل برای نمایش بهتر لوگوهای کوچک‌تر */
+        #brandCarousel .carousel-item {
+            padding: 15px 0;
+        }
+
+        /* برای نمایش بهتر در موبایل */
+        @media (max-width: 768px) {
+            #brands .brand-logo {
+                height: 35px; /* کاهش بیشتر برای موبایل */
+            }
+
+            #brandCarousel .carousel-item {
+                padding: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- نوار زرد جدید -->
     <div class="yellow-bar">
         <div class="container">
             <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
@@ -1225,7 +1180,6 @@
 
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- منوی بازشونده خدمات -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             خدمات
@@ -1241,7 +1195,6 @@
                         </ul>
                     </li>
 
-                    <!-- منوی بازشونده مجله آموزشی -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             مجله آموزشی
@@ -1293,8 +1246,10 @@
         </section>
     </header>
     <!-- Brand Logos -->
-    <section id="brands" class="container my-5">
-        <div class="text-center mb-4">
+    <section id="brands" class="container my-4">
+        <!-- کاهش margin با my-4 -->
+        <div class="text-center mb-3">
+            <!-- کاهش margin با mb-3 -->
             <h2 style="font-weight:800">برندهای تحت پوشش</h2>
             <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
         </div>
@@ -1302,32 +1257,33 @@
         <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
                 <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-4 flex-wrap">
-                        <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
-                        <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
-                        <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
-                        <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
-                        <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
-                        <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
-                        <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
-                        <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <!-- کاهش gap از 4 به 3 -->
+                        <img src="images/lg.png" alt="LG" class="brand-logo">
+                        <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
+                        <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
+                        <img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo">
+                        <img src="images/Siemens.png" alt="Siemens" class="brand-logo">
+                        <img src="images/Snowa.svg" alt="Snowa" class="brand-logo">
+                        <img src="images/aeg.png" alt="AEG" class="brand-logo">
+                        <img src="images/kenwood.png" alt="Kenwood" class="brand-logo">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-4 flex-wrap">
-                        <img src="images/lg.png" alt="LG" class="img-fluid" style="height:60px">
-                        <img src="images/samsung.jpg" alt="Samsung" class="img-fluid" style="height:60px">
-                        <img src="images/Bosch.svg" alt="Bosch" class="img-fluid" style="height:60px">
-                        <img src="images/Daewoo.svg" alt="Daewoo" class="img-fluid" style="height:60px">
-                        <img src="images/Siemens.png" alt="Siemens" class="img-fluid" style="height:60px">
-                        <img src="images/Snowa.svg" alt="Snowa" class="img-fluid" style="height:60px">
-                        <img src="images/aeg.png" alt="AEG" class="img-fluid" style="height:60px">
-                        <img src="images/kenwood.png" alt="Kenwood" class="img-fluid" style="height:60px">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <!-- کاهش gap از 4 به 3 -->
+                        <img src="images/lg.png" alt="LG" class="brand-logo">
+                        <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
+                        <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
+                        <img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo">
+                        <img src="images/Siemens.png" alt="Siemens" class="brand-logo">
+                        <img src="images/Snowa.svg" alt="Snowa" class="brand-logo">
+                        <img src="images/aeg.png" alt="AEG" class="brand-logo">
+                        <img src="images/kenwood.png" alt="Kenwood" class="brand-logo">
                     </div>
                 </div>
             </div>
 
-            <!-- controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
@@ -1347,7 +1303,6 @@
             </div>
 
             <div class="services-grid">
-                <!-- لباسشویی -->
                 <a href="washer.html" class="service-card">
                     <div class="service-icon-container">
                         <img src="images/washer.png" alt="تعمیر لباسشویی" class="service-icon">
@@ -1357,7 +1312,6 @@
                     <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
-                <!-- ظرفشویی -->
                 <a href="dishwasher.html" class="service-card">
                     <div class="service-icon-container">
                         <img src="images/dishwasher.png" alt="تعمیر ظرفشویی" class="service-icon">
@@ -1367,7 +1321,6 @@
                     <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
-                <!-- جاروبرقی -->
                 <a href="vacuum.html" class="service-card">
                     <div class="service-icon-container">
                         <img src="images/vacuum.png" alt="تعمیر جاروبرقی" class="service-icon">
@@ -1377,7 +1330,6 @@
                     <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
-                <!-- مایکروفر -->
                 <a href="microwave.html" class="service-card">
                     <div class="service-icon-container">
                         <img src="images/microwave.png" alt="تعمیر مایکروفر" class="service-icon">
@@ -1391,52 +1343,7 @@
     </section>
     <br />
     <br />
-    <!-- Services -->
-    <!--<section id="services" class="services">
-        <div class="text-center mb-4">
-            <h2 style="font-weight:800">خدمات ما</h2>
-            <p style="color:var(--text-muted)">تعمیرگاه مجاز انواع لوازم خانگی — خدمات در محل</p>
-        </div>
-        <div class="row g-4">-->
-    <!-- لباسشویی -->
-    <!--<div class="col-6 col-md-3">
-        <a href="washer.html" class="text-decoration-none text-dark">
-            <div class="service-card">
-                <div class="service-icon"><img src="images/washer.png" alt="تعمیر لباسشویی"></div>
-                <div class="service-title">تعمیر لباسشویی</div>
-            </div>
-        </a>
-    </div>-->
-    <!-- ظرفشویی -->
-    <!--<div class="col-6 col-md-3">
-        <a href="dishwasher.html" class="text-decoration-none text-dark">
-            <div class="service-card">
-                <div class="service-icon"><img src="images/dishwasher.png" alt="تعمیر ظرفشویی"></div>
-                <div class="service-title">تعمیر ظرفشویی</div>
-            </div>
-        </a>
-    </div>-->
-    <!-- جاروبرقی -->
-    <!--<div class="col-6 col-md-3">
-        <a href="vacuum.html" class="text-decoration-none text-dark">
-            <div class="service-card">
-                <div class="service-icon"><img src="images/vacuum.png" alt="تعمیر جاروبرقی"></div>
-                <div class="service-title">تعمیر جاروبرقی</div>
-            </div>
-        </a>
-    </div>-->
-    <!-- مایکروفر -->
-    <!--<div class="col-6 col-md-3">
-                <a href="microwave.html" class="text-decoration-none text-dark">
-                    <div class="service-card">
-                        <div class="service-icon"><img src="images/microwave.png" alt="تعمیر مایکروفر"></div>
-                        <div class="service-title">تعمیر مایکروفر</div>
-                    </div>
-                </a>
-            </div>
 
-        </div>
-    </section>-->
     <!-- Steps -->
     <section id="how" class="steps">
         <div class="text-center mb-4">
@@ -1462,130 +1369,7 @@
         </div>
     </section>
 
-    <!-- مجله آموزشی - بخش جدید -->
-    <!--<section id="magazine" class="magazine-section">
-        <div class="container">
-            <div class="magazine-header">
-                <h2>مجله آموزشی تعمیرات پلاس</h2>
-                <p>آموزش‌های تخصصی، نکات کاربردی و راهنمای تعمیر لوازم خانگی</p>
-            </div>
 
-            <div class="row">-->
-    <!-- مقاله 1 -->
-    <!--<div class="col-md-4 mb-4">
-        <div class="article-card">
-            <video class="article-img" controls>
-                <source src="videos/video1.mp4" type="video/mp4">
-                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-            </video>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۵ فروردین ۱۴۰۳</span>
-                    <span class="article-category">لباسشویی</span>
-                </div>
-                <h3 class="article-title">۷ نشانه که می‌گوید لباسشویی شما نیاز به تعمیر دارد</h3>
-                <p class="article-excerpt">اگر لباسشویی شما صداهای غیرعادی تولید می‌کند، آب را تخلیه نمی‌کند یا لباس‌ها به خوبی شسته نمی‌شوند، زمان آن رسیده که به فکر تعمیر باشید.</p>
-                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>-->
-    <!-- مقاله 2 -->
-    <!--<div class="col-md-4 mb-4">
-        <div class="article-card">
-            <video class="article-img" controls>
-                <source src="videos/video3.mp4" type="video/mp4">
-                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-            </video>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۸ فروردین ۱۴۰۳</span>
-                    <span class="article-category">جاروبرقی</span>
-                </div>
-                <h3 class="article-title">۱۰ نکته طلایی برای افزایش طول عمر جاروبرقی</h3>
-                <p class="article-excerpt">با رعایت چند نکته ساده می‌توانید عمر جاروبرقی خود را افزایش داده و از هزینه‌های اضافی تعمیر جلوگیری کنید.</p>
-                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>-->
-    <!-- مقاله 3 -->
-    <!--<div class="col-md-4 mb-4">
-        <div class="article-card">
-            <video class="article-img" controls>
-                <source src="videos/video3.mp4" type="video/mp4">
-                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-            </video>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۲ فروردین ۱۴۰۳</span>
-                    <span class="article-category">مایکروفر</span>
-                </div>
-                <h3 class="article-title">راهنمای کامل عیب‌یابی و رفع مشکلات مایکروفر</h3>
-                <p class="article-excerpt">اگر مایکروفر شما غذا را گرم نمی‌کند، جرقه می‌زند یا صفحه نمایش آن کار نمی‌کند، این راهنما به شما کمک می‌کند مشکل را تشخیص دهید.</p>
-                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>-->
-    <!-- مقاله 4 -->
-    <!--<div class="col-md-4 mb-4">
-        <div class="article-card">
-            <video class="article-img" controls>
-                <source src="videos/video4.mp4" type="video/mp4">
-                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-            </video>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۵ فروردین ۱۴۰۳</span>
-                    <span class="article-category">ظرفشویی</span>
-                </div>
-                <h3 class="article-title">تفاوت‌های ظرفشویی صنعتی و خانگی و نکات تعمیر آن‌ها</h3>
-                <p class="article-excerpt">ظرفشویی‌های صنعتی و خانگی تفاوت‌های اساسی در ساختار و عملکرد دارند که بر روش تعمیر آن‌ها تأثیر می‌گذارد.</p>
-                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>-->
-    <!-- مقاله 5 -->
-    <!--<div class="col-md-4 mb-4">
-        <div class="article-card">
-            <video class="article-img" controls>
-                <source src="videos/video3.mp4" type="video/mp4">
-                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-            </video>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۸ اسفند ۱۴۰۲</span>
-                    <span class="article-category">نکات کاربردی</span>
-                </div>
-                <h3 class="article-title">چگونه مصرف انرژی لوازم خانگی خود را کاهش دهیم؟</h3>
-                <p class="article-excerpt">با رعایت این نکات ساده می‌توانید تا ۳۰٪ در مصرف انرژی صرفه‌جویی کرده و هزینه قبض‌های خود را کاهش دهید.</p>
-                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>-->
-    <!-- مقاله 6 -->
-    <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video3.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۰ اسفند ۱۴۰۲</span>
-                                <span class="article-category">الکترونیک</span>
-                            </div>
-                            <h3 class="article-title">آشنایی با بردهای الکترونیکی لوازم خانگی و مشکلات آن‌ها</h3>
-                            <p class="article-excerpt">بردهای الکترونیکی مغز متفکر لوازم خانگی هستند. در این مقاله با مشکلات رایج آن‌ها و روش‌های تعمیر آشنا می‌شوید.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="view-all-btn">
-                <a href="tutorial.html" class="btn btn-primary-custom">مشاهده همه مقالات <i class="fas fa-arrow-left me-2"></i></a>
-            </div>
-        </div>
-    </section>-->
     <!-- FAQ -->
     <section id="faq" class="container my-5">
         <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
@@ -1667,11 +1451,11 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-👤 نام: ${name}
-📞 شماره تماس: ${phone}
-🛠 دستگاه: ${device}
-🏷 برند: ${brand}
-📝 توضیحات: ${message ? message : "ندارد"}`;
+                                👤 نام: ${name}
+                                📞 شماره تماس: ${phone}
+                                🛠 دستگاه: ${device}
+                                🏷 برند: ${brand}
+                                📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
@@ -1687,15 +1471,12 @@
         </div>
     </footer>
 
-    <!-- تماس شناور -->
     <a href="tel:+989199195067" class="call-float">
         <i class="fas fa-phone"></i>
     </a>
 
-    <!-- واتساپ شناور -->
     <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
     <script>
-        // تابع برای بستن منوی بازشونده در حالت موبایل
         function closeDropdown() {
             if (window.innerWidth < 768) {
                 var navbarToggler = document.querySelector('.navbar-toggler');
@@ -1704,8 +1485,6 @@
                 if (navbarToggler && !navbarCollapse.classList.contains('show')) {
                     return;
                 }
-
-                // بستن منو
                 var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
                     toggle: false
                 });
@@ -1713,7 +1492,6 @@
             }
         }
 
-        // بستن منوی بازشونده هنگام کلیک روی یک آیتم (در حالت موبایل)
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', function () {
                 if (window.innerWidth < 768) {
@@ -1726,4 +1504,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>
+</html> 

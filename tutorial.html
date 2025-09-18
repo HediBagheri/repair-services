@@ -25,7 +25,6 @@
             margin: 0;
         }
 
-        /* نوار زرد */
         .yellow-bar {
             background-color: var(--secondary-color);
             color: var(--primary-color);
@@ -35,7 +34,6 @@
             font-size: 0.95rem;
         }
 
-        /* navbar */
         .navbar {
             background: var(--card-bg);
             box-shadow: 0 6px 20px rgba(1,30,50,.06);
@@ -87,7 +85,6 @@
                 transform: translateY(-2px);
             }
 
-        /* مجله آموزشی */
         .magazine-page {
             padding: 60px 0;
         }
@@ -222,14 +219,12 @@
 </head>
 <body>
 
-    <!-- نوار زرد -->
     <div class="yellow-bar">
         <div class="container">
             <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
         </div>
     </div>
 
-    <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="brand" href="index.html">تعمیرات <span>پلاس</span></a>
@@ -251,7 +246,6 @@
         </div>
     </nav>
 
-    <!-- صفحه مجله آموزشی -->
     <section class="magazine-page">
         <div class="container">
             <div class="magazine-header">
@@ -259,7 +253,6 @@
                 <p>آموزش‌های تخصصی، نکات کاربردی و راهنمای تعمیر لوازم خانگی</p>
             </div>
 
-            <!-- فیلتر دسته‌بندی -->
             <div class="category-filter text-center">
                 <h4 class="mb-3">دسته‌بندی مقالات</h4>
                 <div>
@@ -274,7 +267,6 @@
             </div>
 
             <div class="row" id="articles-container">
-                <!-- مقاله لباسشویی -->
                 <div class="col-md-4 mb-4" data-category="لباسشویی">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -290,7 +282,6 @@
                     </div>
                 </div>
 
-                <!-- مقاله جاروبرقی -->
                 <div class="col-md-4 mb-4" data-category="جاروبرقی">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -306,7 +297,6 @@
                     </div>
                 </div>
 
-                <!-- مقاله مایکروفر -->
                 <div class="col-md-4 mb-4" data-category="مایکروفر">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -322,7 +312,6 @@
                     </div>
                 </div>
 
-                <!-- مقاله ظرفشویی -->
                 <div class="col-md-4 mb-4" data-category="ظرفشویی">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -338,7 +327,6 @@
                     </div>
                 </div>
 
-                <!-- مقاله نکات کاربردی -->
                 <div class="col-md-4 mb-4" data-category="نکات کاربردی">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -354,7 +342,6 @@
                     </div>
                 </div>
 
-                <!-- مقاله الکترونیک -->
                 <div class="col-md-4 mb-4" data-category="الکترونیک">
                     <div class="article-card">
                         <video class="article-img" controls>
@@ -373,7 +360,6 @@
         </div>
     </section>
 
-    <!-- footer -->
     <footer>
         <div class="container text-center">
             <p>© 2025 تعمیرات پلاس — تمامی حقوق محفوظ است.</p>
@@ -382,7 +368,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // فیلتر دسته‌بندی
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.category-btn');
             const articles = document.querySelectorAll('#articles-container .col-md-4');
@@ -409,18 +394,14 @@
             const filterButtons = document.querySelectorAll('.category-btn');
             const articles = document.querySelectorAll('#articles-container .col-md-4');
 
-            // اگر category توی URL بود
             if (categoryFromUrl) {
-                // دکمه‌ها رو غیر فعال کن
                 filterButtons.forEach(btn => btn.classList.remove('active'));
 
-                // دکمه مرتبط رو فعال کن
                 const activeBtn = Array.from(filterButtons).find(btn => btn.getAttribute('data-category') === categoryFromUrl);
                 if (activeBtn) {
                     activeBtn.classList.add('active');
                 }
 
-                // مقالات رو فیلتر کن
                 articles.forEach(article => {
                     if (article.getAttribute('data-category') === categoryFromUrl) {
                         article.style.display = 'block';
