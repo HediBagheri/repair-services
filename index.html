@@ -429,7 +429,7 @@
                 background: rgba(255,255,255,0.1);
             }
 
-     /*   .services {
+        /*   .services {
             padding: 50px 0
         }
 
@@ -1029,47 +1029,93 @@
                 padding: 12px 20px;
             }
         }
-        /* استایل‌های جدید برای بخش خدمات */
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, rgba(1, 58, 99, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
-            transition: all 0.3s ease;
-            position: relative;
+        .services-section {
+            padding: 60px 0;
+            background: #fff;
         }
 
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        .services-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-            /* حذف تغییر رنگ آیکون هنگام hover */
-            .service-card:hover .service-icon img {
-                filter: none;
+            .services-header h2 {
+                font-weight: 800;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+                font-size: 2.2rem;
             }
 
-        .service-icon img {
-            max-width: 60%;
-            max-height: 60%;
-            object-fit: contain;
+            .services-header p {
+                color: var(--text-muted);
+                max-width: 700px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+            }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(2,22,36,.04);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+            .service-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(2,22,36,.08);
+            }
+
+        .service-icon-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            background: linear-gradient(135deg, rgba(1, 58, 99, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-container {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            transform: scale(1.08);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
         }
 
         .service-title {
             font-weight: 800;
             margin-bottom: 12px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
         }
 
-        /* حذف توضیح خدمات */
         .service-description {
-            display: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .service-link {
@@ -1079,7 +1125,8 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-top: auto;
         }
 
             .service-link:hover {
@@ -1097,88 +1144,63 @@
 
         /* موبایل */
         @media (max-width: 768px) {
-            .services {
+            .services-section {
                 padding: 40px 0;
             }
 
-            .services-header {
-                text-align: center; /* وسط چین کردن تیتر و توضیح */
-                margin-bottom: 30px;
+            .services-header h2 {
+                font-size: 1.8rem;
             }
 
-                .services-header h2 {
-                    font-size: 2rem;
-                    font-weight: 800;
-                    margin-bottom: 10px;
-                    color: var(--primary-color);
-                }
-
-                .services-header p {
-                    font-size: 1rem;
-                    color: var(--text-muted);
-                    max-width: 700px;
-                    margin: 0 auto; /* وسط چین کردن پاراگراف */
-                }
-
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
 
             .service-card {
                 padding: 20px 15px;
-                margin-bottom: 20px;
+            }
+
+            .service-icon-container {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 18px;
             }
 
             .service-icon {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 15px;
+                width: 55px;
+                height: 55px;
             }
 
             .service-title {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
-            .service-description {
-                font-size: 0.9rem;
-            }
-        }
-        .button-row {
-            display: flex;
-            justify-content: center;
-            gap: 12px; /* فاصله کم بین دکمه‌ها */
-        }
-
-        .nav-request-btn,
-        .phone-badge {
-            width: 125px; /* طول بزرگتر */
-            padding: 0.7rem 0; /* ارتفاع کمی بزرگتر */
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            color: var(--secondary-color); /* متن زرد */
-            font-weight: 500;
-            font-size: 1rem;
-            background-color: var(--primary-color); /* زمینه سرمه‌ای */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-            .nav-request-btn:hover,
-            .phone-badge:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-            }
-
-        /* تنظیم برای موبایل */
-        @media (max-width: 768px) {
-            .button-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-request-btn,
-            .phone-badge {
-                width: 200px; /* کمی کوچکتر در موبایل */
-                margin-bottom: 8px;
+            /* مخفی کردن توضیحات و لینک جزئیات در موبایل */
+            .service-description,
+            .service-link {
+                display: none;
             }
         }
+
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .service-icon-container {
+                width: 110px;
+                height: 110px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1251,7 +1273,7 @@
                         <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
                     </a>
                 </div>
-               
+
 
             </div>
         </div>
@@ -1317,55 +1339,55 @@
     <br />
     <br />
     <!-- Services -->
-    <section>
-    <div class="container">
-        <div class="text-center mb-4">
-            <h2>خدمات تخصصی ما</h2>
-            <p>با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم</p>
-        </div>
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2>خدمات تخصصی ما</h2>
+                <p>با بهره‌گیری از تکنسین‌های مجرب و استفاده از قطعات اصلی، خدمات بی‌نظیری ارائه می‌دهیم</p>
+            </div>
 
-        <div class="row g-4">
-            <!-- لباسشویی -->
-            <div class="col-6 col-md-6 col-lg-3">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/washer.png" alt="تعمیر لباسشویی">
+            <div class="services-grid">
+                <!-- لباسشویی -->
+                <a href="washer.html" class="service-card">
+                    <div class="service-icon-container">
+                        <img src="images/washer.png" alt="تعمیر لباسشویی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر لباسشویی</h3>
-                </div>
-            </div>
+                    <p class="service-description">تعمیر تخصصی انواع لباسشویی با قطعات اصلی و گارانتی معتبر</p>
+                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
+                </a>
 
-            <!-- ظرفشویی -->
-            <div class="col-6 col-md-6 col-lg-3">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dishwasher.png" alt="تعمیر ظرفشویی">
+                <!-- ظرفشویی -->
+                <a href="dishwasher.html" class="service-card">
+                    <div class="service-icon-container">
+                        <img src="images/dishwasher.png" alt="تعمیر ظرفشویی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر ظرفشویی</h3>
-                </div>
-            </div>
+                    <p class="service-description">رفع مشکلات ظرفشویی با جدیدترین تجهیزات و دانش فنی</p>
+                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
+                </a>
 
-            <!-- جاروبرقی -->
-            <div class="col-6 col-md-6 col-lg-3">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/vacuum.png" alt="تعمیر جاروبرقی">
+                <!-- جاروبرقی -->
+                <a href="vacuum.html" class="service-card">
+                    <div class="service-icon-container">
+                        <img src="images/vacuum.png" alt="تعمیر جاروبرقی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر جاروبرقی</h3>
-                </div>
-            </div>
+                    <p class="service-description">تعمیر انواع جاروبرقی با ضمانت عملکرد و کیفیت</p>
+                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
+                </a>
 
-            <!-- مایکروفر -->
-            <div class="col-6 col-md-6 col-lg-3">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/microwave.png" alt="تعمیر مایکروفر">
+                <!-- مایکروفر -->
+                <a href="microwave.html" class="service-card">
+                    <div class="service-icon-container">
+                        <img src="images/microwave.png" alt="تعمیر مایکروفر" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر مایکروفر</h3>
-                </div>
+                    <p class="service-description">تعمیر تخصصی مایکروفر با قطعات اورجینال و استاندارد</p>
+                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
+                </a>
             </div>
         </div>
-    </div>
     </section>
     <br />
     <br />
@@ -1449,103 +1471,98 @@
             </div>
 
             <div class="row">-->
-                <!-- مقاله 1 -->
-                <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video1.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۵ فروردین ۱۴۰۳</span>
-                                <span class="article-category">لباسشویی</span>
-                            </div>
-                            <h3 class="article-title">۷ نشانه که می‌گوید لباسشویی شما نیاز به تعمیر دارد</h3>
-                            <p class="article-excerpt">اگر لباسشویی شما صداهای غیرعادی تولید می‌کند، آب را تخلیه نمی‌کند یا لباس‌ها به خوبی شسته نمی‌شوند، زمان آن رسیده که به فکر تعمیر باشید.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- مقاله 2 -->
-                <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video3.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۸ فروردین ۱۴۰۳</span>
-                                <span class="article-category">جاروبرقی</span>
-                            </div>
-                            <h3 class="article-title">۱۰ نکته طلایی برای افزایش طول عمر جاروبرقی</h3>
-                            <p class="article-excerpt">با رعایت چند نکته ساده می‌توانید عمر جاروبرقی خود را افزایش داده و از هزینه‌های اضافی تعمیر جلوگیری کنید.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- مقاله 3 -->
-                <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video3.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۲ فروردین ۱۴۰۳</span>
-                                <span class="article-category">مایکروفر</span>
-                            </div>
-                            <h3 class="article-title">راهنمای کامل عیب‌یابی و رفع مشکلات مایکروفر</h3>
-                            <p class="article-excerpt">اگر مایکروفر شما غذا را گرم نمی‌کند، جرقه می‌زند یا صفحه نمایش آن کار نمی‌کند، این راهنما به شما کمک می‌کند مشکل را تشخیص دهید.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- مقاله 4 -->
-                <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video4.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۵ فروردین ۱۴۰۳</span>
-                                <span class="article-category">ظرفشویی</span>
-                            </div>
-                            <h3 class="article-title">تفاوت‌های ظرفشویی صنعتی و خانگی و نکات تعمیر آن‌ها</h3>
-                            <p class="article-excerpt">ظرفشویی‌های صنعتی و خانگی تفاوت‌های اساسی در ساختار و عملکرد دارند که بر روش تعمیر آن‌ها تأثیر می‌گذارد.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- مقاله 5 -->
-                <!--<div class="col-md-4 mb-4">
-                    <div class="article-card">
-                        <video class="article-img" controls>
-                            <source src="videos/video3.mp4" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۸ اسفند ۱۴۰۲</span>
-                                <span class="article-category">نکات کاربردی</span>
-                            </div>
-                            <h3 class="article-title">چگونه مصرف انرژی لوازم خانگی خود را کاهش دهیم؟</h3>
-                            <p class="article-excerpt">با رعایت این نکات ساده می‌توانید تا ۳۰٪ در مصرف انرژی صرفه‌جویی کرده و هزینه قبض‌های خود را کاهش دهید.</p>
-                            <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-
-                <!-- مقاله 6 -->
-                <!--<div class="col-md-4 mb-4">
+    <!-- مقاله 1 -->
+    <!--<div class="col-md-4 mb-4">
+        <div class="article-card">
+            <video class="article-img" controls>
+                <source src="videos/video1.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۵ فروردین ۱۴۰۳</span>
+                    <span class="article-category">لباسشویی</span>
+                </div>
+                <h3 class="article-title">۷ نشانه که می‌گوید لباسشویی شما نیاز به تعمیر دارد</h3>
+                <p class="article-excerpt">اگر لباسشویی شما صداهای غیرعادی تولید می‌کند، آب را تخلیه نمی‌کند یا لباس‌ها به خوبی شسته نمی‌شوند، زمان آن رسیده که به فکر تعمیر باشید.</p>
+                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </div>-->
+    <!-- مقاله 2 -->
+    <!--<div class="col-md-4 mb-4">
+        <div class="article-card">
+            <video class="article-img" controls>
+                <source src="videos/video3.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۸ فروردین ۱۴۰۳</span>
+                    <span class="article-category">جاروبرقی</span>
+                </div>
+                <h3 class="article-title">۱۰ نکته طلایی برای افزایش طول عمر جاروبرقی</h3>
+                <p class="article-excerpt">با رعایت چند نکته ساده می‌توانید عمر جاروبرقی خود را افزایش داده و از هزینه‌های اضافی تعمیر جلوگیری کنید.</p>
+                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </div>-->
+    <!-- مقاله 3 -->
+    <!--<div class="col-md-4 mb-4">
+        <div class="article-card">
+            <video class="article-img" controls>
+                <source src="videos/video3.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۱۲ فروردین ۱۴۰۳</span>
+                    <span class="article-category">مایکروفر</span>
+                </div>
+                <h3 class="article-title">راهنمای کامل عیب‌یابی و رفع مشکلات مایکروفر</h3>
+                <p class="article-excerpt">اگر مایکروفر شما غذا را گرم نمی‌کند، جرقه می‌زند یا صفحه نمایش آن کار نمی‌کند، این راهنما به شما کمک می‌کند مشکل را تشخیص دهید.</p>
+                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </div>-->
+    <!-- مقاله 4 -->
+    <!--<div class="col-md-4 mb-4">
+        <div class="article-card">
+            <video class="article-img" controls>
+                <source src="videos/video4.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۵ فروردین ۱۴۰۳</span>
+                    <span class="article-category">ظرفشویی</span>
+                </div>
+                <h3 class="article-title">تفاوت‌های ظرفشویی صنعتی و خانگی و نکات تعمیر آن‌ها</h3>
+                <p class="article-excerpt">ظرفشویی‌های صنعتی و خانگی تفاوت‌های اساسی در ساختار و عملکرد دارند که بر روش تعمیر آن‌ها تأثیر می‌گذارد.</p>
+                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </div>-->
+    <!-- مقاله 5 -->
+    <!--<div class="col-md-4 mb-4">
+        <div class="article-card">
+            <video class="article-img" controls>
+                <source src="videos/video3.mp4" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt me-1"></i> ۲۸ اسفند ۱۴۰۲</span>
+                    <span class="article-category">نکات کاربردی</span>
+                </div>
+                <h3 class="article-title">چگونه مصرف انرژی لوازم خانگی خود را کاهش دهیم؟</h3>
+                <p class="article-excerpt">با رعایت این نکات ساده می‌توانید تا ۳۰٪ در مصرف انرژی صرفه‌جویی کرده و هزینه قبض‌های خود را کاهش دهید.</p>
+                <a href="#" class="article-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </div>-->
+    <!-- مقاله 6 -->
+    <!--<div class="col-md-4 mb-4">
                     <div class="article-card">
                         <video class="article-img" controls>
                             <source src="videos/video3.mp4" type="video/mp4">
@@ -1569,8 +1586,6 @@
             </div>
         </div>
     </section>-->
-
-
     <!-- FAQ -->
     <section id="faq" class="container my-5">
         <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
