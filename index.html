@@ -1157,6 +1157,122 @@
                 padding: 10px 0;
             }
         }
+        .faq-section {
+            padding: 60px 0;
+            background: var(--muted-bg);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+            .faq-header h2 {
+                font-weight: 800;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+
+                .faq-header h2::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 3px;
+                    background: var(--secondary-color);
+                    border-radius: 3px;
+                }
+
+            .faq-header p {
+                color: var(--text-muted);
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+        .accordion-button {
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border: none;
+            background-color: #fff;
+            color: var(--text-dark);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-radius: 8px !important;
+            margin-bottom: 10px;
+        }
+
+            .accordion-button:not(.collapsed) {
+                background-color: var(--primary-color);
+                color: white;
+                box-shadow: 0 4px 12px rgba(1,58,99,0.15);
+            }
+
+            .accordion-button:focus {
+                box-shadow: 0 0 0 3px rgba(1,58,99,0.2);
+                border-color: var(--primary-color);
+            }
+
+        .accordion-body {
+            padding: 1.25rem;
+            background-color: #f9fafb;
+            border-radius: 0 0 8px 8px;
+            line-height: 1.7;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-search {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+            .faq-search input {
+                padding: 12px 20px;
+                border-radius: 50px;
+                border: 1px solid #e6e9ee;
+                width: 100%;
+                font-size: 1rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                transition: all 0.3s ease;
+            }
+
+                .faq-search input:focus {
+                    outline: none;
+                    border-color: var(--primary-color);
+                    box-shadow: 0 4px 15px rgba(1,58,99,0.1);
+                }
+
+            .faq-search button {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: transparent;
+                border: none;
+                color: var(--text-muted);
+            }
+
+        .faq-category {
+            margin-bottom: 30px;
+        }
+
+            .faq-category h3 {
+                font-weight: 800;
+                color: var(--primary-color);
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid rgba(1,58,99,0.1);
+            }
     </style>
 </head>
 <body>
@@ -1371,19 +1487,199 @@
 
 
     <!-- FAQ -->
-    <section id="faq" class="container my-5">
-        <div class="text-center mb-4"><h2 style="font-weight:800">سوالات متداول</h2></div>
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">هزینه تعمیرات چگونه محاسبه می‌شود؟</button></h2>
-                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">هزینه بر اساس نوع دستگاه، قطعات و اجرت تکنسین تعیین می‌شود.</div></div>
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2>سوالات متداول</h2>
+                <p>پاسخ به پرتکرارترین سوالات مشتریان درباره خدمات تعمیرات لوازم خانگی</p>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">آیا خدمات شامل ضمانت است؟</button></h2>
-                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">بله، تمامی خدمات ما ضمانت کتبی و پشتیبانی دارند.</div></div>
+
+            <div class="faq-search">
+                <input type="text" placeholder="جستجو در سوالات متداول..." id="faqSearch">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-tools me-2"></i> سوالات عمومی تعمیرات</h3>
+                <div class="accordion" id="generalFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#generalOne">
+                                هزینه تعمیرات چگونه محاسبه می‌شود؟
+                            </button>
+                        </h2>
+                        <div id="generalOne" class="accordion-collapse collapse show" data-bs-parent="#generalFaq">
+                            <div class="accordion-body">
+                                هزینه تعمیرات بر اساس عوامل مختلفی از جمله نوع دستگاه، میزان خرابی، هزینه قطعات یدکی و مدت زمان مورد نیاز برای تعمیر محاسبه می‌شود. پس از بررسی اولیه توسط تکنسین، هزینه نهایی به شما اعلام خواهد شد.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalTwo">
+                                آیا خدمات شامل ضمانت است؟
+                            </button>
+                        </h2>
+                        <div id="generalTwo" class="accordion-collapse collapse" data-bs-parent="#generalFaq">
+                            <div class="accordion-body">
+                                بله، تمامی خدمات ما دارای ضمانت کتبی هستند. ضمانت تعمیرات بین 3 تا 12 ماه بسته به نوع دستگاه و خدمات ارائه شده متغیر است. جزئیات ضمانت در فاکتور خدمات درج می‌شود.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalThree">
+                                مدت زمان انجام تعمیرات چقدر است؟
+                            </button>
+                        </h2>
+                        <div id="generalThree" class="accordion-collapse collapse" data-bs-parent="#generalFaq">
+                            <div class="accordion-body">
+                                مدت زمان تعمیر بستگی به نوع و میزان خرابی دستگاه دارد. بیشتر تعمیرات در همان روز و در محل انجام می‌شوند. در موارد خاص که نیاز به تهیه قطعه خاصی باشد، ممکن است تعمیر تا 48 ساعت به طول بیانجامد.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalFour">
+                                آیا هزینه ایاب و ذهاب دریافت می‌کنید؟
+                            </button>
+                        </h2>
+                        <div id="generalFour" class="accordion-collapse collapse" data-bs-parent="#generalFaq">
+                            <div class="accordion-body">
+                                خیر، هزینه ایاب و ذهاب برای تمامی خدمات رایگان است. تنها در صورتی که تعمیرات توسط خودتان لغو شود، ممکن است هزینه جابجایی دریافت گردد.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-tshirt me-2"></i> سوالات مربوط به تعمیر لباسشویی</h3>
+                <div class="accordion" id="washerFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#washerOne">
+                                چه مشکلاتی در لباسشویی معمولاً رخ می‌دهد؟
+                            </button>
+                        </h2>
+                        <div id="washerOne" class="accordion-collapse collapse show" data-bs-parent="#washerFaq">
+                            <div class="accordion-body">
+                                مشکلات رایج لباسشویی شامل: نشتی آب، تخلیه نشدن آب، چرخش نکردن бараبان، تولید صداهای غیرعادی، روشن نشدن دستگاه، و عدم گرم شدن آب می‌باشد.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#washerTwo">
+                                هر چند وقت یکبار باید لباسشویی سرویس شود؟
+                            </button>
+                        </h2>
+                        <div id="washerTwo" class="accordion-collapse collapse" data-bs-parent="#washerFaq">
+                            <div class="accordion-body">
+                                توصیه می‌شود لباسشویی هر 6 ماه یکبار سرویس دوره‌ای شود. این کار باعث افزایش عمر دستگاه، بهبود عملکرد و کاهش مصرف انرژی می‌شود.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-concierge-bell me-2"></i> سوالات مربوط به تعمیر ظرفشویی</h3>
+                <div class="accordion" id="dishwasherFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dishwasherOne">
+                                چرا ظرفشویی ظروف را تمیز نمی‌شوید؟
+                            </button>
+                        </h2>
+                        <div id="dishwasherOne" class="accordion-collapse collapse show" data-bs-parent="#dishwasherFaq">
+                            <div class="accordion-body">
+                                این مشکل ممکن است به دلایل مختلفی از جمله: گرفتگی فیلتر، مشکل در پمپ آب، کم بودن فشار آب، استفاده نادرست از مواد شوینده یا قرارگیری نادرست ظروف باشد.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dishwasherTwo">
+                                چگونه از بوی بد داخل ظرفشویی جلوگیری کنم؟
+                            </button>
+                        </h2>
+                        <div id="dishwasherTwo" class="accordion-collapse collapse" data-bs-parent="#dishwasherFaq">
+                            <div class="accordion-body">
+                                برای جلوگیری از بوی بد، پس از هر بار استفاده، باقیمانده غذاها را از فیلتر پاک کنید، ماهی یکبار با سرکه سفید یا جوش شیرین دستگاه را شستشو دهید و درب دستگاه را پس از اتمام کار باز بگذارید تا خشک شود.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-wind me-2"></i> سوالات مربوط به تعمیر جاروبرقی</h3>
+                <div class="accordion" id="vacuumFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#vacuumOne">
+                                چرا جاروبرقی مکش خود را از دست می‌دهد؟
+                            </button>
+                        </h2>
+                        <div id="vacuumOne" class="accordion-collapse collapse show" data-bs-parent="#vacuumFaq">
+                            <div class="accordion-body">
+                                کاهش مکش جاروبرقی ممکن است به دلیل پر بودن کیسه یا مخزن، گرفتگی لوله‌ها یا فیلتر، آسیب به برس یا مشکل در موتور باشد. ابتدا قسمت‌های قابل دسترسی را بررسی و تمیز کنید.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vacuumTwo">
+                                هر چند وقت یکبار باید فیلتر جاروبرقی تعویض شود؟
+                            </button>
+                        </h2>
+                        <div id="vacuumTwo" class="accordion-collapse collapse" data-bs-parent="#vacuumFaq">
+                            <div class="accordion-body">
+                                فیلترهای جاروبرقی بسته به مدل و استفاده، معمولاً هر 6 تا 12 ماه نیاز به تعویض دارند. در صورت استفاده زیاد یا مشاهده کاهش مکش، ممکن است زودتر نیاز به تعویض داشته باشد.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-radiation me-2"></i> سوالات مربوط به تعمیر مایکروفر</h3>
+                <div class="accordion" id="microwaveFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#microwaveOne">
+                                چرا مایکروفر غذا را گرم نمی‌کند؟
+                            </button>
+                        </h2>
+                        <div id="microwaveOne" class="accordion-collapse collapse show" data-bs-parent="#microwaveFaq">
+                            <div class="accordion-body">
+                                اگر مایکروفر روشن می‌شود ولی غذا را گرم نمی‌کند، احتمالاً مگنترون (قطعه اصلی تولید امواج) آسیب دیده است. این مشکل باید توسط تکنسین متخصص بررسی و تعمیر شود.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#microwaveTwo">
+                                آیا تعمیر مایکروفر خطرناک است؟
+                            </button>
+                        </h2>
+                        <div id="microwaveTwo" class="accordion-collapse collapse" data-bs-parent="#microwaveFaq">
+                            <div class="accordion-body">
+                                بله، تعمیر مایکروفر به دلیل وجود خازن‌های پرانرژی و تولید امواج مایکروویو بسیار خطرناک است و باید حتماً توسط تکنسین‌های مجرب و با تجهیزات مناسب انجام شود.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <p>پاسخ سوال خود را پیدا نکردید؟</p>
+                <a href="tel:+989199195067" class="btn btn-primary-custom">تماس با پشتیبانی</a>
             </div>
         </div>
     </section>
+
 
     <!-- Contact -->
     <section id="contact" class="contact mt-4">
@@ -1451,11 +1747,11 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-                                👤 نام: ${name}
-                                📞 شماره تماس: ${phone}
-                                🛠 دستگاه: ${device}
-                                🏷 برند: ${brand}
-                                📝 توضیحات: ${message ? message : "ندارد"}`;
+                                        👤 نام: ${name}
+                                        📞 شماره تماس: ${phone}
+                                        🛠 دستگاه: ${device}
+                                        🏷 برند: ${brand}
+                                        📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
@@ -1499,8 +1795,31 @@
                 }
             });
         });
-    </script>
 
+        document.getElementById("faqSearch").addEventListener("keyup", function () {
+            let searchValue = this.value.toLowerCase();
+            let accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                let question = item.querySelector('.accordion-button').textContent.toLowerCase();
+                let answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+
+                if (question.includes(searchValue) || answer.includes(searchValue)) {
+                    item.style.display = 'block';
+
+                    // باز کردن آیتم در صورت مطابقت
+                    if (searchValue.length > 2) {
+                        let collapseElement = item.querySelector('.accordion-collapse');
+                        if (!collapseElement.classList.contains('show')) {
+                            new bootstrap.Collapse(collapseElement).show();
+                        }
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
