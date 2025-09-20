@@ -332,6 +332,34 @@
                 margin-right: .25rem
             }
 
+        /* استایل‌های جدید برای لوگو */
+        .navbar-brand-with-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 80px; /* افزایش ارتفاع از 40px به 50px */
+            width: auto;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand-with-logo:hover .site-logo {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .site-logo {
+                height: 42px; /* افزایش ارتفاع از 35px به 42px */
+            }
+
+            .brand {
+                font-size: 1.1rem;
+            }
+        }
+
         .hero {
             background: linear-gradient(rgba(1, 58, 99, 0.5), rgba(1, 47, 79, 0.5)),url('images/hero.png') center/cover no-repeat;
             color: #fff;
@@ -767,9 +795,6 @@
                     font-size: 1.6rem
                 }
 
-            /*.services {
-                padding: 30px 0
-            }*/
             .services {
                 display: flex;
                 justify-content: center;
@@ -842,63 +867,6 @@
                 margin: 10px auto;
                 width: 90%;
                 justify-content: center;
-            }
-        }
-
-        .nav-item.dropdown .dropdown-menu {
-            border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 10px;
-            min-width: 250px;
-        }
-
-        .dropdown-item {
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-        }
-
-            .dropdown-item:hover {
-                background-color: rgba(1,58,99,0.08);
-                color: var(--primary-color);
-            }
-
-            .dropdown-item i {
-                margin-left: 10px;
-                color: var(--primary-color);
-            }
-
-        .dropdown-divider {
-            margin: 10px 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .dropdown-header {
-            font-weight: 800;
-            color: var(--primary-color);
-            padding: 5px 15px;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-item.dropdown .dropdown-menu {
-                text-align: right;
-                box-shadow: none;
-                border-radius: 0;
-                padding: 10px;
-                margin-top: 0;
-                border: none;
-                background-color: rgba(255,255,255,0.95);
-            }
-
-            .dropdown-item {
-                padding: 12px 20px;
             }
         }
 
@@ -1129,9 +1097,8 @@
             }
         }
 
-        /* اضافه کردن استایل برای کوچک‌تر کردن لوگوهای برندها */
         #brands .brand-logo {
-            height: 45px; /* کاهش ارتفاع از 60px به 45px */
+            height: 45px;
             width: auto;
             filter: grayscale(100%) opacity(0.8);
             transition: all 0.3s ease;
@@ -1142,21 +1109,20 @@
                 transform: scale(1.05);
             }
 
-        /* تنظیمات کاروسل برای نمایش بهتر لوگوهای کوچک‌تر */
         #brandCarousel .carousel-item {
             padding: 15px 0;
         }
 
-        /* برای نمایش بهتر در موبایل */
         @media (max-width: 768px) {
             #brands .brand-logo {
-                height: 35px; /* کاهش بیشتر برای موبایل */
+                height: 35px;
             }
 
             #brandCarousel .carousel-item {
                 padding: 10px 0;
             }
         }
+
         .faq-section {
             padding: 60px 0;
             background: var(--muted-bg);
@@ -1203,6 +1169,7 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             border-radius: 8px !important;
             margin-bottom: 10px;
+            position: relative;
         }
 
             .accordion-button:not(.collapsed) {
@@ -1214,6 +1181,10 @@
             .accordion-button:focus {
                 box-shadow: 0 0 0 3px rgba(1,58,99,0.2);
                 border-color: var(--primary-color);
+            }
+
+            .accordion-button:not(.collapsed)::after {
+                filter: brightness(0) invert(1);
             }
 
         .accordion-body {
@@ -1287,7 +1258,11 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="brand" href="#">تعمیرات <span>پلاس</span></a>
+            <a class="navbar-brand-with-logo" href="#">
+                <img src="images/logo.png" alt="لوگو تعمیرات پلاس" class="site-logo">
+                <span class="brand">تعمیرات <span>پلاس</span></span>
+            </a>
+
             <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -1363,9 +1338,8 @@
     </header>
     <!-- Brand Logos -->
     <section id="brands" class="container my-4">
-        <!-- کاهش margin با my-4 -->
+
         <div class="text-center mb-3">
-            <!-- کاهش margin با mb-3 -->
             <h2 style="font-weight:800">برندهای تحت پوشش</h2>
             <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
         </div>
@@ -1374,7 +1348,7 @@
             <div class="carousel-inner text-center">
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <!-- کاهش gap از 4 به 3 -->
+
                         <img src="images/lg.png" alt="LG" class="brand-logo">
                         <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
                         <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
@@ -1387,7 +1361,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <!-- کاهش gap از 4 به 3 -->
+
                         <img src="images/lg.png" alt="LG" class="brand-logo">
                         <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
                         <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
@@ -1747,18 +1721,18 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-                                        👤 نام: ${name}
-                                        📞 شماره تماس: ${phone}
-                                        🛠 دستگاه: ${device}
-                                        🏷 برند: ${brand}
-                                        📝 توضیحات: ${message ? message : "ندارد"}`;
+                                                    👤 نام: ${name}
+                                                    📞 شماره تماس: ${phone}
+                                                    🛠 دستگاه: ${device}
+                                                    🏷 برند: ${brand}
+                                                    📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
         });
     </script>
 
-    </main>
+
 
     <!-- footer -->
     <footer>
@@ -1807,7 +1781,6 @@
                 if (question.includes(searchValue) || answer.includes(searchValue)) {
                     item.style.display = 'block';
 
-                    // باز کردن آیتم در صورت مطابقت
                     if (searchValue.length > 2) {
                         let collapseElement = item.querySelector('.accordion-collapse');
                         if (!collapseElement.classList.contains('show')) {
@@ -1823,4 +1796,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html> 
+</html>
