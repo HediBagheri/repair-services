@@ -423,6 +423,106 @@
                 }
         }
 
+
+
+        /* استایل‌های جدید برای هیرو */
+       /* .hero {
+            background: url('images/hero.png') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            border-radius: var(--radius);
+            margin-top: 15px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .hero-image img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+                .hero h1 {
+                    font-size: 1.8rem;
+                }
+
+                .hero p {
+                    font-size: 1rem;
+                }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .hero-buttons .btn {
+                    width: 100%;
+                    max-width: 280px;
+                }
+        }*/
+
         .btn-primary-custom {
             background: var(--primary-color);
             border: none;
@@ -1100,12 +1200,10 @@
         #brands .brand-logo {
             height: 45px;
             width: auto;
-            filter: grayscale(100%) opacity(0.8);
             transition: all 0.3s ease;
         }
 
             #brands .brand-logo:hover {
-                filter: grayscale(0%) opacity(1);
                 transform: scale(1.05);
             }
 
@@ -1244,26 +1342,111 @@
                 padding-bottom: 10px;
                 border-bottom: 2px solid rgba(1,58,99,0.1);
             }
+
+        .brands-marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 7px 0;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100% );
+        }
+
+        .brands-track {
+            display: flex;
+            animation: infiniteLoop 40s linear infinite;
+            will-change: transform;
+        }
+
+        .brand-logo-item {
+            flex: 0 0 auto;
+            margin: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+        }
+
+        .brand-logo {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: none !important;
+            max-width: 100px;
+            object-fit: contain;
+        }
+
+            .brand-logo:hover {
+                transform: scale(1.2);
+                filter: drop-shadow(0 0 8px rgba(0,0,0,0.3)) !important;
+            }
+
+        @keyframes infiniteLoop {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ایجاد افکت سه بعدی برای شبیه‌سازی حلقه */
+        .brands-track {
+            perspective: 1000px;
+        }
+
+        .brand-logo-item {
+            transition: transform 0.3s ease;
+        }
+
+        .brands-track:hover .brand-logo-item {
+            transform: translateZ(20px);
+        }
+
+        /* برای موبایل */
+        @media (max-width: 768px) {
+            .brand-logo-item {
+                margin: 0 20px;
+                min-width: 70px;
+            }
+
+            .brand-logo {
+                height: 35px;
+            }
+
+            .brands-marquee {
+                padding: 30px 0;
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 95%, rgba(255,255,255,0) 100% );
+            }
+
+            @keyframes infiniteLoop {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="yellow-bar">
+    <!--<div class="yellow-bar">
         <div class="container">
             <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
         </div>
-    </div>
-
-
+    </div>-->
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand-with-logo" href="#">
                 <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
-                <span class="brand">همیار<span>تعمیر</span></span>
+                <!--<span class="brand">همیار<span>تعمیر</span></span>-->
             </a>
 
-            <small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>
+            <!--<small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>-->
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
@@ -1323,69 +1506,89 @@
         </div>
     </nav>
 
+    <!-- Brand Logos -->
+    <section id="brands" class="container my-4">
+        <div class="brands-marquee">
+            <div class="brands-track">
+                <!-- مجموعه اول (12 لوگو) -->
+                <div class="brand-logo-item"><img src="images/lg.png" alt="LG" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/samsung.jpg" alt="Samsung" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Bosch.svg" alt="Bosch" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Siemens.png" alt="Siemens" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Snowa.svg" alt="Snowa" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/aeg.png" alt="AEG" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/kenwood.png" alt="Kenwood" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/ariston.png" alt="Ariston" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/arcelik.png" alt="Arcelik" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Electrolux.png" alt="Electrolux" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/generalelectric.png" alt="General Electric" class="brand-logo"></div>
+
+                <!-- مجموعه دوم (تکرار دقیق برای ایجاد حلقه) -->
+                <div class="brand-logo-item"><img src="images/lg.png" alt="LG" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/samsung.jpg" alt="Samsung" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Bosch.svg" alt="Bosch" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Siemens.png" alt="Siemens" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Snowa.svg" alt="Snowa" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/aeg.png" alt="AEG" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/kenwood.png" alt="Kenwood" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/ariston.png" alt="Ariston" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/arcelik.png" alt="Arcelik" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/Electrolux.png" alt="Electrolux" class="brand-logo"></div>
+                <div class="brand-logo-item"><img src="images/generalelectric.png" alt="General Electric" class="brand-logo"></div>
+            </div>
+        </div>
+    </section>
     <!-- HERO -->
     <header class="container">
         <section class="hero">
             <div class="container">
-                <h1>تعمیرات تخصصی لوازم خانگی در محل</h1>
-                <p>تعمیرات ماشین لباسشویی, ظرفشویی, جاروبرقی و مایکروفر با قطعات استاندارد و ضمانت کار در کمترین زمان در محل شما.</p>
-                <div class="hero-buttons cta">
-                    <a class="btn btn-primary-custom" href="#contact"><i class="fas fa-wrench me-2"></i> ثبت درخواست آنلاین</a>
-                    <a class="btn btn-ghost" href="https://wa.me/989199195067" target="_blank"><i class="fab fa-whatsapp me-2"></i> ارسال پیام در واتساپ</a>
+                <div class="hero-content">
+                    <div class="hero-text" style="display: flex; justify-content: flex-start;">
+                        <div>
+                            <h1>تعمیرات تخصصی لوازم خانگی</h1>
+                            <p style="text-align: right; direction: rtl;">با هزینه کارشناسی و ایاب و ذهاب رایگان</p>
+                            <div class="hero-buttons">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </header>
-    <!-- Brand Logos -->
-    <section id="brands" class="container my-4">
-
-        <div class="text-center mb-3">
-            <h2 style="font-weight:800">برندهای تحت پوشش</h2>
-            <p style="color:var(--text-muted)">تعمیرات انواع برندهای ایرانی و خارجی</p>
-        </div>
-
-        <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                        <img src="images/lg.png" alt="LG" class="brand-logo">
-                        <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
-                        <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
-                        <img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo">
-                        <img src="images/Siemens.png" alt="Siemens" class="brand-logo">
-                        <img src="images/Snowa.svg" alt="Snowa" class="brand-logo">
-                        <img src="images/aeg.png" alt="AEG" class="brand-logo">
-                        <img src="images/kenwood.png" alt="Kenwood" class="brand-logo">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-
-                        <img src="images/lg.png" alt="LG" class="brand-logo">
-                        <img src="images/samsung.jpg" alt="Samsung" class="brand-logo">
-                        <img src="images/Bosch.svg" alt="Bosch" class="brand-logo">
-                        <img src="images/Daewoo.svg" alt="Daewoo" class="brand-logo">
-                        <img src="images/Siemens.png" alt="Siemens" class="brand-logo">
-                        <img src="images/Snowa.svg" alt="Snowa" class="brand-logo">
-                        <img src="images/aeg.png" alt="AEG" class="brand-logo">
-                        <img src="images/kenwood.png" alt="Kenwood" class="brand-logo">
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </section>
-    <br />
-    <br />
+    <!-- Services -->
     <!-- Services -->
     <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2>خدمات تخصصی ما</h2>
+            </div>
+
+            <div class="services-grid">
+                <a href="washer.html" class="service-card">
+                    <img src="images/washer.png" alt="تعمیر لباسشویی" class="service-icon">
+                    <h3 class="service-title">تعمیر لباسشویی</h3>
+                </a>
+
+                <a href="dishwasher.html" class="service-card">
+                    <img src="images/dishwasher.png" alt="تعمیر ظرفشویی" class="service-icon">
+                    <h3 class="service-title">تعمیر ظرفشویی</h3>
+                </a>
+
+                <a href="vacuum.html" class="service-card">
+                    <img src="images/vacuum.png" alt="تعمیر جاروبرقی" class="service-icon">
+                    <h3 class="service-title">تعمیر جاروبرقی</h3>
+                </a>
+
+                <a href="microwave.html" class="service-card">
+                    <img src="images/microwave.png" alt="تعمیر مایکروفر" class="service-icon">
+                    <h3 class="service-title">تعمیر مایکروفر</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--<section id="services" class="services-section">
         <div class="container">
             <div class="services-header">
                 <h2>خدمات تخصصی ما</h2>
@@ -1398,8 +1601,6 @@
                         <img src="images/washer.png" alt="تعمیر لباسشویی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر لباسشویی</h3>
-                    <p class="service-description">تعمیر تخصصی انواع لباسشویی با قطعات اصلی و گارانتی معتبر</p>
-                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
                 <a href="dishwasher.html" class="service-card">
@@ -1407,8 +1608,6 @@
                         <img src="images/dishwasher.png" alt="تعمیر ظرفشویی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر ظرفشویی</h3>
-                    <p class="service-description">رفع مشکلات ظرفشویی با جدیدترین تجهیزات و دانش فنی</p>
-                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
                 <a href="vacuum.html" class="service-card">
@@ -1416,8 +1615,6 @@
                         <img src="images/vacuum.png" alt="تعمیر جاروبرقی" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر جاروبرقی</h3>
-                    <p class="service-description">تعمیر انواع جاروبرقی با ضمانت عملکرد و کیفیت</p>
-                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
 
                 <a href="microwave.html" class="service-card">
@@ -1425,12 +1622,10 @@
                         <img src="images/microwave.png" alt="تعمیر مایکروفر" class="service-icon">
                     </div>
                     <h3 class="service-title">تعمیر مایکروفر</h3>
-                    <p class="service-description">تعمیر تخصصی مایکروفر با قطعات اورجینال و استاندارد</p>
-                    <span class="service-link">مشاهده جزئیات <i class="fas fa-arrow-left"></i></span>
                 </a>
             </div>
         </div>
-    </section>
+    </section>-->
     <br />
     <br />
 
@@ -1721,11 +1916,11 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-                                                    👤 نام: ${name}
-                                                    📞 شماره تماس: ${phone}
-                                                    🛠 دستگاه: ${device}
-                                                    🏷 برند: ${brand}
-                                                    📝 توضیحات: ${message ? message : "ندارد"}`;
+                                                                    👤 نام: ${name}
+                                                                    📞 شماره تماس: ${phone}
+                                                                    🛠 دستگاه: ${device}
+                                                                    🏷 برند: ${brand}
+                                                                    📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
@@ -1790,6 +1985,57 @@
                 } else {
                     item.style.display = 'none';
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.getElementById('brandsTrack');
+            const marquee = track.parentElement;
+
+            // تکرار لوگوها برای ایجاد حلقه پیوسته
+            const originalContent = track.innerHTML;
+            track.innerHTML = originalContent + originalContent + originalContent;
+
+            // محاسبه سرعت انیمیشن بر اساس عرض واقعی
+            function startAnimation() {
+                const firstLogo = track.querySelector('.brand-logo-item');
+                if (!firstLogo) return;
+
+                const logoWidth = firstLogo.offsetWidth + 40; // عرض + margin
+                const totalLogos = track.children.length;
+                const totalWidth = logoWidth * totalLogos;
+
+                const viewportWidth = marquee.offsetWidth;
+                const speed = totalWidth / 100; // پیکسل در ثانیه
+
+                // حذف انیمیشن قبلی
+                track.style.animation = 'none';
+
+                // ایجاد keyframes داینامیک
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes infiniteScroll {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-${totalWidth / 2}px); }
+                    }
+                `;
+                document.head.appendChild(style);
+
+                // اعمال انیمیشن جدید
+                track.style.animation = `infiniteScroll ${totalWidth / speed}s linear infinite`;
+            }
+
+            // شروع انیمیشن و تنظیم مجدد هنگام تغییر سایز
+            startAnimation();
+            window.addEventListener('resize', startAnimation);
+
+            // توقف انیمیشن هنگام hover
+            marquee.addEventListener('mouseenter', () => {
+                track.style.animationPlayState = 'paused';
+            });
+
+            marquee.addEventListener('mouseleave', () => {
+                track.style.animationPlayState = 'running';
             });
         });
     </script>
