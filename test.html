@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>همیار تعمیر</title>
+    <style>
+        body {
+            font-family: tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px 30px;
+        }
+
+            header img {
+                height: 50px;
+            }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+        .top-btn {
+            background: #ffcc00;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .brands {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            flex-wrap: wrap;
+        }
+
+        .hero {
+            background: #f9f9f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+            .hero img {
+                max-width: 250px;
+                border-radius: 10px;
+            }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+            .hero-text h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .hero-text a {
+                display: inline-block;
+                margin: 5px;
+                padding: 10px 20px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        .btn-primary {
+            background: #ffcc00;
+            color: #000;
+        }
+
+        .btn-secondary {
+            background: #0a4a7a;
+            color: #fff;
+        }
+
+        .services {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+            .services h3 {
+                margin-bottom: 30px;
+                font-size: 22px;
+            }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .service-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 30px 20px;
+            transition: 0.3s;
+            background: #fff;
+        }
+
+            .service-card:hover {
+                background: #f1f1f1;
+            }
+
+            .service-card img {
+                height: 40px;
+                margin-bottom: 15px;
+            }
+
+        footer {
+            background: #0a4a7a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="لوگو">
+        <nav>
+            <ul>
+                <li><a href="#">خدمات</a></li>
+                <li><a href="#">مجله آموزشی</a></li>
+                <li><a href="#">سوالات متداول</a></li>
+                <li><a href="#">درباره ما</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="top-btn">ثبت درخواست</a>
+    </header>
+
+    <section class="brands">
+        <span>Electrolux</span>
+        <span>DAEWOO</span>
+        <span>BOSCH</span>
+        <span>ARISTON</span>
+        <span>AEG</span>
+        <span>General Electric</span>
+    </section>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>تعمیرات تخصصی لوازم خانگی در محل</h2>
+            <a href="#" class="btn-primary">ثبت درخواست آنلاین</a>
+            <a href="#" class="btn-secondary">ارسال پیام در واتساپ</a>
+        </div>
+        <img src="repairman.jpg" alt="تعمیرکار">
+    </section>
+
+    <section class="services">
+        <h3>خدمات تخصصی ما</h3>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="vacuum.png" alt="جاروبرقی">
+                <p>تعمیر جاروبرقی</p>
+            </div>
+            <div class="service-card">
+                <img src="microwave.png" alt="مایکروویو">
+                <p>تعمیر مایکروویو</p>
+            </div>
+            <div class="service-card">
+                <img src="dishwasher.png" alt="ماشین ظرفشویی">
+                <p>تعمیر ماشین ظرفشویی</p>
+            </div>
+            <div class="service-card">
+                <img src="washer.png" alt="ماشین لباسشویی">
+                <p>تعمیر ماشین لباسشویی</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 همیار تعمیر | تمامی حقوق محفوظ است</p>
+    </footer>
+</body>
+</html>
