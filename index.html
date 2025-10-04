@@ -445,6 +445,7 @@
             }
         }
 
+        <style >
         .hero {
             background: transparent;
             color: var(--text-dark);
@@ -493,25 +494,19 @@
             line-height: 1.4;
         }
 
-        /* استایل‌های ریسپانسیو */
+        /* استایل‌های ریسپانسیو - تغییرات اصلی اینجا است */
         @media (max-width: 992px) {
             .hero-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr; /* همچنان دو ستون باقی می‌ماند */
                 gap: 30px;
-                text-align: center;
-            }
-
-            .hero-text {
-                text-align: center;
-                order: -1; /* متن بالاتر از عکس بیاید */
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero h4 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -520,22 +515,9 @@
                 padding: 40px 0;
             }
 
-                .hero h1 {
-                    font-size: 1.8rem;
-                }
-
-                .hero h4 {
-                    font-size: 1.1rem;
-                }
-
-            .hero-img {
-                max-width: 90%;
-            }
-        }
-
-        @media (max-width: 576px) {
             .hero-content {
-                gap: 20px;
+                grid-template-columns: 1fr 1fr; /* همچنان دو ستون */
+                gap: 25px;
             }
 
             .hero h1 {
@@ -543,7 +525,63 @@
             }
 
             .hero h4 {
+                font-size: 1.1rem;
+            }
+
+            .hero-img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr; /* همچنان دو ستون در موبایل */
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .hero h4 {
+                font-size: 0.95rem;
+            }
+
+            .hero-text {
+                padding: 10px;
+            }
+        }
+
+        /* برای موبایل‌های خیلی کوچک */
+        @media (max-width: 480px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr; /* همچنان دو ستون */
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.1rem;
+            }
+
+            .hero h4 {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* برای حالت عمودی (پورتrait) در موبایل‌های کوچک */
+        @media (max-width: 400px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr; /* همچنان دو ستون */
+                gap: 12px;
+            }
+
+            .hero h1 {
                 font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero h4 {
+                font-size: 0.8rem;
             }
         }
 
@@ -1655,7 +1693,7 @@
     <section id="services" class="services-section" role="main" itemscope itemtype="https://schema.org/Service">
         <div class="container">
             <div class="services-header">
-                <h2 itemprop="name">خدمات تخصصی تعمیرات لوازم خانگی</h2>
+                <h2 itemprop="name">خدمات تخصصی </h2>
             </div>
 
             <div class="services-grid">
