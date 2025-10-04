@@ -3,55 +3,54 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>مجله آموزشی |همیار تعمیر</title>
+    <title>مجله آموزشی | همیار تعمیر</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet" />
     <style>
         :root {
             --primary-color: #013a63;
-            --secondary-color: #FFD700;
+            --secondary-color: #ffffff;
             --muted-bg: #f6f7f9;
             --card-bg: #ffffff;
             --text-dark: #24323f;
             --text-muted: #6b7a86;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: "Vazirmatn","Tahoma",sans-serif;
-            background: var(--muted-bg);
+            font-family: "Vazirmatn", "Tahoma", sans-serif;
+            background-color: var(--muted-bg);
             color: var(--text-dark);
             line-height: 1.6;
-            margin: 0;
         }
 
-        .yellow-bar {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 8px 0;
-            text-align: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
+        /* استایل‌های ناوبری */
         .navbar {
             background: var(--card-bg);
             box-shadow: 0 6px 20px rgba(1,30,50,.06);
+            border-bottom: 1px solid rgba(3,22,36,.04);
             padding: .9rem 0;
         }
 
-        .brand {
-            font-weight: 800;
-            font-size: 1.35rem;
-            color: var(--primary-color);
-            text-decoration: none !important;
+        .navbar-brand-with-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
-            .brand span {
-                color: var(--secondary-color);
-                font-weight: 900;
-                margin-right: .25rem
-            }
+        .site-logo {
+            height: 80px;
+            width: auto;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
 
         .nav-link {
             color: var(--text-dark);
@@ -67,85 +66,197 @@
                 color: var(--primary-color);
             }
 
-        .phone-badge {
+        .nav-request-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: 2px solid #013a63;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: .6rem;
-            background: var(--primary-color);
-            color: #fff;
-            padding: .55rem 1rem;
-            border-radius: 10px;
-            font-weight: 800;
-            box-shadow: 0 8px 20px rgba(1,58,99,.12);
-            transition: all 0.3s ease;
+            gap: 5px;
+            box-shadow: 0 2px 8px rgba(1, 58, 99, 0.2);
         }
 
-            .phone-badge:hover {
-                background: #02548f;
+            .nav-request-btn:hover {
+                background: #013a63;
+                color: #ffffff;
+                border-color: #013a63;
                 transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(1, 58, 99, 0.3);
             }
 
+        /* استایل‌های برندها */
+        .brands-section {
+            padding: 15px 0;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .brands-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brands-track {
+            display: flex;
+            width: max-content;
+            animation: scrollBrands 40s linear infinite;
+            will-change: transform;
+        }
+
+        .brand-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 25px;
+            height: 50px;
+        }
+
+        .brand-logo {
+            height: 35px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            filter: none !important;
+            opacity: 0.8;
+        }
+
+        .brand-item:hover .brand-logo {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scrollBrands {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* استایل‌های اصلی مجله آموزشی */
         .magazine-page {
-            padding: 60px 0;
+            padding: 40px 0;
+            background: var(--muted-bg);
         }
 
         .magazine-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            padding: 0 20px;
         }
 
             .magazine-header h1 {
+                font-size: 2.5rem;
                 font-weight: 800;
                 color: var(--primary-color);
                 margin-bottom: 15px;
+                line-height: 1.3;
             }
 
             .magazine-header p {
+                font-size: 1.2rem;
                 color: var(--text-muted);
-                max-width: 700px;
+                max-width: 600px;
                 margin: 0 auto;
+                line-height: 1.6;
             }
 
+        /* فیلتر دسته‌بندی */
+        .category-filter {
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+            .category-filter h4 {
+                color: var(--primary-color);
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+        .category-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            margin: 5px 8px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .category-btn:hover,
+            .category-btn.active {
+                background: var(--primary-color);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(1, 58, 99, 0.2);
+            }
+
+        /* کارت‌های مقاله */
         .article-card {
-            background: #fff;
-            border-radius: 12px;
+            background: white;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             height: 100%;
+            margin-bottom: 25px;
+            border: 1px solid rgba(1, 58, 99, 0.1);
         }
 
             .article-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                border-color: var(--primary-color);
             }
 
         .article-img {
-            height: 200px;
             width: 100%;
+            height: 220px;
             object-fit: cover;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        video.article-img {
+            background: #000;
         }
 
         .article-content {
-            padding: 20px;
+            padding: 25px;
         }
 
         .article-meta {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-size: 0.85rem;
-            color: var(--text-muted);
         }
 
         .article-date {
-            margin-right: 15px;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         .article-category {
-            background: rgba(1,58,99,0.1);
+            background: rgba(1, 58, 99, 0.1);
             color: var(--primary-color);
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -153,103 +264,359 @@
 
         .article-title {
             font-weight: 800;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+            margin-bottom: 0;
+            font-size: 1.3rem;
             line-height: 1.4;
+            color: var(--text-dark);
+            height: 60px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
-        .article-excerpt {
+        /* مسیر ناوبری */
+        .breadcrumb {
+            background-color: transparent;
+            padding: 15px 0;
+            margin-bottom: 0;
+        }
+
+        .breadcrumb-item a {
             color: var(--text-muted);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .article-link {
-            color: var(--primary-color);
-            font-weight: 700;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-            .article-link:hover {
-                color: #02548f;
+            .breadcrumb-item a:hover {
+                color: var(--primary-color);
             }
 
-            .article-link i {
-                margin-right: 5px;
-                transition: transform 0.3s ease;
-            }
-
-            .article-link:hover i {
-                transform: translateX(5px);
-            }
-
-        .category-filter {
-            margin-bottom: 30px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .category-btn {
-            background: rgba(1,58,99,0.1);
+        .breadcrumb-item.active {
             color: var(--primary-color);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
-            .category-btn:hover, .category-btn.active {
-                background: var(--primary-color);
-                color: #fff;
+        /* فوتر */
+        footer {
+            background: linear-gradient(90deg, var(--primary-color), #012f4f);
+            color: white;
+            padding: 30px 0 20px;
+            margin-top: 50px;
+        }
+
+            footer p {
+                margin: 0;
+                opacity: 0.9;
             }
 
-        footer {
-            padding: 40px 0;
-            color: #fff;
-            background: linear-gradient(90deg,var(--primary-color),#012f4f);
-            margin-top: 24px;
+        /* دکمه‌های شناور */
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 26px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background .2s ease;
+            text-decoration: none;
+        }
+
+            .call-float:hover {
+                background: #02548f;
+                color: white;
+            }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 85px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            font-size: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+            z-index: 1000;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+            .whatsapp-float:hover {
+                background: #20bd5a;
+                color: white;
+            }
+
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .magazine-header h1 {
+                font-size: 2rem;
+            }
+
+            .magazine-header p {
+                font-size: 1.1rem;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                margin: 3px 5px;
+                font-size: 0.9rem;
+            }
+
+            .article-card {
+                margin-bottom: 20px;
+            }
+
+            .article-img {
+                height: 200px;
+            }
+
+            .article-content {
+                padding: 20px;
+            }
+
+            .article-title {
+                font-size: 1.2rem;
+                height: auto;
+            }
+
+            .nav-request-btn {
+                margin: 10px auto;
+                width: 90%;
+                justify-content: center;
+                border-width: 1.5px;
+            }
+
+            .site-logo {
+                height: 60px;
+            }
+
+            .brands-section {
+                padding: 12px 0;
+                margin: 15px 0;
+            }
+
+            .brand-item {
+                padding: 0 20px;
+                height: 45px;
+            }
+
+            .brand-logo {
+                height: 30px;
+                max-width: 100px;
+            }
+
+            .brands-track {
+                animation: scrollBrands 35s linear infinite;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .magazine-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .magazine-header p {
+                font-size: 1rem;
+            }
+
+            .category-filter h4 {
+                font-size: 1.1rem;
+            }
+
+            .article-img {
+                height: 180px;
+            }
+
+            .article-content {
+                padding: 15px;
+            }
+
+            .article-title {
+                font-size: 1.1rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .brands-section {
+                padding: 10px 0;
+            }
+
+            .brand-item {
+                padding: 0 15px;
+                height: 40px;
+            }
+
+            .brand-logo {
+                height: 25px;
+                max-width: 80px;
+            }
+
+            .brands-track {
+                animation: scrollBrands 30s linear infinite;
+            }
+
+            .call-float,
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-float {
+                bottom: 75px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .magazine-page {
+                padding: 30px 0;
+            }
+
+            .magazine-header {
+                margin-bottom: 30px;
+            }
+
+            .category-filter {
+                margin-bottom: 30px;
+            }
+
+            .article-img {
+                height: 160px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="yellow-bar">
-        <div class="container">
-            <i class="fas fa-truck me-2"></i> هزینه ایاب و ذهاب رایگان برای تمامی خدمات
-        </div>
-    </div>
-
+    <!-- ناوبری -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="brand" href="index.html">همیار<span>تعمیر</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
+                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="منوی ناوبری">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="magazine.html">مجله آموزشی</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            خدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                            <li><a class="dropdown-item" href="washer.html"><i class="fas fa-tshirt"></i> تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#services"><i class="fas fa-list"></i> مشاهده همه خدمات</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            مجله آموزشی
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="magazineDropdown">
+                            <li><h6 class="dropdown-header">آموزش‌های تخصصی</h6></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=لباسشویی"><i class="fas fa-tshirt"></i> آموزش تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=ظرفشویی"><i class="fas fa-concierge-bell"></i> آموزش تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=جاروبرقی"><i class="fas fa-wind"></i> آموزش تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=مایکروفر"><i class="fas fa-radiation"></i> آموزش تعمیر مایکروفر</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=الکترونیک"><i class="fas fa-microchip"></i> آموزش الکترونیک</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=نکات کاربردی"><i class="fas fa-lightbulb"></i> نکات کاربردی</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="tutorial.html"><i class="fas fa-book"></i> همه مقالات آموزشی</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center mt-3 mt-lg-0">
-                    <a class="phone-badge" href="tel:+989199195067">
-                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                <div class="d-flex align-items-center mt-3 mt-lg-0 button-row">
+                    <a href="#contact" class="nav-request-btn mb-2">
+                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
+                    </a>
+
+                    <a class="nav-request-btn mb-2" href="index.html">
+                        <i class="fas fa-home me-1"></i> بازگشت به صفحه اصلی
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- مسیر ناوبری (Breadcrumb) -->
+    <div class="container mt-3">
+        <nav aria-label="مسیر ناوبری">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">صفحه اصلی</a></li>
+                <li class="breadcrumb-item active" aria-current="page">مجله آموزشی</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- بخش برندها -->
+    <section class="brands-section" aria-label="برندهای قابل تعمیر">
+        <div class="brands-container">
+            <div class="brands-track">
+                <!-- مجموعه اول (12 لوگو) -->
+                <div class="brand-item"><img src="images/lg.png" alt="تعمیر لباسشویی ال جی" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/samsung.jpg" alt="تعمیر لباسشویی سامسونگ" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Bosch.svg" alt="تعمیر لباسشویی بوش" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Daewoo.svg" alt="تعمیر لباسشویی دئو" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Siemens.png" alt="تعمیر لباسشویی زیمنس" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Snowa.svg" alt="تعمیر لباسشویی سونا" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/aeg.png" alt="تعمیر لباسشویی ای جی" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/kenwood.png" alt="تعمیر لباسشویی کنوود" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/ariston.png" alt="تعمیر لباسشویی آریستون" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/arcelik.png" alt="تعمیر لباسشویی آرچلیک" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Electrolux.png" alt="تعمیر لباسشویی الکترولوکس" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/generalelectric.png" alt="تعمیر لباسشویی جنرال الکتریک" class="brand-logo"></div>
+
+                <!-- مجموعه دوم (تکرار برای ایجاد حلقه پیوسته) -->
+                <div class="brand-item"><img src="images/lg.png" alt="تعمیر لباسشویی ال جی" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/samsung.jpg" alt="تعمیر لباسشویی سامسونگ" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Bosch.svg" alt="تعمیر لباسشویی بوش" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Daewoo.svg" alt="تعمیر لباسشویی دئو" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Siemens.png" alt="تعمیر لباسشویی زیمنس" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Snowa.svg" alt="تعمیر لباسشویی سونا" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/aeg.png" alt="تعمیر لباسشویی ای جی" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/kenwood.png" alt="تعمیر لباسشویی کنوود" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/ariston.png" alt="تعمیر لباسشویی آریستون" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/arcelik.png" alt="تعمیر لباسشویی آرچلیک" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/Electrolux.png" alt="تعمیر لباسشویی الکترولوکس" class="brand-logo"></div>
+                <div class="brand-item"><img src="images/generalelectric.png" alt="تعمیر لباسشویی جنرال الکتریک" class="brand-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش اصلی مجله آموزشی -->
     <section class="magazine-page">
         <div class="container">
             <div class="magazine-header">
-                <h1>مجله آموزشیهمیار تعمیر</h1>
+                <h1>مجله آموزشی همیار تعمیر</h1>
                 <p>آموزش‌های تخصصی، نکات کاربردی و راهنمای تعمیر لوازم خانگی</p>
             </div>
 
@@ -269,8 +636,9 @@
             <div class="row" id="articles-container">
                 <div class="col-md-4 mb-4" data-category="لباسشویی">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-1.jpg">
                             <source src="videos/video1.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -284,8 +652,9 @@
 
                 <div class="col-md-4 mb-4" data-category="جاروبرقی">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-2.jpg">
                             <source src="videos/video2.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -299,8 +668,9 @@
 
                 <div class="col-md-4 mb-4" data-category="مایکروفر">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-3.jpg">
                             <source src="videos/video3.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -314,8 +684,9 @@
 
                 <div class="col-md-4 mb-4" data-category="ظرفشویی">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-4.jpg">
                             <source src="videos/video4.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -329,8 +700,9 @@
 
                 <div class="col-md-4 mb-4" data-category="نکات کاربردی">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-5.jpg">
                             <source src="videos/video5.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -344,8 +716,9 @@
 
                 <div class="col-md-4 mb-4" data-category="الکترونیک">
                     <div class="article-card">
-                        <video class="article-img" controls>
+                        <video class="article-img" controls poster="images/video-thumb-6.jpg">
                             <source src="videos/video6.mp4" type="video/mp4">
+                            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
                         </video>
                         <div class="article-content">
                             <div class="article-meta">
@@ -360,18 +733,29 @@
         </div>
     </section>
 
+    <!-- فوتر -->
     <footer>
         <div class="container text-center">
-            <p>© 2025همیار تعمیر — تمامی حقوق محفوظ است.</p>
+            <p>© 2025 همیار تعمیر — تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
 
+    <!-- دکمه‌های شناور -->
+    <a href="tel:+989199195067" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/989199195067" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // فیلتر مقالات بر اساس دسته‌بندی
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.category-btn');
             const articles = document.querySelectorAll('#articles-container .col-md-4');
 
+            // فیلتر بر اساس کلیک دکمه
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -387,17 +771,18 @@
                     });
                 });
             });
-        });
-        document.addEventListener('DOMContentLoaded', function () {
+
+            // فیلتر بر اساس پارامتر URL
             const urlParams = new URLSearchParams(window.location.search);
             const categoryFromUrl = urlParams.get('category');
-            const filterButtons = document.querySelectorAll('.category-btn');
-            const articles = document.querySelectorAll('#articles-container .col-md-4');
 
             if (categoryFromUrl) {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
 
-                const activeBtn = Array.from(filterButtons).find(btn => btn.getAttribute('data-category') === categoryFromUrl);
+                const activeBtn = Array.from(filterButtons).find(btn =>
+                    btn.getAttribute('data-category') === categoryFromUrl
+                );
+
                 if (activeBtn) {
                     activeBtn.classList.add('active');
                 }
@@ -412,7 +797,19 @@
             }
         });
 
-
+        // بستن dropdown منو هنگام کلیک روی لینک
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.dropdown-item').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    const dropdown = this.closest('.dropdown');
+                    const toggle = dropdown.querySelector('.dropdown-toggle');
+                    const bsDropdown = bootstrap.Dropdown.getInstance(toggle);
+                    if (bsDropdown) {
+                        bsDropdown.hide();
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

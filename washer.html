@@ -940,6 +940,19 @@
                     color: white;
                     text-decoration: underline;
                 }
+
+        .navbar-brand-with-logo {
+            cursor: pointer;
+        }
+
+        .site-logo {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand-with-logo:hover .site-logo {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -948,7 +961,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
-                <img src="images/logo.png" alt="لوگو همیار تعمیر - خدمات تخصصی تعمیر لباسشویی" class="site-logo">
+                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="منوی ناوبری">
@@ -999,7 +1012,7 @@
                     </a>
 
                     <a class="nav-request-btn mb-2" href="index.html">
-                        <i class="fas fa-door-open me-1"></i> بازگشت به صفحه اصلی
+                        <i class="fas fa-home me-1"></i> بازگشت به صفحه اصلی
                     </a>
                 </div>
             </div>
