@@ -1601,113 +1601,6 @@
                 border-width: 1.5px; /* خط نازک‌تر در موبایل */
             }
         }
-
-        /* نمایش شماره موبایل در نوبار موبایل - اصلاح شده */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem 0 !important;
-                position: relative;
-                min-height: 70px;
-            }
-
-                .navbar > .container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    position: relative;
-                    min-height: 60px;
-                }
-
-            .navbar-brand-with-logo {
-                position: absolute;
-                right: 0;
-                z-index: 1001;
-            }
-
-            .site-logo {
-                height: 50px !important;
-                margin-left: 0 !important;
-            }
-
-            /* استایل برای شماره موبایل در وسط */
-            .navbar-mobile-phone {
-                display: flex !important;
-                align-items: center;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-            }
-
-            .mobile-phone-number {
-                background: var(--primary-color);
-                color: white;
-                padding: 6px 12px;
-                border-radius: 8px;
-                font-weight: 700;
-                font-size: 0.85rem;
-                text-decoration: none;
-                white-space: nowrap;
-                box-shadow: 0 2px 8px rgba(1, 58, 99, 0.3);
-                transition: all 0.3s ease;
-            }
-
-                .mobile-phone-number:hover {
-                    background: #02548f;
-                    transform: translateY(-1px);
-                    color: white;
-                }
-
-            .navbar-toggler {
-                position: absolute;
-                left: 0;
-                z-index: 1002;
-                margin-right: 0;
-            }
-
-            /* مخفی کردن دکمه‌های اصلی در موبایل */
-            .button-row {
-                display: none !important;
-            }
-
-            .navbar-collapse {
-                margin-top: 10px;
-                position: relative;
-                z-index: 999;
-            }
-
-                /* اطمینان از اینکه منوی باز شده زیر سایر عناصر قرار نگیرد */
-                .navbar-collapse.show {
-                    background: var(--card-bg);
-                    border-radius: 8px;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-                    margin-top: 15px;
-                }
-        }
-
-        @media (max-width: 480px) {
-            .mobile-phone-number {
-                font-size: 0.8rem;
-                padding: 5px 10px;
-            }
-
-            .site-logo {
-                height: 45px !important;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .mobile-phone-number {
-                font-size: 0.75rem;
-                padding: 4px 8px;
-            }
-
-            .site-logo {
-                height: 40px !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1735,90 +1628,11 @@
         </div>
     </div>-->
     <!-- navbar -->
-    <!--<nav class="navbar navbar-expand-lg" role="navigation" aria-label="منوی اصلی">
-        <div class="container">
-            <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
-                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                    aria-controls="mainNav" aria-expanded="false" aria-label="بازکردن منو">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="menubar">
-                    <li class="nav-item dropdown" role="none">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                            خدمات
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown" role="menu">
-                            <li role="none"><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
-                            <li role="none">
-                                <a class="dropdown-item" href="washer.html" role="menuitem">
-                                    <i class="fas fa-tshirt"></i> تعمیر لباسشویی
-                                </a>
-                            </li>
-                            <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
-                            <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
-                            <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <a class="dropdown-item" href="#services">
-                                    <i class="fas fa-list"></i> مشاهده همه خدمات
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            مجله آموزشی
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="magazineDropdown">
-                            <li><h6 class="dropdown-header">آموزش‌های تخصصی</h6></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=لباسشویی"><i class="fas fa-tshirt"></i> آموزش تعمیر لباسشویی</a></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=ظرفشویی"><i class="fas fa-concierge-bell"></i> آموزش تعمیر ظرفشویی</a></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=جاروبرقی"><i class="fas fa-wind"></i> آموزش تعمیر جاروبرقی</a></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=مایکروفر"><i class="fas fa-radiation"></i> آموزش تعمیر مایکروفر</a></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=الکترونیک"><i class="fas fa-microchip"></i> آموزش الکترونیک</a></li>
-                            <li><a class="dropdown-item" href="tutorial.html?category=نکات کاربردی"><i class="fas fa-lightbulb"></i> نکات کاربردی</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="tutorial.html"><i class="fas fa-book"></i> همه مقالات آموزشی</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
-
-                </ul>
-
-                <div class="d-flex align-items-center mt-3 mt-lg-0 button-row">
-                    <a href="#contact" class="nav-request-btn mb-2" aria-label="درخواست تعمیر">
-                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
-                    </a>
-                    <a class="nav-request-btn mb-2" href="tel:+989199195067" aria-label="تماس تلفنی">
-                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </nav>-->
-    <!-- navbar -->
     <nav class="navbar navbar-expand-lg" role="navigation" aria-label="منوی اصلی">
         <div class="container">
             <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
                 <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
             </a>
-
-            <!-- شماره موبایل در نوبار موبایل -->
-            <div class="navbar-mobile-phone d-none d-md-none">
-                <a href="tel:+989199195067" class="mobile-phone-number">
-                    <i class="fas fa-phone-alt me-1"></i> ۰۹۱۹۹۱۹۵۰۶۷
-                </a>
-            </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                     aria-controls="mainNav" aria-expanded="false" aria-label="بازکردن منو">
@@ -2257,7 +2071,58 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        // تابع برای بستن dropdown بعد از کلیک
+        function closeDropdown() {
+            // پیدا کردن تمام dropdown‌های باز
+            var dropdowns = document.querySelectorAll('.dropdown-toggle');
+            dropdowns.forEach(function (dropdown) {
+                var bsDropdown = bootstrap.Dropdown.getInstance(dropdown);
+                if (bsDropdown) {
+                    bsDropdown.hide();
+                }
+            });
+        }
+
+        // بستن اتوماتیک dropdown وقتی روی لینک کلیک می‌شود
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.dropdown-item').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    closeDropdown();
+                });
+            });
+
+            // بستن dropdown وقتی خارج از آن کلیک می‌شود
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.dropdown')) {
+                    closeDropdown();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("repairForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = this.name.value;
+            let phone = this.phone.value;
+            let device = this.device.value;
+            let brand = this.brand.value;
+            let message = this.message.value;
+
+            let text = `📩 درخواست تعمیر لوازم خانگی
+                                                                                                                                    👤 نام: ${name}
+                                                                                                                                    📞 شماره تماس: ${phone}
+                                                                                                                                    🛠 دستگاه: ${device}
+                                                                                                                                    🏷 برند: ${brand}
+                                                                                                                                    📝 توضیحات: ${message ? message : "ندارد"}`;
+
+            let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank");
+        });
+    </script>
 
     <a href="tel:+989199195067" class="call-float">
         <i class="fas fa-phone"></i>
@@ -2445,79 +2310,6 @@
         //        }
         //    }
         //}
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // مدیریت نوبار در موبایل - کد ساده و تمیز
-        document.addEventListener('DOMContentLoaded', function () {
-            // بستن خودکار نوبار هنگام کلیک روی لینک‌ها در موبایل
-            const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth < 768) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                        if (bsCollapse) {
-                            bsCollapse.hide();
-                        }
-                    }
-                });
-            });
-
-            // مدیریت فرم درخواست تعمیر
-            const repairForm = document.getElementById('repairForm');
-            if (repairForm) {
-                repairForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    let name = this.name.value;
-                    let phone = this.phone.value;
-                    let device = this.device.value;
-                    let brand = this.brand.value;
-                    let message = this.message.value;
-
-                    let text = `📩 درخواست تعمیر لوازم خانگی
-👤 نام: ${name}
-📞 شماره تماس: ${phone}
-🛠 دستگاه: ${device}
-🏷 برند: ${brand}
-📝 توضیحات: ${message ? message : "ندارد"}`;
-
-                    let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
-                    window.open(url, "_blank");
-                });
-            }
-
-            // مدیریت اسلایدر برندها
-            const track = document.querySelector('.brands-track');
-            const container = document.querySelector('.brands-container');
-
-            if (container && track) {
-                container.addEventListener('mouseenter', () => {
-                    track.style.animationPlayState = 'paused';
-                });
-
-                container.addEventListener('mouseleave', () => {
-                    track.style.animationPlayState = 'running';
-                });
-
-                // تنظیم سرعت انیمیشن
-                function adjustAnimationSpeed() {
-                    if (window.innerWidth < 480) {
-                        track.style.animationDuration = '30s';
-                    } else if (window.innerWidth < 768) {
-                        track.style.animationDuration = '35s';
-                    } else {
-                        track.style.animationDuration = '40s';
-                    }
-                }
-
-                adjustAnimationSpeed();
-                window.addEventListener('resize', adjustAnimationSpeed);
-            }
-        });
     </script>
 
     <!-- Google Analytics -->
