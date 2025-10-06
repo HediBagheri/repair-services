@@ -1602,11 +1602,12 @@
             }
         }
 
-        /* نمایش شماره موبایل در نوبار موبایل - در وسط */
+        /* نمایش شماره موبایل در نوبار موبایل - در وسط و بالاتر */
         @media (max-width: 768px) {
             .navbar {
                 padding: 0.5rem 0 !important;
                 position: relative;
+                min-height: 70px; /* ارتفاع بیشتر برای نوبار */
             }
 
             .navbar-brand-with-logo {
@@ -1624,7 +1625,7 @@
                 flex: 0 0 auto;
             }
 
-            /* استایل برای شماره موبایل در وسط نوبار */
+            /* استایل برای شماره موبایل در وسط نوبار و بالاتر */
             .navbar-mobile-phone {
                 display: flex !important;
                 align-items: center;
@@ -1632,8 +1633,7 @@
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                top: 50%;
-                transform: translateY(-50%);
+                top: 35%; /* تغییر از 50% به 35% برای موقعیت بالاتر */
             }
 
             .mobile-phone-number {
@@ -1670,34 +1670,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .mobile-phone-number {
-                font-size: 0.8rem;
-                padding: 5px 10px;
-            }
-
-            .site-logo {
-                height: 45px !important;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .mobile-phone-number {
-                font-size: 0.75rem;
-                padding: 4px 8px;
-            }
-
-            .site-logo {
-                height: 40px !important;
-            }
-
-            .navbar-mobile-phone {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
+                min-height: 60px;
             }
         }
     </style>
