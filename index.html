@@ -1633,7 +1633,7 @@
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                top: 35%; /* تغییر از 50% به 35% برای موقعیت بالاتر */
+                top: 30%; /* تغییر از 50% به 35% برای موقعیت بالاتر */
             }
 
             .mobile-phone-number {
@@ -2225,68 +2225,73 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // تابع برای بستن dropdown بعد از کلیک
-        function closeDropdown() {
-            // پیدا کردن تمام dropdown‌های باز
-            var dropdowns = document.querySelectorAll('.dropdown-toggle');
-            dropdowns.forEach(function (dropdown) {
-                var bsDropdown = bootstrap.Dropdown.getInstance(dropdown);
-                if (bsDropdown) {
-                    bsDropdown.hide();
-                }
-            });
-        }
-
-        // بستن اتوماتیک dropdown وقتی روی لینک کلیک می‌شود
+        // مدیریت نوبار در موبایل - کد ساده و تمیز
         document.addEventListener('DOMContentLoaded', function () {
-            // بستن dropdown منوها هنگام کلیک روی آیتم‌ها
-            document.querySelectorAll('.dropdown-item, .nav-link').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    closeDropdown();
+            // بستن خودکار نوبار هنگام کلیک روی لینک‌ها در موبایل
+            const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
-                    // بستن نوبار در موبایل
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
                     if (window.innerWidth < 768) {
-                        closeNavbar();
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
                     }
                 });
             });
 
-            // بستن dropdown وقتی خارج از آن کلیک می‌شود
-            document.addEventListener('click', function (event) {
-                if (!event.target.closest('.dropdown')) {
-                    closeDropdown();
-                }
-            });
-        });
+            // مدیریت فرم درخواست تعمیر
+            const repairForm = document.getElementById('repairForm');
+            if (repairForm) {
+                repairForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-        // تابع برای بستن نوبار در موبایل
-        function closeNavbar() {
-            var navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                if (bsCollapse) {
-                    bsCollapse.hide();
-                }
+                    let name = this.name.value;
+                    let phone = this.phone.value;
+                    let device = this.device.value;
+                    let brand = this.brand.value;
+                    let message = this.message.value;
+
+                    let text = `📩 درخواست تعمیر لوازم خانگی
+👤 نام: ${name}
+📞 شماره تماس: ${phone}
+🛠 دستگاه: ${device}
+🏷 برند: ${brand}
+📝 توضیحات: ${message ? message : "ندارد"}`;
+
+                    let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+                    window.open(url, "_blank");
+                });
             }
-        }
 
-        // بستن نوبار هنگام کلیک روی لینک‌ها در موبایل
-        document.querySelectorAll('.nav-link, .dropdown-item').forEach(function (link) {
-            link.addEventListener('click', function () {
-                if (window.innerWidth < 768) {
-                    closeNavbar();
-                }
-            });
-        });
+            // مدیریت اسلایدر برندها
+            const track = document.querySelector('.brands-track');
+            const container = document.querySelector('.brands-container');
 
-        // بستن نوبار هنگام کلیک خارج از آن
-        document.addEventListener('click', function (event) {
-            if (window.innerWidth < 768) {
-                var navbar = document.querySelector('.navbar');
-                var navbarToggler = document.querySelector('.navbar-toggler');
-                if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
-                    closeNavbar();
+            if (container && track) {
+                container.addEventListener('mouseenter', () => {
+                    track.style.animationPlayState = 'paused';
+                });
+
+                container.addEventListener('mouseleave', () => {
+                    track.style.animationPlayState = 'running';
+                });
+
+                // تنظیم سرعت انیمیشن
+                function adjustAnimationSpeed() {
+                    if (window.innerWidth < 480) {
+                        track.style.animationDuration = '30s';
+                    } else if (window.innerWidth < 768) {
+                        track.style.animationDuration = '35s';
+                    } else {
+                        track.style.animationDuration = '40s';
+                    }
                 }
+
+                adjustAnimationSpeed();
+                window.addEventListener('resize', adjustAnimationSpeed);
             }
         });
     </script>
@@ -2330,11 +2335,11 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-                                                                                                                                        👤 نام: ${name}
-                                                                                                                                        📞 شماره تماس: ${phone}
-                                                                                                                                        🛠 دستگاه: ${device}
-                                                                                                                                        🏷 برند: ${brand}
-                                                                                                                                        📝 توضیحات: ${message ? message : "ندارد"}`;
+                                                                                                                                            👤 نام: ${name}
+                                                                                                                                            📞 شماره تماس: ${phone}
+                                                                                                                                            🛠 دستگاه: ${device}
+                                                                                                                                            🏷 برند: ${brand}
+                                                                                                                                            📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
