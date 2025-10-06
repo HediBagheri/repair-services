@@ -1601,6 +1601,86 @@
                 border-width: 1.5px; /* خط نازک‌تر در موبایل */
             }
         }
+
+        /* نمایش شماره موبایل در نوبار موبایل */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem 0 !important;
+            }
+
+            .navbar-brand-with-logo {
+                flex: 1;
+            }
+
+            .site-logo {
+                height: 50px !important;
+                margin-left: 0 !important;
+            }
+
+            .navbar-toggler {
+                order: 3;
+                margin-right: 0;
+            }
+
+            /* استایل برای شماره موبایل در نوبار */
+            .navbar-mobile-phone {
+                display: flex !important;
+                align-items: center;
+                order: 2;
+                margin-left: auto;
+                margin-right: 10px;
+            }
+
+            .mobile-phone-number {
+                background: var(--primary-color);
+                color: white;
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                text-decoration: none;
+                white-space: nowrap;
+                box-shadow: 0 2px 8px rgba(1, 58, 99, 0.3);
+                transition: all 0.3s ease;
+            }
+
+                .mobile-phone-number:hover {
+                    background: #02548f;
+                    transform: translateY(-1px);
+                    color: white;
+                }
+
+            /* مخفی کردن دکمه‌های اصلی در موبایل */
+            .button-row {
+                display: none !important;
+            }
+
+            .navbar-collapse {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-phone-number {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+
+            .site-logo {
+                height: 45px !important;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .mobile-phone-number {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+            }
+
+            .site-logo {
+                height: 40px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1628,11 +1708,90 @@
         </div>
     </div>-->
     <!-- navbar -->
+    <!--<nav class="navbar navbar-expand-lg" role="navigation" aria-label="منوی اصلی">
+        <div class="container">
+            <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
+                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="بازکردن منو">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="menubar">
+                    <li class="nav-item dropdown" role="none">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                            خدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown" role="menu">
+                            <li role="none"><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                            <li role="none">
+                                <a class="dropdown-item" href="washer.html" role="menuitem">
+                                    <i class="fas fa-tshirt"></i> تعمیر لباسشویی
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#services">
+                                    <i class="fas fa-list"></i> مشاهده همه خدمات
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            مجله آموزشی
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="magazineDropdown">
+                            <li><h6 class="dropdown-header">آموزش‌های تخصصی</h6></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=لباسشویی"><i class="fas fa-tshirt"></i> آموزش تعمیر لباسشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=ظرفشویی"><i class="fas fa-concierge-bell"></i> آموزش تعمیر ظرفشویی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=جاروبرقی"><i class="fas fa-wind"></i> آموزش تعمیر جاروبرقی</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=مایکروفر"><i class="fas fa-radiation"></i> آموزش تعمیر مایکروفر</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=الکترونیک"><i class="fas fa-microchip"></i> آموزش الکترونیک</a></li>
+                            <li><a class="dropdown-item" href="tutorial.html?category=نکات کاربردی"><i class="fas fa-lightbulb"></i> نکات کاربردی</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="tutorial.html"><i class="fas fa-book"></i> همه مقالات آموزشی</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
+
+                </ul>
+
+                <div class="d-flex align-items-center mt-3 mt-lg-0 button-row">
+                    <a href="#contact" class="nav-request-btn mb-2" aria-label="درخواست تعمیر">
+                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
+                    </a>
+                    <a class="nav-request-btn mb-2" href="tel:+989199195067" aria-label="تماس تلفنی">
+                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>-->
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg" role="navigation" aria-label="منوی اصلی">
         <div class="container">
             <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
                 <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
             </a>
+
+            <!-- شماره موبایل در نوبار موبایل -->
+            <div class="navbar-mobile-phone d-none d-md-none">
+                <a href="tel:+989199195067" class="mobile-phone-number">
+                    <i class="fas fa-phone-alt me-1"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                </a>
+            </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                     aria-controls="mainNav" aria-expanded="false" aria-label="بازکردن منو">
@@ -2113,11 +2272,11 @@
             let message = this.message.value;
 
             let text = `📩 درخواست تعمیر لوازم خانگی
-                                                                                                                                    👤 نام: ${name}
-                                                                                                                                    📞 شماره تماس: ${phone}
-                                                                                                                                    🛠 دستگاه: ${device}
-                                                                                                                                    🏷 برند: ${brand}
-                                                                                                                                    📝 توضیحات: ${message ? message : "ندارد"}`;
+                                                                                                                                        👤 نام: ${name}
+                                                                                                                                        📞 شماره تماس: ${phone}
+                                                                                                                                        🛠 دستگاه: ${device}
+                                                                                                                                        🏷 برند: ${brand}
+                                                                                                                                        📝 توضیحات: ${message ? message : "ندارد"}`;
 
             let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
             window.open(url, "_blank");
