@@ -2126,14 +2126,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // اسکریپت یکپارچه و ساده
+        // اسکریپت اصلاح شده برای مدیریت منو
         document.addEventListener('DOMContentLoaded', function () {
             // --- مدیریت منوی همبرگری ---
             const navbarToggler = document.querySelector('.navbar-toggler');
             const navbarCollapse = document.querySelector('.navbar-collapse');
 
-            // بستن منوی همبرگری هنگام کلیک روی لینک‌ها در موبایل
-            document.querySelectorAll('.nav-link, .nav-request-btn, .dropdown-item').forEach(function (link) {
+            // بستن منوی همبرگری هنگام کلیک روی لینک‌های معمولی (نه dropdown)
+            document.querySelectorAll('.nav-link:not(.dropdown-toggle), .nav-request-btn, .dropdown-item').forEach(function (link) {
                 link.addEventListener('click', function () {
                     // فقط در موبایل و وقتی منو باز است
                     if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
