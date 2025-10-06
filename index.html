@@ -2124,198 +2124,57 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // تابع برای بستن dropdown بعد از کلیک
-        function closeDropdown() {
-            // پیدا کردن تمام dropdown‌های باز
-            var dropdowns = document.querySelectorAll('.dropdown-toggle');
-            dropdowns.forEach(function (dropdown) {
-                var bsDropdown = bootstrap.Dropdown.getInstance(dropdown);
-                if (bsDropdown) {
-                    bsDropdown.hide();
-                }
-            });
-        }
-
-        // بستن اتوماتیک dropdown وقتی روی لینک کلیک می‌شود
+        // اسکریپت یکپارچه و ساده
         document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.dropdown-item').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    closeDropdown();
-                });
-            });
+            // --- مدیریت منوی همبرگری ---
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
-            // بستن dropdown وقتی خارج از آن کلیک می‌شود
-            document.addEventListener('click', function (event) {
-                if (!event.target.closest('.dropdown')) {
-                    closeDropdown();
-                }
-            });
-
-            // بستن منوی همبرگری وقتی روی لینک‌ها کلیک می‌شود (مخصوص موبایل)
-            document.querySelectorAll('.nav-link, .nav-request-btn').forEach(function (link) {
+            // بستن منوی همبرگری هنگام کلیک روی لینک‌ها در موبایل
+            document.querySelectorAll('.nav-link, .nav-request-btn, .dropdown-item').forEach(function (link) {
                 link.addEventListener('click', function () {
-                    if (window.innerWidth < 992) { // برای تبلت و موبایل
-                        var navbarToggler = document.querySelector('.navbar-toggler');
-                        var navbarCollapse = document.querySelector('.navbar-collapse');
-
-                        if (navbarCollapse.classList.contains('show')) {
-                            var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                            if (!bsCollapse) {
-                                bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                            }
-                            bsCollapse.hide();
+                    // فقط در موبایل و وقتی منو باز است
+                    if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                        // استفاده از روش ساده - کلیک روی دکمه همبرگری
+                        if (navbarToggler) {
+                            navbarToggler.click();
                         }
                     }
                 });
             });
-        });
 
-        // تابع بهبود یافته برای بستن منوی همبرگری
-        function closeNavbar() {
-            if (window.innerWidth < 992) {
-                var navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (!bsCollapse) {
-                        bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                    }
-                    bsCollapse.hide();
-                }
+            // --- مدیریت فرم درخواست تعمیر ---
+            const repairForm = document.getElementById('repairForm');
+            if (repairForm) {
+                repairForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = this.name.value;
+                    const phone = this.phone.value;
+                    const device = this.device.value;
+                    const brand = this.brand.value;
+                    const message = this.message.value;
+
+                    const text = `📩 درخواست تعمیر لوازم خانگی
+👤 نام: ${name}
+📞 شماره تماس: ${phone}
+🛠 دستگاه: ${device}
+🏷 برند: ${brand}
+📝 توضیحات: ${message ? message : "ندارد"}`;
+
+                    const url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
+                    window.open(url, "_blank");
+                });
             }
-        }
 
-        // اضافه کردن event listener برای تمام لینک‌های منو
-        document.addEventListener('DOMContentLoaded', function () {
-            // بستن منو هنگام کلیک روی لینک‌ها
-            document.querySelectorAll('.nav-link, .dropdown-item, .nav-request-btn').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    closeNavbar();
-                    closeDropdown();
-                });
-            });
-
-            // بستن منو هنگام کلیک خارج از منو
-            document.addEventListener('click', function (event) {
-                var navbar = document.querySelector('.navbar');
-                var toggler = document.querySelector('.navbar-toggler');
-
-                if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
-                    closeNavbar();
-                    closeDropdown();
-                }
-            });
-        });
-    </script>
-    <script>
-        // تابع برای بستن dropdown بعد از کلیک
-        function closeDropdown() {
-            // پیدا کردن تمام dropdown‌های باز
-            var dropdowns = document.querySelectorAll('.dropdown-toggle');
-            dropdowns.forEach(function (dropdown) {
-                var bsDropdown = bootstrap.Dropdown.getInstance(dropdown);
-                if (bsDropdown) {
-                    bsDropdown.hide();
-                }
-            });
-        }
-
-        // بستن اتوماتیک dropdown وقتی روی لینک کلیک می‌شود
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.dropdown-item').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    closeDropdown();
-                });
-            });
-
-            // بستن dropdown وقتی خارج از آن کلیک می‌شود
-            document.addEventListener('click', function (event) {
-                if (!event.target.closest('.dropdown')) {
-                    closeDropdown();
-                }
-            });
-        });
-    </script>
-    <script>
-        document.getElementById("repairForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            let name = this.name.value;
-            let phone = this.phone.value;
-            let device = this.device.value;
-            let brand = this.brand.value;
-            let message = this.message.value;
-
-            let text = `📩 درخواست تعمیر لوازم خانگی
-                                                                                                                                                👤 نام: ${name}
-                                                                                                                                                📞 شماره تماس: ${phone}
-                                                                                                                                                🛠 دستگاه: ${device}
-                                                                                                                                                🏷 برند: ${brand}
-                                                                                                                                                📝 توضیحات: ${message ? message : "ندارد"}`;
-
-            let url = `https://wa.me/989199195067?text=${encodeURIComponent(text)}`;
-            window.open(url, "_blank");
-        });
-    </script>
-
-    <a href="tel:+989199195067" class="call-float">
-        <i class="fas fa-phone"></i>
-    </a>
-
-    <a href="https://wa.me/989199195067" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-    <script>
-        function closeDropdown() {
-            if (window.innerWidth < 768) {
-                var navbarToggler = document.querySelector('.navbar-toggler');
-                var navbarCollapse = document.querySelector('.navbar-collapse');
-
-                if (navbarToggler && !navbarCollapse.classList.contains('show')) {
-                    return;
-                }
-                var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
-            }
-        }
-
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function () {
-                if (window.innerWidth < 768) {
-                    closeDropdown();
-                }
-            });
-        });
-
-        document.getElementById("faqSearch").addEventListener("keyup", function () {
-            let searchValue = this.value.toLowerCase();
-            let accordionItems = document.querySelectorAll('.accordion-item');
-
-            accordionItems.forEach(item => {
-                let question = item.querySelector('.accordion-button').textContent.toLowerCase();
-                let answer = item.querySelector('.accordion-body').textContent.toLowerCase();
-
-                if (question.includes(searchValue) || answer.includes(searchValue)) {
-                    item.style.display = 'block';
-
-                    if (searchValue.length > 2) {
-                        let collapseElement = item.querySelector('.accordion-collapse');
-                        if (!collapseElement.classList.contains('show')) {
-                            new bootstrap.Collapse(collapseElement).show();
-                        }
-                    }
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
+            // --- مدیریت اسلایدر برندها ---
             const track = document.querySelector('.brands-track');
             const container = document.querySelector('.brands-container');
 
-            // توقف انیمیشن هنگام hover
-            if (container) {
+            if (container && track) {
+                // توقف انیمیشن هنگام hover
                 container.addEventListener('mouseenter', () => {
                     track.style.animationPlayState = 'paused';
                 });
@@ -2323,47 +2182,83 @@
                 container.addEventListener('mouseleave', () => {
                     track.style.animationPlayState = 'running';
                 });
-            }
 
-            // تنظیم سرعت انیمیشن بر اساس عرض صفحه
-            function adjustAnimationSpeed() {
-                if (!track) return;
-
-                if (window.innerWidth < 480) {
-                    track.style.animationDuration = '30s';
-                } else if (window.innerWidth < 768) {
-                    track.style.animationDuration = '35s';
-                } else {
-                    track.style.animationDuration = '40s';
+                // تنظیم سرعت انیمیشن بر اساس عرض صفحه
+                function adjustAnimationSpeed() {
+                    if (window.innerWidth < 480) {
+                        track.style.animationDuration = '30s';
+                    } else if (window.innerWidth < 768) {
+                        track.style.animationDuration = '35s';
+                    } else {
+                        track.style.animationDuration = '40s';
+                    }
                 }
+
+                adjustAnimationSpeed();
+                window.addEventListener('resize', adjustAnimationSpeed);
             }
 
-            // اجرای اولیه و هنگام تغییر سایز صفحه
-            adjustAnimationSpeed();
-            window.addEventListener('resize', adjustAnimationSpeed);
+            // --- مدیریت جستجوی FAQ ---
+            const faqSearch = document.getElementById('faqSearch');
+            if (faqSearch) {
+                faqSearch.addEventListener('keyup', function () {
+                    const searchValue = this.value.toLowerCase();
+                    const accordionItems = document.querySelectorAll('.accordion-item');
 
-            // بهبود عملکرد انیمیشن
-            track.style.willChange = 'transform';
+                    accordionItems.forEach(item => {
+                        const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+                        const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+
+                        if (question.includes(searchValue) || answer.includes(searchValue)) {
+                            item.style.display = 'block';
+
+                            if (searchValue.length > 2) {
+                                const collapseElement = item.querySelector('.accordion-collapse');
+                                if (collapseElement && !collapseElement.classList.contains('show')) {
+                                    new bootstrap.Collapse(collapseElement).show();
+                                }
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // --- مدیریت اسکرول نرم برای لینک‌های داخلی ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && !this.classList.contains('dropdown-toggle')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
         });
 
-        // تابع برای بستن منوی dropdown در موبایل
-        function closeDropdown() {
-            if (window.innerWidth < 768) {
-                var navbarToggler = document.querySelector('.navbar-toggler');
-                var navbarCollapse = document.querySelector('.navbar-collapse');
-
-                if (navbarToggler && !navbarCollapse.classList.contains('show')) {
-                    return;
+        // مدیریت ریسایز ویندو
+        window.addEventListener('resize', function () {
+            // بستن منو در دسکتاپ اگر باز باشد
+            if (window.innerWidth >= 992) {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    if (bsCollapse) {
+                        bsCollapse.hide();
+                    }
                 }
-                var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
             }
-        }
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Structured Data -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -2389,63 +2284,6 @@
         }
     </script>
 
-    <script>
-        // بهبود سرعت لود تصاویر
-        document.addEventListener('DOMContentLoaded', function () {
-            // Lazy Loading برای تصاویر
-            const images = document.querySelectorAll('img');
-            const imageOptions = {
-                threshold: 0,
-                rootMargin: '0px 0px 50px 0px'
-            };
-
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, imageOptions);
-
-            images.forEach(img => {
-                if (img.classList.contains('lazy')) {
-                    imageObserver.observe(img);
-                }
-            });
-
-            // ردیابی رویدادهای مهم
-            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.addEventListener('click', function () {
-                    gtag('event', 'phone_click', {
-                        'event_category': 'Contact',
-                        'event_label': 'Phone Call'
-                    });
-                });
-            });
-
-            document.getElementById('repairForm').addEventListener('submit', function (e) {
-                gtag('event', 'form_submit', {
-                    'event_category': 'Lead',
-                    'event_label': 'Repair Request'
-                });
-            });
-        });
-
-        // بهبود navigation
-        //function closeDropdown() {
-        //    if (window.innerWidth < 768) {
-        //        var navbarCollapse = document.querySelector('.navbar-collapse');
-        //        if (navbarCollapse.classList.contains('show')) {
-        //            var bsCollapse = new bootstrap.Collapse(navbarCollapse);
-        //            bsCollapse.hide();
-        //        }
-        //    }
-        //}
-    </script>
-
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -2453,7 +2291,6 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
-    </script>>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 </html>
