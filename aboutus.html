@@ -974,7 +974,8 @@
         }
 
             .testimonial-card:after {
-                content: '''; font-family: Arial;
+                content: '';
+                font-family: Arial;
                 position: absolute;
                 top: 10px;
                 left: 20px;
@@ -1080,6 +1081,21 @@
                     color: #FFD700;
                 }
 
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: .8rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            box-shadow: 0 8px 24px rgba(1,58,99,.18);
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary-custom:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
         @media (max-width: 768px) {
             .page-hero {
                 padding: 60px 0;
@@ -1544,6 +1560,7 @@
             </div>
         </div>
     </section>
+    <!-- Contact -->
     <section id="contact" class="contact mt-4" itemscope itemtype="https://schema.org/ContactPoint">
         <div class="container">
             <div class="row justify-content-center">

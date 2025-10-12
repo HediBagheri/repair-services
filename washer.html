@@ -540,7 +540,21 @@
             }
 
 
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: .8rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            box-shadow: 0 8px 24px rgba(1,58,99,.18);
+            transition: all 0.3s ease;
+        }
 
+            .btn-primary-custom:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
 
         @media (max-width: 768px) {
             .hero-section {
@@ -1377,14 +1391,15 @@
         </section>
 
 
-        <section id="contact" class="contact mt-4">
+        <!-- Contact -->    <!-- Contact -->
+        <section id="contact" class="contact mt-4" itemscope itemtype="https://schema.org/ContactPoint">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-card">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
-                                    <h4 style="font-weight:800;margin:0">ثبت سریع درخواست تعمیر</h4>
+                                    <h4 style="font-weight:800;margin:0">ثبت درخواست تعمیر</h4>
                                     <small style="color:var(--text-muted)">همین الان درخواستت رو ثبت کن</small>
                                 </div>
                                 <a class="phone-badge" href="tel:+989199195067">
@@ -1392,7 +1407,7 @@
                                 </a>
                             </div>
 
-                            <form id="repairForm">
+                            <form id="repairForm" method="post" action="/submit-request">
                                 <div class="row g-2">
                                     <div class="col-md-6">
                                         <input class="form-control" name="name" placeholder="نام و نام خانوادگی" required>
