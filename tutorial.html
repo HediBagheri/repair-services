@@ -361,6 +361,24 @@
             .whatsapp-float:hover {
                 background: #20bd5a;
             }
+        .phone-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.55rem 1rem;
+            border-radius: 10px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(1,58,99,.12);
+            transition: all 0.3s ease;
+        }
+
+            .phone-badge:hover {
+                background: #02548f;
+                transform: translateY(-2px);
+            }
+
         @media (max-width: 768px) {
             .hero-section {
                 padding: 50px 0;
@@ -484,6 +502,19 @@
                 border-width: 1.5px;
             }
 
+            .phone-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: .6rem;
+                background: var(--primary-color);
+                color: #fff;
+                padding: 0.55rem 1rem;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 0.95rem;
+                box-shadow: 0 8px 20px rgba(1,58,99,.12);
+                transition: all 0.3s ease;
+            }
             .site-logo {
                 height: 60px;
             }
@@ -1028,6 +1059,7 @@
             </div>
         </div>
     </section>
+    <br />
     <!-- فوتر -->
     <footer class="footer" role="contentinfo">
         <div class="container">
