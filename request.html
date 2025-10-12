@@ -380,6 +380,7 @@
             margin-bottom: 15px;
         }
 
+
         .footer {
             background: linear-gradient(90deg, var(--primary-color), #012f4f);
             color: white;
@@ -393,7 +394,7 @@
             }
 
                 .footer a:hover {
-                    color: var(--secondary-color);
+                    color: var(--secondary-color); /* حالا سفید خواهد بود */
                 }
 
         .whatsapp-float {
@@ -1055,6 +1056,7 @@
             margin-bottom: 15px;
         }
 
+
         .footer {
             background: linear-gradient(90deg, var(--primary-color), #012f4f);
             color: white;
@@ -1068,7 +1070,7 @@
             }
 
                 .footer a:hover {
-                    color: var(--secondary-color);
+                    color: var(--secondary-color); /* حالا سفید خواهد بود */
                 }
 
         .whatsapp-float {
@@ -1670,29 +1672,37 @@
         });
     </script>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5>تعمیرات پلاس</h5>
+                    <h5>همیار تعمیر</h5>
                     <p>ارائه خدمات تخصصی تعمیرات لوازم خانگی با کیفیت برتر و ضمانت کار</p>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">درباره ما</a></li>
+                        <li><a href="request.html">درخواست همکاری</a></li>
+                        <li><a href="#faq">سوالات متداول</a></li>
+                    </ul>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5>تماس با ما</h5>
-                    <p><i class="fas fa-phone"></i> ۰۹۱۹۹۱۹۵۰۶۷</p>
-                    <p><i class="fas fa-map-marker-alt"></i> تهران</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> ۰۹۱۹۹۱۹۵۰۶۷</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> تهران</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@example.com</p>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5>لینک‌های مفید</h5>
-                    <p><a href="index.html">صفحه اصلی</a></p>
-                    <p><a href="service-washer.html">تعمیر لباسشویی</a></p>
-                    <p><a href="service-dishwasher.html">تعمیر ظرفشویی</a></p>
-                    <p><a href="service-vacuum.html">تعمیر جاروبرقی</a></p>
-                    <p><a href="service-microwave.html">تعمیر مایکروفر</a></p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="washer.html">تعمیر لباسشویی</a></li>
+                        <li><a href="dishwasher.html">تعمیر ظرفشویی</a></li>
+                        <li><a href="vacuum.html">تعمیر جاروبرقی</a></li>
+                        <li><a href="microwave.html">تعمیر مایکروفر</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="text-center mt-4 pt-3 border-top">
-                <p>© ۲۰۲۳همیار تعمیر. تمام حقوق محفوظ است.</p>
+                <p>© ۲۰۲۳ همیار تعمیر. تمام حقوق محفوظ است.</p>
             </div>
         </div>
     </footer>

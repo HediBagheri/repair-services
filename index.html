@@ -772,13 +772,21 @@
                 transform: translateY(-2px);
             }
 
-        footer {
-            padding: 40px 0;
-            color: #fff;
-            background: linear-gradient(90deg,var(--primary-color),#012f4f);
-            margin-top: 24px;
-            border-radius: 8px
+        .footer {
+            background: linear-gradient(90deg, var(--primary-color), #012f4f);
+            color: white;
+            padding: 40px 0 20px;
         }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .footer a:hover {
+                    color: var(--secondary-color); /* حالا سفید خواهد بود */
+                }
 
         .call-float {
             position: fixed;
@@ -2108,18 +2116,38 @@
             </div>
         </div>
     </section>
-    <footer role="contentinfo" itemscope itemtype="https://schema.org/LocalBusiness">
-        <div class="container text-center">
-            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                <span itemprop="addressLocality">تهران</span> -
-                <span itemprop="addressCountry">ایران</span>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>همیار تعمیر</h5>
+                    <p>ارائه خدمات تخصصی تعمیرات لوازم خانگی با کیفیت برتر و ضمانت کار</p>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">درباره ما</a></li>
+                        <li><a href="request.html">درخواست همکاری</a></li>
+                        <li><a href="#faq">سوالات متداول</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>تماس با ما</h5>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> ۰۹۱۹۹۱۹۵۰۶۷</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> تهران</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@example.com</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>لینک‌های مفید</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="washer.html">تعمیر لباسشویی</a></li>
+                        <li><a href="dishwasher.html">تعمیر ظرفشویی</a></li>
+                        <li><a href="vacuum.html">تعمیر جاروبرقی</a></li>
+                        <li><a href="microwave.html">تعمیر مایکروفر</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>
-                © <span itemprop="copyrightYear">2025</span>
-                <span itemprop="name">همیار تعمیر</span> — تمامی حقوق محفوظ است.
-            </p>
-            <meta itemprop="openingHours" content="Mo-Su 08:00-22:00" />
-            <meta itemprop="priceRange" content="$$" />
+            <div class="text-center mt-4 pt-3 border-top">
+                <p>© ۲۰۲۳ همیار تعمیر. تمام حقوق محفوظ است.</p>
+            </div>
         </div>
     </footer>
 
