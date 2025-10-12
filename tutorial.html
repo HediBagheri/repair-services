@@ -1105,6 +1105,27 @@
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.category-btn');
             const articles = document.querySelectorAll('#articles-container .col-md-4');
+            const articlesContainer = document.getElementById('articles-container');
+
+            function filterArticles(category) {
+                let visibleCount = 0;
+
+                articles.forEach(article => {
+                    if (category === 'all' || article.getAttribute('data-category') === category) {
+                        article.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+
+                // اگر مقاله‌ای نمایش داده نمی‌شود، ارتفاع container را تنظیم کن
+                if (visibleCount === 0) {
+                    articlesContainer.style.minHeight = '200px';
+                } else {
+                    articlesContainer.style.minHeight = '';
+                }
+            }
 
             // فیلتر بر اساس کلیک دکمه
             filterButtons.forEach(button => {
@@ -1112,14 +1133,7 @@
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
                     const category = this.getAttribute('data-category');
-
-                    articles.forEach(article => {
-                        if (category === 'all' || article.getAttribute('data-category') === category) {
-                            article.style.display = 'block';
-                        } else {
-                            article.style.display = 'none';
-                        }
-                    });
+                    filterArticles(category);
                 });
             });
 
@@ -1136,15 +1150,8 @@
 
                 if (activeBtn) {
                     activeBtn.classList.add('active');
+                    filterArticles(categoryFromUrl);
                 }
-
-                articles.forEach(article => {
-                    if (article.getAttribute('data-category') === categoryFromUrl) {
-                        article.style.display = 'block';
-                    } else {
-                        article.style.display = 'none';
-                    }
-                });
             }
         });
 
