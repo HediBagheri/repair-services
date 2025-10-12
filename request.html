@@ -1232,6 +1232,71 @@
                 font-size: 1.3rem;
             }
         }
+
+        /* استایل برای هدر موبایل */
+        .navbar-header-mobile {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .navbar-phone-mobile {
+            margin-right: auto;
+            margin-left: 15px;
+        }
+
+        .phone-link-mobile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(1, 58, 99, 0.2);
+            transition: all 0.3s ease;
+        }
+
+            .phone-link-mobile:hover {
+                background: #02548f;
+                color: white;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(1, 58, 99, 0.3);
+            }
+
+        /* مخفی کردن در دسکتاپ */
+        @media (min-width: 992px) {
+            .navbar-phone-mobile {
+                display: none;
+            }
+        }
+
+        /* تنظیمات ریسپانسیو */
+        @media (max-width: 480px) {
+            .phone-link-mobile {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .phone-text {
+                display: inline; /* نمایش متن شماره */
+            }
+        }
+
+        @media (max-width: 360px) {
+            .phone-link-mobile {
+                font-size: 0.75rem;
+                padding: 5px 8px;
+            }
+
+            .site-logo {
+                height: 45px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1301,8 +1366,7 @@
     <div class="container mt-3">
         <nav aria-label="مسیر ناوبری">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">صفحه اصلی</a></li>
-                <li class="breadcrumb-item"><a href="services.html">خدمات</a></li>
+                <li class="breadcrumb-item"><a href="index.html">صفحه اصلس /</a></li>
                 <li class="breadcrumb-item active" aria-current="page">تعمیر لباسشویی</li>
             </ol>
         </nav>
