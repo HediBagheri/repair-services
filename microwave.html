@@ -932,33 +932,50 @@
     </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="منوی اصلی">
         <div class="container">
-            <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
-                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
-            </a>
+            <div class="navbar-header-mobile">
+                <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
+                    <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
+                </a>
 
-            <!--<small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>-->
+                <!-- شماره تلفن برای موبایل -->
+                <div class="navbar-phone-mobile d-lg-none">
+                    <a href="tel:+989199195067" class="phone-link-mobile">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="phone-text">۰۹۱۹۹۱۹۵۰۶۷</span>
+                    </a>
+                </div>
+            </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="بازکردن منو">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="menubar">
+                    <li class="nav-item dropdown" role="none">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                             خدمات
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
-                            <li><a class="dropdown-item" href="washer.html"><i class="fas fa-tshirt"></i> تعمیر لباسشویی</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown" role="menu">
+                            <li role="none"><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                            <li role="none">
+                                <a class="dropdown-item" href="washer.html" role="menuitem">
+                                    <i class="fas fa-tshirt"></i> تعمیر لباسشویی
+                                </a>
+                            </li>
                             <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
                             <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
                             <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#services" onclick="closeDropdown()"><i class="fas fa-list"></i> مشاهده همه خدمات</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#services">
+                                    <i class="fas fa-list"></i> مشاهده همه خدمات
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -981,12 +998,71 @@
                     <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
-
                 </ul>
 
                 <div class="d-flex align-items-center mt-3 mt-lg-0 button-row">
-                    <!-- دکمه ثبت درخواست با خط سرمه‌ای -->
-                    <a href="#contact" class="nav-request-btn mb-2">
+                    <a href="#contact" class="nav-request-btn mb-2" aria-label="درخواست تعمیر">
+                        <i class="fas fa-wrench me-1"></i> ثبت درخواست
+                    </a>
+                    <a class="nav-request-btn mb-2" href="tel:+989199195067" aria-label="تماس تلفنی">
+                        <i class="fas fa-phone-alt"></i> ۰۹۱۹۹۱۹۵۰۶۷
+                    </a>
+                </div>
+            </div> <!-- اینجا div اضافی حذف شد -->
+        </div>
+    </nav>
+    <!--<nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand-with-logo" href="index.html" aria-label="همیار تعمیر - صفحه اصلی">
+                <img src="images/logo.png" alt="لوگو همیار تعمیر" class="site-logo">
+            </a>-->
+    <!--<small class="text-muted d-none d-lg-inline">خدمات فوری و ضمانت‌دار</small>-->
+    <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    خدمات
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                    <li><h6 class="dropdown-header">خدمات تخصصی ما</h6></li>
+                    <li><a class="dropdown-item" href="washer.html"><i class="fas fa-tshirt"></i> تعمیر لباسشویی</a></li>
+                    <li><a class="dropdown-item" href="dishwasher.html"><i class="fas fa-concierge-bell"></i> تعمیر ظرفشویی</a></li>
+                    <li><a class="dropdown-item" href="vacuum.html"><i class="fas fa-wind"></i> تعمیر جاروبرقی</a></li>
+                    <li><a class="dropdown-item" href="microwave.html"><i class="fas fa-radiation"></i> تعمیر مایکروفر</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#services" onclick="closeDropdown()"><i class="fas fa-list"></i> مشاهده همه خدمات</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="magazineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    مجله آموزشی
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="magazineDropdown">
+                    <li><h6 class="dropdown-header">آموزش‌های تخصصی</h6></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=لباسشویی"><i class="fas fa-tshirt"></i> آموزش تعمیر لباسشویی</a></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=ظرفشویی"><i class="fas fa-concierge-bell"></i> آموزش تعمیر ظرفشویی</a></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=جاروبرقی"><i class="fas fa-wind"></i> آموزش تعمیر جاروبرقی</a></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=مایکروفر"><i class="fas fa-radiation"></i> آموزش تعمیر مایکروفر</a></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=الکترونیک"><i class="fas fa-microchip"></i> آموزش الکترونیک</a></li>
+                    <li><a class="dropdown-item" href="tutorial.html?category=نکات کاربردی"><i class="fas fa-lightbulb"></i> نکات کاربردی</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="tutorial.html"><i class="fas fa-book"></i> همه مقالات آموزشی</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="request.html">درخواست همکاری</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">سوالات متداول</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutus.html">درباره ما</a></li>
+
+        </ul>
+
+        <div class="d-flex align-items-center mt-3 mt-lg-0 button-row">-->
+    <!-- دکمه ثبت درخواست با خط سرمه‌ای -->
+    <!--<a href="#contact" class="nav-request-btn mb-2">
                         <i class="fas fa-wrench me-1"></i> ثبت درخواست
                     </a>
 
@@ -998,7 +1074,7 @@
 
             </div>
         </div>
-    </nav>
+    </nav>-->
     <!-- مسیر ناوبری (Breadcrumb) -->
     <div class="container mt-3">
         <nav aria-label="مسیر ناوبری">
